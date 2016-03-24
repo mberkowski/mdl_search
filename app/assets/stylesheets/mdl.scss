@@ -1,0 +1,37 @@
+#compound-menu {
+  height: 800px;
+  width: 205px;
+  overflow: auto;
+
+  li {
+    text-align: center;
+    width: 195px;
+    a {
+      border: 0;
+    }
+    margin-bottom: 10px;
+  }
+}
+
+.blacklight-catalog-show {
+  @media (min-width: 1000px) {
+    .container {
+      width: 1500px;
+      margin-left: 200px;
+    }
+  }
+}
+
+.asset-viewer {
+  display: inline-block;
+  .audio-player {
+    margin-top: 25px;
+  }
+}
+
+.asset-viewer.display {
+  width: 800px;
+  vertical-align: top;
+  text-align: center;
+}
+

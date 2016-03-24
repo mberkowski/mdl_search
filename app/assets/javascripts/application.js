@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks//
+//= require turbolinks
+//= require openseadragon/built-openseadragon/openseadragon/openseadragon.min.js
 // Required by Blacklight
 //= require blacklight/blacklight
+
 
 //= require_tree .

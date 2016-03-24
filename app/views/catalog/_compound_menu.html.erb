@@ -1,0 +1,15 @@
+<div id="compound-menu">
+  <ul class="nav nav-pills">
+    <% compound_list.compounds.each do |compound| %>
+    <li role="presentation" class="<%= (compound.item_id == params['compound']) ? 'active' : '' %>">
+      <% # Use the AJAX handler when available - we can get bigger images and it's faster than the thumbnail handler %>
+      <% if compound.viewer == 'image' %>
+        <%= raw link_to image_tag(full_page_thumbnail(compound)), "/catalog/#{document.id}?compound=#{compound.item_id}#compound-#{compound.item_id}", id:  menu_link_id(compound) %>
+      <% else %>
+        <%= raw link_to image_tag(compound.thumbnail), "/catalog/#{document.id}?compound=#{compound.item_id}#compound-#{compound.item_id}", id: menu_link_id(compound) %>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+

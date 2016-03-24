@@ -1,49 +1,29 @@
 Rails.application.routes.draw do
-          mount Blacklight::Engine => '/'
 
-  root to: "catalog#index"
-  concern :searchable, Blacklight::Routes::Searchable.new
+  mount Blacklight::Engine => '/'
 
-resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
-  concerns :searchable
-end
+    root to: "catalog#index"
+    concern :searchable, Blacklight::Routes::Searchable.new
 
-  concern :exportable, Blacklight::Routes::Exportable.new
-
-resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
-  concerns :exportable
-end
-
-resources :bookmarks do
-  concerns :exportable
-
-  collection do
-    delete 'clear'
+  resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
+    concerns :searchable
   end
-end
 
-          mount Blacklight::Engine => '/'
+    concern :exportable, Blacklight::Routes::Exportable.new
 
-  root to: "catalog#index"
-  concern :searchable, Blacklight::Routes::Searchable.new
-
-resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
-  concerns :searchable
-end
-
-  concern :exportable, Blacklight::Routes::Exportable.new
-
-resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
-  concerns :exportable
-end
-
-resources :bookmarks do
-  concerns :exportable
-
-  collection do
-    delete 'clear'
+  resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
+    concerns :exportable
   end
-end
+
+  resources :bookmarks do
+    concerns :exportable
+
+    collection do
+      delete 'clear'
+    end
+  end
+
+  get 'contentdm-images' => 'contentdm_images#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

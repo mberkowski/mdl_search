@@ -15,9 +15,13 @@ class CatalogController < ApplicationController
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
-      rows: 10
+      rows: 10,
+      fl: '*'
     }
 
+
+    config.index.thumbnail_method = :cached_thumbnail_tag
+    config.show.thumbnail_method = :cached_thumbnail_tag
     # solr path which will be added to solr base url before the other solr params.
     #config.solr_path = 'select'
 
@@ -36,8 +40,8 @@ class CatalogController < ApplicationController
     #}
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'title_display'
-    config.index.display_type_field = 'format'
+    config.index.title_field = 'title_ssi'
+    config.index.display_type_field = 'type_ssi'
 
     # solr field configuration for document/show views
     #config.show.title_field = 'title_display'
@@ -67,22 +71,14 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'format', label: 'Format'
-    config.add_facet_field 'pub_date', label: 'Publication Year', single: true
-    config.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
-    config.add_facet_field 'language_facet', label: 'Language', limit: true
-    config.add_facet_field 'lc_1letter_facet', label: 'Call Number'
-    config.add_facet_field 'subject_geo_facet', label: 'Region'
-    config.add_facet_field 'subject_era_facet', label: 'Era'
-
-    config.add_facet_field 'example_pivot_field', label: 'Pivot Field', :pivot => ['format', 'language_facet']
-
-    config.add_facet_field 'example_query_facet_field', label: 'Publish Date', :query => {
-       :years_5 => { label: 'within 5 Years', fq: "pub_date:[#{Time.zone.now.year - 5 } TO *]" },
-       :years_10 => { label: 'within 10 Years', fq: "pub_date:[#{Time.zone.now.year - 10 } TO *]" },
-       :years_25 => { label: 'within 25 Years', fq: "pub_date:[#{Time.zone.now.year - 25 } TO *]" }
-    }
-
+    config.add_facet_field 'contributing_organization_ssi', label: 'Collection', index_range: 'A'..'Z', sort: 'index', collapse: false, limit: 10,  :tag => 'co', :ex => 'co'
+    # config.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
+    config.add_facet_field 'creator_ssim', label: 'Creator', show: true
+    config.add_facet_field 'physical_format_ssi', label: 'Format', show: true
+    config.add_facet_field 'formal_subject_ssim', label: 'Subject', limit: 20, show: true
+    config.add_facet_field 'type_ssi', label: 'Type', show: true
+    config.add_facet_field 'title_ssi', label: 'Title', show: true
+    config.add_facet_field 'record_type_ssi', label: 'Single or Compound', show: true
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -91,32 +87,96 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field 'title_display', label: 'Title'
-    config.add_index_field 'title_vern_display', label: 'Title'
-    config.add_index_field 'author_display', label: 'Author'
-    config.add_index_field 'author_vern_display', label: 'Author'
-    config.add_index_field 'format', label: 'Format'
-    config.add_index_field 'language_facet', label: 'Language'
-    config.add_index_field 'published_display', label: 'Published'
-    config.add_index_field 'published_vern_display', label: 'Published'
-    config.add_index_field 'lc_callnum_display', label: 'Call number'
+    config.add_index_field 'dat_ssi', label: 'Date Created'
+    config.add_index_field 'description_ssi', label: 'Description'
+    config.add_index_field 'contributing_organization_ssi', label: 'Publisher'
+    config.add_index_field 'type_ssi', label: 'Type'
+    config.add_index_field 'physical_format_ssi', label: 'Format'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field 'title_display', label: 'Title'
-    config.add_show_field 'title_vern_display', label: 'Title'
-    config.add_show_field 'subtitle_display', label: 'Subtitle'
-    config.add_show_field 'subtitle_vern_display', label: 'Subtitle'
-    config.add_show_field 'author_display', label: 'Author'
-    config.add_show_field 'author_vern_display', label: 'Author'
-    config.add_show_field 'format', label: 'Format'
-    config.add_show_field 'url_fulltext_display', label: 'URL'
-    config.add_show_field 'url_suppl_display', label: 'More Information'
-    config.add_show_field 'language_facet', label: 'Language'
-    config.add_show_field 'published_display', label: 'Published'
-    config.add_show_field 'published_vern_display', label: 'Published'
-    config.add_show_field 'lc_callnum_display', label: 'Call number'
-    config.add_show_field 'isbn_t', label: 'ISBN'
+    # config.add_show_field 'title_ssi', label: 'Title'
+    # config.add_show_field 'dat_ssi', label: 'Date Created'
+    # config.add_show_field 'description_tei', label: 'Description'
+    # config.add_show_field 'publishing_agency_tei', label: 'Publisher'
+
+
+      # {dest_path: 'id', origin_path: 'id'},
+      # {dest_path: 'title_tei', origin_path: 'title'},
+      # {dest_path: 'title_ssi', origin_path: 'title'},
+      # {dest_path: 'title_unstem_search', origin_path: 'title'},
+      # {dest_path: 'contributor_teim', origin_path: 'contri'},
+      # {dest_path: 'contributor_unstem_search', origin_path: 'contri'},
+      # {dest_path: 'contributor_ssim', origin_path: 'contri'},
+      # {dest_path: 'creator_teim', origin_path: 'photog'},
+      # {dest_path: 'creator_unstem_search', origin_path: 'photog'},
+      # {dest_path: 'creator_ssim', origin_path: 'photog'},
+      # {dest_path: 'description_tei', origin_path: 'descri'},
+      # {dest_path: 'dat_ssi', origin_path: 'dat'},
+      # {dest_path: 'publishing_agency_tei', origin_path: 'publia'},
+      # {dest_path: 'publishing_agency_unstem_search', origin_path: 'publia'},
+      # {dest_path: 'publishing_agency_ssi', origin_path: 'publia'},
+      # {dest_path: 'dimensions_ssi', origin_path: 'dimens'},
+      # {dest_path: 'topic_teim', origin_path: 'genera'},
+      # {dest_path: 'topic_unstem_search', origin_path: 'genera'},
+      # {dest_path: 'topic_ssim', origin_path: 'genera'},
+      # {dest_path: 'type_tei', origin_path: 'type'},
+      # {dest_path: 'physical_format_tei', origin_path: 'physic'},
+      # {dest_path: 'formal_subject_teim', origin_path: 'specif', formatters: [SplitFormatter, StripFormatter]},
+      # {dest_path: 'formal_subject_unstem_search', origin_path: 'specif'},
+      # {dest_path: 'formal_subject_ssim', origin_path: 'specif', formatters: [SplitFormatter, StripFormatter]},
+      # {dest_path: 'subject_teim', origin_path: 'subjec', formatters: [SplitFormatter, StripFormatter]},
+      # {dest_path: 'subject_unstem_search', origin_path: 'subjec'},
+      # {dest_path: 'subject_ssim', origin_path: 'subjec', formatters: [SplitFormatter, StripFormatter]},
+      # {dest_path: 'city_ssi', origin_path: 'city'},
+      # {dest_path: 'district_ssi', origin_path: 'distri'},
+      # {dest_path: 'county_ssi', origin_path: 'county'},
+      # {dest_path: 'state_ssi', origin_path: 'state'},
+      # {dest_path: 'country_ssi', origin_path: 'countr'},
+      # {dest_path: 'language_ssi', origin_path: 'langua'},
+      # {dest_path: 'contributing_organization_tei', origin_path: 'contra'},
+      # {dest_path: 'contributing_unstem_search', origin_path: 'contra'},
+      # {dest_path: 'contributing_organization_ssim', origin_path: 'contra'},
+      # {dest_path: 'contact_information_ssi', origin_path: 'contac'},
+      # {dest_path: 'rights_ssi', origin_path: 'righta'},
+      # {dest_path: 'local_identifier_ssi', origin_path: 'identi'},
+      # {dest_path: 'identifier_ssi', origin_path: 'resour'},
+      # {dest_path: 'project_ssi', origin_path: 'projec'},
+      # {dest_path: 'fiscal_sponsor_ssi', origin_path: 'fiscal'},
+      # {dest_path: 'publisher_ssi', origin_path: 'publis'},
+      # {dest_path: 'date_ssi', origin_path: 'date'},
+      # {dest_path: 'format_ssi', origin_path: 'format'},
+      # {dest_path: 'digspa_ssi', origin_path: 'digspa'},
+      # {dest_path: 'digspb_ssi', origin_path: 'digspb'},
+      # {dest_path: 'digspc_ssi', origin_path: 'digspc'},
+      # {dest_path: 'digspd_ssi', origin_path: 'digspd'},
+      # {dest_path: 'digspe_ssi', origin_path: 'digspe'},
+      # {dest_path: 'digspf_ssi', origin_path: 'digspf'},
+      # {dest_path: 'digspg_ssi', origin_path: 'digspg'},
+      # {dest_path: 'digsph_ssi', origin_path: 'digsph'},
+      # {dest_path: 'digspi_ssi', origin_path: 'digspi'},
+      # {dest_path: 'digspj_ssi', origin_path: 'digspj'},
+      # {dest_path: 'digspk_ssi', origin_path: 'digspk'},
+      # {dest_path: 'transcription_tes', origin_path: 'transc'},
+      # {dest_path: 'translation_tes', origin_path: 'transl'},
+      # {dest_path: 'fullrs_tes', origin_path: 'fullrs'},
+      # {dest_path: 'find_ssi', origin_path: 'find'},
+      # {dest_path: 'dmaccess_ssi', origin_path: 'dmaccess'},
+      # {dest_path: 'dmimage_ssi', origin_path: 'dmimage'},
+      # {dest_path: 'dmcreated_ssi', origin_path: 'dmcreated'},
+      # {dest_path: 'dmmodified_ssi', origin_path: 'dmmodified'},
+      # {dest_path: 'dmoclcno_ssi', origin_path: 'dmoclcno'},
+      # {dest_path: 'restriction_code_ssi', origin_path: 'restrictionCode'},
+      # {dest_path: 'cdmfilesize_ssi', origin_path: 'cdmfilesize'},
+      # {dest_path: 'cdmfilesizeformatted_ssi', origin_path: 'cdmfilesizeformatted'},
+      # {dest_path: 'cdmprintpdf_is', origin_path: 'cdmprintpdf', formatters: [ToIFormatter]},
+      # {dest_path: 'cdmhasocr_is', origin_path: 'cdmhasocr', formatters: [ToIFormatter]},
+      # {dest_path: 'cdmisnewspaper_is', origin_path: 'cdmisnewspaper', formatters: [ToIFormatter]},
+      # {dest_path: 'image_uri_ssi', origin_path: 'image_uri'},
+      # {dest_path: 'record_type_ssi', origin_path: 'record_type'},
+      # {dest_path: 'geographic_feature_ssi', origin_path: 'geogra'},
+      # {dest_path: 'compound_objects_ts', origin_path: 'compound_objects', formatters: [ToJsonFormatter]}
+
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

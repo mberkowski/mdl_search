@@ -1,0 +1,10 @@
+<div id="full-record-seadragon" style="width: 800px; height: 800px;"><script type="text/javascript">
+  OpenSeadragon({
+      id:            "full-record-seadragon",
+      prefixUrl:     "/assets/",
+      tileSources:   [{
+          type: 'image',
+          url:  '<%= "http://localhost:3000/contentdm-images?id=#{id}" %>'
+      }]
+  });
+</script></div>

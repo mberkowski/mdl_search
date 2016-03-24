@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'
@@ -54,6 +55,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'solr_wrapper', '>= 0.3'
 end
 
 group :test do
@@ -64,11 +66,5 @@ group :test do
 end
 
 gem "blacklight"
-group :development, :test do
-  gem 'solr_wrapper', '>= 0.3'
-end
-
 gem 'rsolr', '~> 1.0.6'
 gem 'globalid'
-group :development, :test do
-end
