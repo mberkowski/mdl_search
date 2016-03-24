@@ -1,14 +1,8 @@
-<%= javascript_include_tag "messages_new.js" %>
-
-<% compounds = compounds(document) %>
-<div class="asset-viewer panel">
-  <div class="asset-viewer display">
-    <%= render_compound(compounds.with_item_id(params[:compound])) %>
-  </div>
-  <div class="asset-viewer menu">
-    <%= render 'compound_menu', compound_list: compounds(@document), document: @document %>
-  </div>
-</div>
+<% if document['record_type_ssi'] == 'compound' %>
+  <%= render 'compound_record', compounds: compounds(document) %>
+<% else %>
+  <%=  render_asset_viewer MDL::Item.new(desolerize(document)) %>
+<% end %>
 
 
 <%# default partial to display solr document fields in catalog show view -%>

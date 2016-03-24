@@ -13,20 +13,26 @@ module MDL
       "http://reflections.mndigital.org/utils/getthumbnail/collection/#{collection}/id/#{id}"
     end
 
+    def id
+      record[:id].split(':').last
+    end
+
+    def collection
+      record[:id].split(':').first
+    end
+
+    def page_id
+      id
+    end
+
+    def filename
+      record[:id].gsub(':', '-')
+    end
+
     private
 
     def format
       record.fetch(:format)
-    end
-
-    def method_missing(name, *args, &block)
-      record_fields.include?(name) ? record.fetch(name) : super
-    end
-
-    private
-
-    def record_fields
-      [:original_file_uri, :collection, :id, :scalable_image_uri]
     end
 
     # Give hints as to how to theme/visualize this item
@@ -35,6 +41,8 @@ module MDL
       {
         'image/jp2' => 'image',
         'mp3' => 'audio',
+        'mp4' => 'video',
+        'video/mp4' => 'video',
         'jp2' => 'image',
         'jpg' => 'image',
         'pdf' => 'pdf',

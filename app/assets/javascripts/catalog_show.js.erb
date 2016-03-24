@@ -14,28 +14,39 @@ $(function() {
   }
 
   function pdf_viewer(collection, id, pagefile) {
-    var url = "http://reflections.mndigital.org/utils/getfile/collection/" + collection + "/id/"+ item_id +"/filename/"+ pagefile +"#toolbar=1&navpanes=1";
+    var url = "http://reflections.mndigital.org/utils/getfile/collection/" + collection + "/id/"+ page_id +"/filename/"+ pagefile +"#toolbar=1&navpanes=1";
     return '<embed src="' + url +'" width="800" height="800" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" background-color="0xFF525659" top-toolbar-height="56">' + url;
   }
 
-  function audio_viewer(collection, item_id) {
-    var src = "http://reflections.mndigital.org/utils/getstream/collection/" + collection + "/id/" + item_id;
+  function audio_viewer(collection, page_id) {
+    var src = "http://reflections.mndigital.org/utils/getstream/collection/" + collection + "/id/" + page_id;
     return '<audio controls class="audio-player">' +
            '<source src="' + src + '" type="audio/mpeg">' +
            'Your browser does not support the audio element.' +
            '</audio>';
   }
 
-  function viewer(type, collection, id, item_id, pagefile) {
+  function video_viewer(collection, page_id) {
+    var src = "http://reflections.mndigital.org/utils/getstream/collection/" + collection + "/id/" + page_id;
+    return '<video "400" height="400" controls class="audio-player">' +
+           '<source src="' + src + '" type="audio/mpeg">' +
+           'Your browser does not support the audio element.' +
+           '</video>';
+  }
+
+  function viewer(type, collection, id, page_id, pagefile) {
     switch(type) {
         case 'image':
-            return image_viewer(collection + ':' + item_id);
+            return image_viewer(collection + ':' + page_id);
             break;
         case 'pdf':
-            return pdf_viewer(collection, item_id, pagefile);
+            return pdf_viewer(collection, page_id, pagefile);
             break;
         case 'audio':
-            return audio_viewer(collection, item_id);
+            return audio_viewer(collection, page_id);
+            break;
+        case 'video':
+            return video_viewer(collection, page_id);
             break;
         default:
             return image_viewer(id);
@@ -57,8 +68,8 @@ $(function() {
   $('#compound-menu a').click(function(e) {
       e.preventDefault();
       toggle_active(this);
-      [type, collection, id, item_id, pagefile] = extract_link_data(this);
-      $('.asset-viewer.display').html(viewer(type, collection, id, item_id, pagefile));
+      [type, collection, id, page_id, pagefile] = extract_link_data(this);
+      $('.asset-viewer.display').html(viewer(type, collection, id, page_id, pagefile));
   });
 
 });

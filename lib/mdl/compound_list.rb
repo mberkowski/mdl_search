@@ -13,9 +13,9 @@ module MDL
       compounds.select { |item| types.include? item.type  }
     end
 
-    def with_item_id(id = nil)
+    def with_page_id(id = nil)
       return compounds.first unless id
-      compounds.find { |compound| compound.item_id == id  }
+      compounds.find { |compound| compound.page_id == id  }
     end
 
   end

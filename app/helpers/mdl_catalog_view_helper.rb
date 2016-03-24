@@ -1,19 +1,16 @@
 require 'json'
 module MdlCatalogViewHelper
 
-  def menu_link_id(compound)
-    "#{compound.viewer}-#{compound.collection}-#{compound.id}-#{compound.item_id}-#{compound.pagefile}"
+  def render_asset_viewer(item)
+    render "catalog/viewers/#{item.viewer}", item: item
   end
 
-  def full_page_thumbnail(compound)
-    ContentdmIIIF.new(compound.collection, compound.item_id, 7, 200, 200).location
-  end
-
-  def render_compound(compound)
-    render "catalog/viewers/compound_#{compound.viewer}_viewer", compound: compound
+  def desolerize(document)
+    document.transform_keys{ |key| key.gsub(/_([a-z])*$/, '').to_sym }.symbolize_keys
   end
 
   private
+
 
   def compounds(document)
     MDL::CompoundList.new(compounds_with_identifiers(document))

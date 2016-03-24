@@ -10,6 +10,6 @@ describe MDL::CompoundItem do
   end
 
   it 'knows about its item id' do
-    expect(subject.item_id).to eq '999'
+    expect(subject.page_id).to eq '999'
   end
 end

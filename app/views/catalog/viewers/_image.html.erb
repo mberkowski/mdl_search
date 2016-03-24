@@ -4,7 +4,9 @@
       prefixUrl:     "/assets/",
       tileSources:   [{
           type: 'image',
-          url:  '<%= "http://localhost:3000/contentdm-images?id=#{id}" %>'
+          url:  '<%= "#{ENV['RAILS_ROOT_URL']}/contentdm-images?id=#{item.collection}:#{item.page_id}" %>'
       }]
   });
 </script></div>
+<%= "http://reflections.mndigital.org/utils/getfile/collection/#{item.collection}/id/#{item.page_id}/filename/#{item.filename}" %>
+
