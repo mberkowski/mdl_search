@@ -1,10 +1,7 @@
-  # Adapted from: https://github.com/UMNLibraries/umbra.search/blob/master/lib/tasks/setup/setup_helper.rb
 module Sunrise
   module SetupHelper
-    include Sunrise::TeardownHelper
 
     def setup_solr(env, port, solr_version, solr_core_repo, solr_core_name, solr_core_version)
-      teardown_solr(port, env, solr_core_version)
       solr = {
         url: "http://mirrors.advancedhosters.com/apache/lucene/solr/#{solr_version}/solr-#{solr_version}.tgz",
         core_url: "https://github.com/#{solr_core_repo}/archive/#{solr_core_version}.tar.gz",
