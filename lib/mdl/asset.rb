@@ -1,8 +1,10 @@
+require 'erb'
+
 module MDL
-  class Item
-    attr_reader :record
-    def initialize(record)
-      @record = record
+  class Asset
+    attr_reader :document
+    def initialize(document)
+      @document = document
     end
 
     def viewer
@@ -14,25 +16,25 @@ module MDL
     end
 
     def id
-      record[:id].split(':').last
+      ids.last
     end
 
     def collection
-      record[:id].split(':').first
-    end
-
-    def page_id
-      id
+      ids.first
     end
 
     def filename
-      record[:id].gsub(':', '-')
+      document[:id].gsub(':', '-')
     end
 
     private
 
+    def ids
+      document[:id].split(':')
+    end
+
     def format
-      record.fetch(:format)
+      document.fetch(:format)
     end
 
     # Give hints as to how to theme/visualize this item

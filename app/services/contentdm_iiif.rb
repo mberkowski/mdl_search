@@ -22,6 +22,7 @@ class ContentdmIIIF
 
   def cache_remote_file
     File.open(local_filepath, 'wb') { |file| file.write(remote_file) }
+    raise "--------#{location}"
     remote_file
   end
 

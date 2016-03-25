@@ -295,6 +295,7 @@ DEPENDENCIES
   blacklight
   byebug
   capistrano (~> 3.2.0)
+  capistrano-bundler (~> 1.1.2)
   capistrano-rails
   capistrano-sidekiq
   capybara

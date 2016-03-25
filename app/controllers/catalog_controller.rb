@@ -71,7 +71,7 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'contributing_organization_ssi', label: 'Collection', index_range: 'A'..'Z', sort: 'index', collapse: false, limit: 10,  :tag => 'co', :ex => 'co'
+    config.add_facet_field 'contributing_organization_ssi', label: 'Collection', index_range: 'A'..'Z', collapse: false, limit: 5,  :tag => 'co', :ex => 'co'
     # config.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
     config.add_facet_field 'creator_ssim', label: 'Creator', show: true
     config.add_facet_field 'physical_format_ssi', label: 'Format', show: true

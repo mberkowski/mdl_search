@@ -1,12 +1,24 @@
-<div id="full-record-seadragon" style="width: 800px; height: 800px;"><script type="text/javascript">
-  OpenSeadragon({
-      id:            "full-record-seadragon",
-      prefixUrl:     "/assets/",
-      tileSources:   [{
-          type: 'image',
-          url:  '<%= "#{ENV['RAILS_ROOT_URL']}/contentdm-images?id=#{item.collection}:#{item.page_id}" %>'
-      }]
-  });
-</script></div>
-<%= "http://reflections.mndigital.org/utils/getfile/collection/#{item.collection}/id/#{item.page_id}/filename/#{item.filename}" %>
-
+<% if js != true %>
+  <div id="full-record-seadragon" style="width: 800px; height: 800px;"><script type="text/javascript">
+    OpenSeadragon({
+        id:            "full-record-seadragon",
+        prefixUrl:     "/assets/",
+        tileSources:   [{
+            type: 'image',
+            url:  '<%= "#{ENV['RAILS_ROOT_URL']}/contentdm-images?id=#{item.collection}:#{item.id}" %>'
+        }]
+    });
+  </script></div>
+  <%= "#{ENV['RAILS_ROOT_URL']}/contentdm-images?id=#{item.collection}:#{item.id}" %>
+<% else %>
+  '<div id="full-record-seadragon" style="width: 800px; height: 800px;"><script type="text/javascript">' +
+  '  OpenSeadragon({ ' +
+  '      id:            "full-record-seadragon", ' +
+  '      prefixUrl:     "/assets/", ' +
+  '      tileSources:   [{' +
+  '          type: "image", ' +
+  '          url: "<%= ENV['RAILS_ROOT_URL'] %>/contentdm-images?id=' + id + '"' +
+  '      }] ' +
+  '  }); ' +
+  '</script></div>';
+<% end %>

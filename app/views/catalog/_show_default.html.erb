@@ -1,7 +1,7 @@
 <% if document['record_type_ssi'] == 'compound' %>
-  <%= render 'compound_record', compounds: compounds(document) %>
+  <%= render 'compound_record', compound_asset:  MDL::CompoundAsset.new(desolerize(document)) %>
 <% else %>
-  <%=  render_asset_viewer MDL::Item.new(desolerize(document)) %>
+  <%=  render_asset_viewer MDL::Asset.new(desolerize(document)) %>
 <% end %>
 
 

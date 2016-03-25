@@ -1,7 +1,7 @@
 $(function() {
 
-  //TODO: find a way to use the existing viewer partials
   function image_viewer(id) {
+    return <%= render('catalog/viewers/image', js: true) %>
     return '<div id="full-record-seadragon" style="width: 800px; height: 800px;"><script type="text/javascript">' +
            '  OpenSeadragon({ ' +
            '      id:            "full-record-seadragon", ' +
