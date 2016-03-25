@@ -7,7 +7,9 @@ module MdlCatalogViewHelper
 
   def desolerize(document)
     document = document.transform_keys{ |key| key.gsub(/_([a-z])*$/, '').to_sym }.symbolize_keys
-    document[:compound_objects] = JSON.parse(document[:compound_objects]).map(&:symbolize_keys)
+    if document[:compound_objects]
+      document[:compound_objects] = JSON.parse(document[:compound_objects]).map(&:symbolize_keys)
+    end
     document
   end
 
