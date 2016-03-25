@@ -37,11 +37,7 @@ module MDL
     end
 
     def menu_link_title
-      if viewer == 'image'
-        image_tag full_page_thumbnail
-      else
-        image_tag thumbnail
-      end
+      raw "<div>#{page_title}</div> #{image_tag thumbnail}"
     end
 
     def full_page_thumbnail
