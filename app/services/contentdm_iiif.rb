@@ -22,7 +22,6 @@ class ContentdmIIIF
 
   def cache_remote_file
     File.open(local_filepath, 'wb') { |file| file.write(remote_file) }
-    raise "--------#{location}"
     remote_file
   end
 
@@ -56,7 +55,7 @@ class ContentdmIIIF
   end
 
   def cache_dir
-    File.join(Rails.root, 'tmp', 'cache', 'cdm_images')
+    File.join(Rails.root, 'cdm_images')
   end
 
 end
