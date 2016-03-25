@@ -45,6 +45,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-sidekiq'
   gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-passenger'
   gem 'fontello_rails_converter'
   gem 'quiet_assets'
   gem 'coveralls', require: false
