@@ -6,11 +6,7 @@ module MDL
     include ActionView::Helpers::AssetTagHelper
     include ActionView::Helpers::UrlHelper
 
-    def thumbnail
-      "http://reflections.mndigital.org/utils/getthumbnail/collection/#{collection}/id/#{id}"
-    end
-
-    def page_title
+    def title
       document[:pagetitle]
     end
 
@@ -34,12 +30,10 @@ module MDL
       link_to menu_link_title, "/catalog/#{document_id}?compound=#{id}#compound-#{id}", id:  menu_link_id
     end
 
-    def menu_link_title
-      raw "<div>#{page_title}</div> #{image_tag thumbnail}"
-    end
+    private
 
-    def full_page_thumbnail
-      ContentdmIIIF.new(collection, id, 3, 175, 175).location
+    def menu_link_title
+      raw "<div>#{title}</div> #{image_tag thumbnail}"
     end
 
     def menu_link_id
