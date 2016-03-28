@@ -1,13 +1,11 @@
 FactoryGirl.define do
-  factory :record, class: OpenStruct do
-    collection 'swede1900'
-    id  '134'
-    original_file_uri 'http://reflections.mndigital.org/utils/getfile/collection/swede1900/id/134/filename/swede1900-134'
+  factory :cdm_document, class: OpenStruct do
+    id  'mpls:13128'
+    original_file_uri 'http://reflections.mndigital.org/utils/getfile/collection/mpls/id/13128/filename/mpls-13128'
     format 'image/jp2'
 
-    trait :with_compound_info do
-      pagefile '999.pdf'
-      pageptr '999'
+    trait :with_compound_objects do
+      compound_objects [{pagefile: '999.pdf', pageptr: '999'}]
     end
   end
 
