@@ -338,6 +338,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver
+  sidekiq
   solr_wrapper (>= 0.3)
   spring
   sqlite3

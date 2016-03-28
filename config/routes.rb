@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   end
 
   get 'contentdm-images' => 'contentdm_images#show'
+  get 'thumbnails/:collection/:id' => 'thumbnails#show'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

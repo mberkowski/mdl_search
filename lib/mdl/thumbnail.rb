@@ -26,5 +26,9 @@ module MDL
     def save
       File.open("#{cache_dir}/#{filename}", 'wb') { |file| file.write(data)}
     end
+
+    def cached_file
+      File.read("#{cache_dir}/#{filename}")
+    end
   end
 end

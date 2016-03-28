@@ -2,13 +2,14 @@ require 'rails_helper'
 require_relative '../../../lib/mdl/thumbnail.rb'
 
 describe MDL::Thumbnail do
-  let(:tmpfilepath) { '/tmp/mpls_13128.jpg' }
+  let(:tmpdir) { File.join(Rails.root, 'tmp') }
+  let(:tmpfilepath) { File.join(tmpdir, 'mpls_13128.jpg') }
   before(:each) do
     FileUtils.rm(tmpfilepath) if File.exist?(tmpfilepath)
   end
 
   let(:asset) { MDL::Asset.new((create :cdm_document).to_h) }
-  subject { MDL::Thumbnail.new(collection: asset.collection, id: asset.id, cache_dir: '/tmp') }
+  subject { MDL::Thumbnail.new(collection: asset.collection, id: asset.id, cache_dir: tmpdir) }
 
   it 'returns a its url' do
    expect(subject.url).to eq 'http://reflections.mndigital.org/utils/getthumbnail/collection/mpls/id/13128'
@@ -30,6 +31,9 @@ describe MDL::Thumbnail do
       subject.save
       expect(File.exist?(tmpfilepath)).to eq true
       expect(subject.cached?).to eq true
+      expect(subject.cached_file).to eq File.read(tmpfilepath)
     end
   end
+
+
 end

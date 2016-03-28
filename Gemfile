@@ -75,3 +75,4 @@ gem "blacklight"
 gem 'rsolr', '~> 1.0.6'
 gem 'globalid'
 gem 'rest-client'
+gem 'sidekiq'

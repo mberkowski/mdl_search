@@ -12,7 +12,7 @@ module MDL
     end
 
     def thumbnail
-      Thumbnail.new(collection: collection, id: id).url
+      "/thumbnails/#{collection}/#{id}"
     end
 
     def id
