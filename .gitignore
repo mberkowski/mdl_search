@@ -21,3 +21,5 @@
 .DS_STORE
 
 /solr_*/
+/thumbnails
+/cdm_images
