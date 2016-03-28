@@ -51,7 +51,7 @@ class ContentdmIIIF
   end
 
   def filename
-    Digest::SHA1.hexdigest("#{collection}:#{id}")
+    "#{collection}:#{id}"
   end
 
   def cache_dir
