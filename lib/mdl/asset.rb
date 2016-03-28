@@ -27,6 +27,10 @@ module MDL
       document[:id].gsub(':', '-')
     end
 
+    def thumbnail_data
+      @thumbnail_data ||= Net::HTTP.get_response(URI(thumbnail)).body
+    end
+
     private
 
     def ids
