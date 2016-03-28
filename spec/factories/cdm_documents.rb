@@ -5,7 +5,7 @@ FactoryGirl.define do
     format 'image/jp2'
 
     trait :with_compound_objects do
-      compound_objects [{pagefile: '999.pdf', pageptr: '999'}]
+      compound_objects [{pagefile: '13096.jp2', pageptr: '13096', pagetitle: 'Front Cover'}]
     end
   end
 
