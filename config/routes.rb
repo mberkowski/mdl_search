@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
 
   get 'contentdm-images' => 'contentdm_images#show'
-  get 'thumbnails/:collection/:id' => 'thumbnails#show'
+  get 'thumbnails/:collection/:id' => 'thumbnails#show', as: 'thumbnail'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
