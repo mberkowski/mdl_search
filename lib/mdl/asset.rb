@@ -12,7 +12,7 @@ module MDL
     end
 
     def thumbnail
-      "http://reflections.mndigital.org/utils/getthumbnail/collection/#{collection}/id/#{id}"
+      Thumbnail.new(collection: collection, id: id).url
     end
 
     def id
@@ -25,10 +25,6 @@ module MDL
 
     def filename
       document[:id].gsub(':', '-')
-    end
-
-    def thumbnail_data
-      @thumbnail_data ||= Net::HTTP.get_response(URI(thumbnail)).body
     end
 
     private
