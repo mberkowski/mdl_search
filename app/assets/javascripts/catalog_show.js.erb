@@ -66,6 +66,9 @@ $(function() {
     $(element).parent('li').addClass('active');
   }
 
+
+  $('#compound-menu li').first().addClass('active');
+
   $('#compound-menu a').click(function(e) {
       e.preventDefault();
       toggle_active(this);

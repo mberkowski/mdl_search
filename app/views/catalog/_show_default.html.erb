@@ -1,8 +1,10 @@
-<% if document['record_type_ssi'] == 'compound' %>
-  <%= render 'compound_record', compound_asset:  MDL::CompoundAsset.new(desolerize(document)) %>
-<% else %>
-  <%=  render_asset_viewer MDL::Asset.new(desolerize(document)) %>
-<% end %>
+<div id="asset-viewer">
+  <% if document['record_type_ssi'] == 'compound' %>
+    <%= render 'compound_record', compound_asset:  MDL::CompoundAsset.new(desolerize(document)) %>
+  <% else %>
+    <%=  render_asset_viewer MDL::Asset.new(desolerize(document)) %>
+  <% end %>
+</div>
 
 
 <%# default partial to display solr document fields in catalog show view -%>

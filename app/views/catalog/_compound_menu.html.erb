@@ -1,5 +1,5 @@
 <div id="compound-menu">
-  <ul class="nav nav-pills">
+  <ul class="nav">
     <% compound_asset.pages.each do |page| %>
     <li role="presentation" class="<%= (page.id == params['compound']) ? 'active' : '' %>">
       <%= page.menu_link %>
