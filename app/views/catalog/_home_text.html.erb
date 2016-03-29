@@ -1,0 +1,7 @@
+<div id="home-page">
+  <div id="browse-panel">
+    <%= link_to raw('<span class="browse-text-container"><span class="browse-text">Browse by Topic</span></span>'), 'catalog/facet/topic_ssim?facet.sort=index&q=&search_field=all_fields&utf8=✓&limit=50', class: 'topic browse' %>
+    <%= link_to raw('<span class="browse-text-container"><span class="browse-text">Browse by Contributing Institution</span></span>'), 'catalog/facet/contributing_organization_ssi?facet.sort=index&limit=50&q=&search_field=all_fields', class: 'contributor browse' %>
+    <%= link_to raw('<span class="browse-text-container"><span class="browse-text">Browse by Format</span></span>'), 'catalog/facet/physical_format_ssi?facet.sort=index&q=&search_field=all_fields&utf8=✓&limit=50', class: 'format browse' %>
+  </div>
+</div>
