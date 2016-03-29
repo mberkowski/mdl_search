@@ -29,10 +29,14 @@ class SolrDocument
   end
 
   def query
-    "((#{self['title_ssi']}) OR (#{self['creator_ssim'].join(' OR ')}) OR (#{self['subject_ssim'].join(' OR ')})) AND -#{self.id}"
+    "((#{self['title_ssi']}) OR (#{mlt_multi_field(self['creator_ssim'])}) OR (#{mlt_multi_field(self['subject_ssim'])})) AND -#{self.id}"
   end
 
   private
+
+  def mlt_multi_field(value)
+    Array.wrap(value).join(' OR ')
+  end
 
   def mlt_assets(mlt)
     mlt.inject([]) {|sum, v| sum <<  MDL::Asset.new(id: v.first) }
