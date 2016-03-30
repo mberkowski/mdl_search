@@ -36,7 +36,11 @@ class SolrDocument
   private
 
   def mlt_values
-    [mlt_multi_field(self['creator_ssim']), mlt_multi_field(self['subject_ssim'])].reject!(&:blank?).join(' OR ')
+    Array.wrap([
+      self['title_ssi'],
+      mlt_multi_field(self['creator_ssim']),
+      mlt_multi_field(self['subject_ssim'])
+    ].reject!(&:blank?)).join(' OR ')
   end
 
   def mlt_multi_field(value)
