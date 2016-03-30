@@ -6,7 +6,7 @@ class SolrClient
   def mlt_config
     {
       mlt: true,
-      'mlt.fl' => 'title_tei, creator_teim, subject_teim, id',
+      'mlt.fl' => 'title_tei, creator_teim, subject_teim, formal_subject_teim, topic_teim, id',
       'mlt.count' => 20,
       'mlt.mintf' => 1
     }

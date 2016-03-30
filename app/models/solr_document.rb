@@ -37,10 +37,15 @@ class SolrDocument
 
   def mlt_values
     Array.wrap([
-      self['title_ssi'],
+      shorten(self['title_ssi']),
       mlt_multi_field(self['creator_ssim']),
-      mlt_multi_field(self['subject_ssim'])
+      mlt_multi_field(self['formal_subject_teim']),
+      mlt_multi_field(self['topic_teim']),
     ].reject!(&:blank?)).join(' OR ')
+  end
+
+  def shorten(value)
+    Array.wrap(value.split(' ')).take(5).join(' ')
   end
 
   def mlt_multi_field(value)
