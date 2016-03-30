@@ -100,7 +100,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     config.add_index_field 'dat_ssi', label: 'Date Created'
-    config.add_index_field 'description_ssi', label: 'Description'
+    config.add_index_field 'description_ts', label: 'Description'
     config.add_index_field 'contributing_organization_ssi', label: 'Contributing Institution'
     config.add_index_field 'type_ssi', label: 'Type'
     config.add_index_field 'physical_format_ssi', label: 'Format'
@@ -109,7 +109,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_show_field 'title_ssi', label: 'Title'
     config.add_show_field 'creator_ssim', label: 'Creator'
-    config.add_show_field 'description_ssi', label: 'Description'
+    config.add_show_field 'description_ts', label: 'Description'
     config.add_show_field 'dat_ssi', label: 'Date of Creation'
     config.add_show_field 'dimensions_ssi', label: 'Dimensions'
     config.add_show_field 'topic_ssim', label: 'Minnesota Reflections Topic'
