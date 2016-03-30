@@ -1,0 +1,142 @@
+
+$viewer-width: 1100px;
+
+.asset-viewer-panel {
+  background-color: #383838;
+  width: $viewer_width;
+  text-align: center;
+  li.active a {
+    display: block;
+    background-color: #D3D3D3;
+    color: #222222;
+  }
+
+  a {
+    color: #FFFFFF;
+  }
+
+  a:hover {
+    color: #222222;
+  }
+  margin-bottom: 10px;
+}
+
+.asset-viewer {
+  display: inline-block;
+  .audio-player {
+    margin-top: 25px;
+  }
+}
+
+.asset-viewer.display {
+  width: $viewer-width;
+  vertical-align: top;
+  text-align: center;
+}
+
+#compound-menu {
+  overflow: auto;
+  margin: 5px 0 -5px;
+  .menu-title {
+    display: none;
+  }
+  ul {
+    height: 100px;
+    white-space:nowrap;
+  }
+  li {
+    a {
+      display: inline-block;
+      height: 120px;
+      width: 120px;
+      img {
+        max-height: 100px;
+        max-width: 90px;
+      }
+    }
+    display: inline-block;
+  }
+  height: 135px;
+  width: $viewer-width;
+  overflow: auto;
+}
+
+
+#full-record-seadragon {
+  height: 600px;
+  width: $viewer-width;
+}
+
+@media (max-width: 320px) {
+  $viewer-width: 275px;
+  #full-record-seadragon {
+    height: 500px;
+  }
+
+  .asset-viewer.display,
+  .asset-viewer-panel,
+  #full-record-seadragon,
+  #compound-menu {
+    width: $viewer-width;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+  $viewer-width: 350px;
+  .asset-viewer.display,
+  .asset-viewer-panel,
+  #full-record-seadragon,
+  #compound-menu {
+    width: $viewer-width;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  $viewer-width: 400px;
+  .asset-viewer.display,
+  .asset-viewer-panel,
+  #full-record-seadragon,
+  #compound-menu {
+    width: $viewer-width;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  $viewer-width: 720px;
+  .asset-viewer.display,
+  .asset-viewer-panel,
+  #full-record-seadragon,
+  #compound-menu {
+    width: $viewer-width;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  $viewer-width: 950px;
+  .asset-viewer.display,
+  .asset-viewer-panel,
+  #full-record-seadragon,
+  #compound-menu {
+    width: $viewer-width;
+  }
+}
+
+@media (min-width: 1025px) {
+  $viewer-width: 800px;
+  .asset-viewer.display,
+  .asset-viewer-panel,
+  #full-record-seadragon,
+  #compound-menu {
+    width: $viewer-width;
+  }
+}
+
+.blacklight-catalog-show {
+  @media (min-width: 1450px) {
+    .container {
+      width: 1500px;
+      margin-left: 200px;
+    }
+  }
+}
+

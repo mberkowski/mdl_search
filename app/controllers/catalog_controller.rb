@@ -88,7 +88,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'formal_subject_ssim', label: 'Subject', limit: 20, show: true, collapse: false, limit: 5
     config.add_facet_field 'type_ssi', label: 'Type', show: true, collapse: false, limit: 5
     config.add_facet_field 'topic_ssim', label: 'Topic', show: true, index_range: 'A'..'Z', collapse: false, limit: 5,  :tag => 'to', :ex => 'to'
-    config.add_facet_field 'record_type_ssi', label: 'Single or Compound', show: false
+    config.add_facet_field 'record_type_ssi', label: 'Single or Compound', show: true
 
 
 

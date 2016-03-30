@@ -1,0 +1,37 @@
+#home-page {
+
+  #browse-panel {
+    margin-top: 60px;
+  }
+
+  .topic {
+    background: #a3bf5b url("http://www.mndigital.org/files/images/reflections/homepage-topic-new.jpg");
+  }
+  .contributor {
+    background: #88c2e6 url("http://www.mndigital.org/files/images/reflections/homepage-collection-new.jpg")
+  }
+  .format {
+    background: #7eba6a url("http://www.mndigital.org/files/images/reflections/homepage-format.jpg")
+  }
+
+
+  .browse:hover {
+    color: #ccc;
+  }
+
+.browse {
+    margin-bottom: 15px;
+    display: block;
+    width: 600px;
+    height: 300px;
+    border-radius: 5px;
+    padding: 15px;
+
+  }
+  .browse-text {
+    color: #fff;
+    font-size: 160%;
+    font-weight: bold;
+    text-shadow: 2px 2px #231f20;
+  }
+}
