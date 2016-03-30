@@ -1,4 +1,4 @@
-<div id="asset-viewer">
+<div class="asset-viewer panel">
   <% if document['record_type_ssi'] == 'compound' %>
     <%= render 'compound_record', compound_asset:  MDL::CompoundAsset.new(desolerize(document)) %>
   <% else %>
