@@ -29,10 +29,15 @@ class SolrDocument
   end
 
   def query
-    "((#{self['title_ssi']}) OR (#{mlt_multi_field(self['creator_ssim'])}) OR (#{mlt_multi_field(self['subject_ssim'])})) AND -#{self.id}"
+    "(#{mlt_values}) AND -#{self.id}"
   end
 
+
   private
+
+  def mlt_values
+    [mlt_multi_field(self['creator_ssim']), mlt_multi_field(self['subject_ssim'])].reject!(&:blank?).join(' OR ')
+  end
 
   def mlt_multi_field(value)
     Array.wrap(value).join(' OR ')
