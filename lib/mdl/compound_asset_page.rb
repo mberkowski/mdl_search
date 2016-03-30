@@ -33,7 +33,11 @@ module MDL
     private
 
     def menu_link_title
-      raw "<div class=\"menu-title\">#{title}</div> #{image_tag thumbnail}"
+      raw "<div class=\"menu-title\">#{title}</div> #{thumbnail_image}"
+    end
+
+    def thumbnail_image
+      image_tag thumbnail, title: title, 'data-toggle' => 'tooltip', 'data-placement' => 'top'
     end
 
     def menu_link_id
