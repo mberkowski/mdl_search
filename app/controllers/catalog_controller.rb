@@ -26,6 +26,8 @@ class CatalogController < ApplicationController
       fl: '*'
     }
 
+    config.autocomplete_enabled = true
+    config.autocomplete_path = 'suggest'
 
     config.index.thumbnail_method = :cached_thumbnail_tag
     config.show.thumbnail_method = :cached_thumbnail_tag
