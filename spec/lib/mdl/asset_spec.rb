@@ -20,4 +20,9 @@ describe MDL::Asset do
   it 'returns a filename' do
    expect(subject.filename).to eq 'mpls-13128'
   end
+
+  it 'returns a title' do
+   asset = MDL::Asset.new(document.merge(title: 'Aerial Lift Bridge'))
+   expect(asset.title).to eq 'Aerial Lift Bridge'
+  end
 end

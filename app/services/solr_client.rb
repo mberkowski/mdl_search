@@ -1,6 +1,6 @@
 class SolrClient
-  def more_like_this(query)
-    client.get 'select', :params => {q: query, start: 0, rows:  9}.merge(mlt_config)
+ def more_like_this(query)
+    client.get 'select', :params => {q: query, start: 0, rows:  9, fl: 'title_ssi, id'}.merge(mlt_config)
   end
 
   def mlt_config

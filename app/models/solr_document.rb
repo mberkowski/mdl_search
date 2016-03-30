@@ -21,7 +21,7 @@ class SolrDocument
 
 
   def more_like_this
-    mlt_assets solr.more_like_this(query)['moreLikeThis']
+    mlt_assets solr.more_like_this(query)['response']['docs']
   end
 
   def solr
@@ -39,6 +39,6 @@ class SolrDocument
   end
 
   def mlt_assets(mlt)
-    mlt.inject([]) {|sum, v| sum <<  MDL::Asset.new(id: v.first) }
+    mlt.inject([]) {|sum, v| sum <<  MDL::Asset.new(id: v['id'], title: v['title_ssi']) }
   end
 end

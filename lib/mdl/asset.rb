@@ -7,6 +7,10 @@ module MDL
       @document = document
     end
 
+    def title
+      document[:title]
+    end
+
     def viewer
       viewer_mapping.fetch(format, 'image')
     end
