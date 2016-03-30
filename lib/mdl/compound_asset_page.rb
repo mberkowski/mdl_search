@@ -33,7 +33,7 @@ module MDL
     private
 
     def menu_link_title
-      raw "<div>#{title}</div> #{image_tag thumbnail}"
+      raw "<div class=\"menu-title\">#{title}</div> #{image_tag thumbnail}"
     end
 
     def menu_link_id
