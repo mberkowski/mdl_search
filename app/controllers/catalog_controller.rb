@@ -22,11 +22,11 @@ class CatalogController < ApplicationController
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
-      rows: 50,
+      rows: 20,
       fl: '*'
     }
 
-    config.default_per_page = 50
+    config.default_per_page = 20
 
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
