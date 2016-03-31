@@ -1,13 +1,15 @@
 #documents.documents-gallery {
   text-align: center;
   vertical-align: top;
+  .panel {
+    margin: 0;
+  }
+
   .document {
-    margin: 10px;
     padding: 0;
+    margin: -3px 5px;
     display: inline-block;
     border: none;
-    height: 250px;
-    width: 175px;
     .title {
       height: 75px;
       width: 150px;
@@ -19,9 +21,9 @@
 .gallery-result {
   display: inline-block;
   height: 230px;
-  margin: 10px;
   .panel-body {
     width: 185px;
+    height: 230px;
   }
   .image-wrapper {
     height: 150px;
