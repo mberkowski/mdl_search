@@ -1,0 +1,26 @@
+#documents.documents-gallery {
+  text-align: center;
+  .document {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    border: none;
+  }
+}
+
+.gallery-result {
+  display: inline-block;
+  margin: 10px;
+
+  .title {
+    padding-top: 5px;
+  }
+  .panel-body {
+    width: 175px;
+    height: 200px;
+  }
+  img {
+    max-height: 150px;
+    max-width: 150px;
+  }
+}

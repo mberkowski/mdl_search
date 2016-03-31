@@ -1,0 +1,9 @@
+<div class="panel panel-default gallery-result">
+  <div class="panel-body">
+    <%= link_to raw(cached_thumbnail_tag(document)), "/catalog/#{document['id']}" %>
+    <div class="title">
+      <% document['title_ssi'] = truncate(document['title_ssi'], length: 50) %>
+      <%=  link_to_document document %>
+    </div>
+  </div>
+</div>
