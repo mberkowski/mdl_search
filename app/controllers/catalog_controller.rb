@@ -106,6 +106,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
+    config.add_index_field 'creator_ssim', label: 'Creator'
     config.add_index_field 'dat_ssi', label: 'Date Created'
     config.add_index_field 'description_ts', label: 'Description'
     config.add_index_field 'contributing_organization_ssi', label: 'Contributing Institution'
