@@ -96,7 +96,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'type_ssi', label: 'Type', show: true, collapse: false, limit: 5
     config.add_facet_field 'topic_ssim', label: 'Topic', show: true, index_range: 'A'..'Z', collapse: false, limit: 5,  :tag => 'to', :ex => 'to'
     config.add_facet_field 'record_type_ssi', label: 'Single or Compound', show: true
-    config.add_facet_field 'date_ssi', label: 'Date Created', limit: 5
+    config.add_facet_field 'dat_ssi', label: 'Date Created', limit: 5
 
 
     # Have BL send all facet field names to Solr, which has been the default
