@@ -90,7 +90,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'contributing_organization_ssi', label: 'Contributing Institution', index_range: 'A'..'Z', collapse: false, limit: 5,  :tag => 'co', :ex => 'co'
     # config.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
     config.add_facet_field 'creator_ssim', label: 'Creator', show: true, collapse: false, limit: 5
-    config.add_facet_field 'county_ssi', label: 'County', show: true, collapse: false, limit: 5
+    config.add_facet_field 'county_ssim', label: 'County', show: true, collapse: false, limit: 5
     config.add_facet_field 'physical_format_ssi', label: 'Format-Medium', show: true, index_range: 'A'..'Z', collapse: false, limit: 5,  :tag => 'fo', :ex => 'fo'
     config.add_facet_field 'formal_subject_ssim', label: 'Subject', limit: 20, show: true, collapse: false
     config.add_facet_field 'type_ssi', label: 'Type', show: true, collapse: false, limit: 5
@@ -126,7 +126,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'formal_subject_ssim', label: 'Formal Subject Headings'
     config.add_show_field 'subject_ssim', label: 'Locally Assigned Subject Headings'
     config.add_show_field 'city_ssi', label: 'Minnesota City or Township'
-    config.add_show_field 'county_ssi', label: 'Minnesota County'
+    config.add_show_field 'county_ssim', label: 'Minnesota County'
     config.add_show_field 'state_ssi', label: 'State or Province'
     config.add_show_field 'country_ssi', label: 'Country'
     config.add_show_field 'collection_name_ssi', label: 'Collection Name'
