@@ -38,7 +38,7 @@ module MDL
     end
 
     def format
-      document.fetch(:format)
+      document.fetch(:format, 'image/jp2')
     end
 
     # Give hints as to how to theme/visualize this item
