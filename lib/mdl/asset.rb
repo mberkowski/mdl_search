@@ -48,6 +48,7 @@ module MDL
         'image/jp2' => 'image',
         'mp3' => 'audio',
         'mp4' => 'video',
+        'video/DV' => 'video',
         'video/mp4' => 'video',
         'jp2' => 'image',
         'jpg' => 'image',
