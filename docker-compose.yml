@@ -1,0 +1,19 @@
+version: '2'
+services:
+  solr:
+    image: solr
+    ports:
+      - "8983:8983"
+    volumes:
+      - ./cores:/opt/solr/server/solr/cores
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/mdl_search
+    ports:
+      - "3000:3000"
+    links:
+      - solr
+    depends_on:
+      - solr

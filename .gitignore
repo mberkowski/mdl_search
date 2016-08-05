@@ -23,3 +23,5 @@
 /solr_*/
 /thumbnails
 /cdm_images
+cores/
+data.tar

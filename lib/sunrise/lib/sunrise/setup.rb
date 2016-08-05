@@ -1,43 +1,102 @@
+require 'open-uri'
+require 'zlib'
+require 'fileutils'
+
 module Sunrise
   module SetupHelper
 
-    def setup_solr(env, port, solr_version, solr_core_repo, solr_core_name, solr_core_version)
-      solr = {
-        url: "http://mirrors.advancedhosters.com/apache/lucene/solr/#{solr_version}/solr-#{solr_version}.tgz",
-        core_url: "https://github.com/#{solr_core_repo}/archive/#{solr_core_version}.tar.gz",
-        dir: "solr_#{env}"
-      }
+    class SolrCore
+      attr_reader :repo,
+                  :org,
+                  :version,
+                  :name,
+                  :example_data_uri,
+                  :dir,
+                  :client
 
-      sh "mkdir #{solr[:dir]}" if !File.directory? solr[:dir]
-
-      if !File.directory? "#{solr[:dir]}/solr-#{solr_version}"
-        puts "Downloading Solr version #{solr_version}"
-        solr_archive = RestClient.get solr[:url]
-        untar solr_archive, solr[:dir], 'solr'
+      def initialize(repo: '',
+                     version: '',
+                     org: '',
+                     name: '',
+                     example_data_uri: false,
+                     dir: './cores')
+        @repo = repo
+        @org = org
+        @version = version
+        @name = name
+        @example_data_uri = example_data_uri
+        @dir = dir
       end
 
-      if !File.directory? "#{solr[:dir]}/#{solr_core_name}-solr-core-#{solr_core_version}"
-        puts "Downloading #{solr_core_name} core v##{solr_core_version}"
-        solr_core = RestClient.get solr[:core_url]
-        untar solr_core, solr[:dir], solr_core_name
+      def run!
+        # if File.directory? dir
+        #   puts "Cores directory #{dir} has already been created"
+        #   return
+        # end
+        init_core_dir!
+        initialize_cores!          
       end
 
-      symlink_core(solr[:dir], solr_version, solr_core_name, solr_core_version)
+      private
 
-      sh "nohup #{solr[:dir]}/solr-#{solr_version}/bin/solr start -p #{port} &"
-    end
-
-    def symlink_core(solr_dir, solr_version, solr_core_name, solr_core_version)
-
-      sh "ln -nsf #{Rails.root}/#{solr_dir}/#{solr_core_name}-solr-core-#{solr_core_version}/ #{Rails.root}/#{solr_dir}/solr-#{solr_version}/server/solr/#{solr_core_name}"
-    end
-
-    def untar(data, dir, filename)
-      open("#{dir}/#{filename}.tar.gz", 'wb')  do |file|
-        file.write(data)
-        file.close()
+      def init_core_dir!
+        FileUtils.mkdir_p dir
       end
-      sh "cd #{dir}; tar -xzvf #{filename}.tar.gz"
+
+      def initialize_cores!
+        # save_core!
+        # untar!("#{repo}-#{version}", core_0_path)
+        # # A second core is created to allow for hot swapping of cores
+        # untar!("#{repo}-#{version}", core_1_path)
+
+
+        save_example_data!
+        FileUtils.chmod_R 0777, dir
+      end
+
+      def save_core!
+        save_tarball(github_uri)
+      end
+
+      def save_example_data!
+        if example_data_uri
+          save_tarball(example_data_uri)
+          untar!('data', core_0_path)
+          untar!('data', core_1_path)
+        end
+      end
+
+
+      def save_tarball(uri)
+        open("data.tar", 'w') do |local_file|
+          puts "Downloading: #{uri}"
+          open(uri) do |remote_file|
+            local_file.write(Zlib::GzipReader.new(remote_file).read)
+          end
+        end
+      end
+
+      def github_uri
+        "https://codeload.github.com/#{org}/#{repo}/tar.gz/#{version}"
+      end
+
+      def request(uri)
+        client.get_response(URI(uri)).body
+      end
+
+      def untar!(filename, dest_path)
+        puts "tar -xvf data.tar; mv #{filename} #{dest_path}"
+        `tar -xvf data.tar; mv #{filename} #{dest_path}`
+      end
+
+      def core_0_path
+        File.join([dir, "#{name}-0"])
+      end
+
+      def core_1_path
+        File.join([dir, "#{name}-1"])
+      end
+
     end
   end
 end
