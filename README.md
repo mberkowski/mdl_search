@@ -8,6 +8,5 @@ An implementation of the [Blacklight Search](http://projectblacklight.org/) plat
 
 * [Install Docker](https://docs.docker.com/engine/installation)
 * [Install Docker Compose](https://docs.docker.com/compose/)
-* docker-compose build
 * docker-compose run solr_setup
 * docker-compose up
