@@ -1,5 +1,10 @@
 version: '2'
 services:
+  solr_setup:
+    build: .
+    command: bundle exec rake solr:setup_dev
+    volumes:
+      - .:/mdl_search
   solr:
     image: solr
     ports:

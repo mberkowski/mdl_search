@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
-gem 'mysql2', '~> 0.3.18'
+group :production do
+  gem 'mysql2', '~> 0.3.18'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'
@@ -74,5 +76,4 @@ end
 gem "blacklight"
 gem 'rsolr', '~> 1.0.6'
 gem 'globalid'
-gem 'rest-client'
 gem 'sidekiq', '~> 3.5.4'

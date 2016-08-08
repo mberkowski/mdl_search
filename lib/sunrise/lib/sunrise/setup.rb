@@ -29,10 +29,10 @@ module Sunrise
       end
 
       def run!
-        # if File.directory? dir
-        #   puts "Cores directory #{dir} has already been created"
-        #   return
-        # end
+        if File.directory? dir
+          puts "Cores directory #{dir} has already been created"
+          return
+        end
         init_core_dir!
         initialize_cores!          
       end
@@ -44,12 +44,10 @@ module Sunrise
       end
 
       def initialize_cores!
-        # save_core!
-        # untar!("#{repo}-#{version}", core_0_path)
-        # # A second core is created to allow for hot swapping of cores
-        # untar!("#{repo}-#{version}", core_1_path)
-
-
+        save_core!
+        untar!("#{repo}-#{version}", core_0_path)
+        # A second core is created to allow for hot swapping of cores
+        untar!("#{repo}-#{version}", core_1_path)
         save_example_data!
         FileUtils.chmod_R 0777, dir
       end
