@@ -8,5 +8,7 @@ An implementation of the [Blacklight Search](http://projectblacklight.org/) plat
 
 * [Install Docker](https://docs.docker.com/engine/installation)
 * [Install Docker Compose](https://docs.docker.com/compose/)
-* docker-compose run solr_setup
-* docker-compose up
+* `$ git clone git@github.com:UMNLibraries/mdl_search.git`
+* `$ cd mdl_search`
+* `$ docker-compose run solr_setup`
+* `$ docker-compose up`
