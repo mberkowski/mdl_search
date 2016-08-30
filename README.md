@@ -7,9 +7,11 @@ An implementation of the [Blacklight Search](http://projectblacklight.org/) plat
 # Developer Quickstart
 
 * [Install Docker](https://docs.docker.com/engine/installation)
+* [Install Docker Group](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/create-a-docker-group)
 * [Install Docker Compose](https://docs.docker.com/compose/)
 * `$ git clone git@github.com:UMNLibraries/mdl_search.git`
 * `$ cd mdl_search`
+* `$ mkdir thumbnails`
 * `$ docker-compose run solr_setup`
 * `$ docker-compose up`
 * `$ docker-compose run web rake db:migrate`

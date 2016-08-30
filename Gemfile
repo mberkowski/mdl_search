@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'dotenv-rails', :groups => [:development, :test]
-
 group :production do
   gem 'mysql2', '~> 0.3.18'
 end
@@ -25,16 +23,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -76,4 +64,8 @@ end
 gem "blacklight"
 gem 'rsolr', '~> 1.0.6'
 gem 'globalid'
-gem 'sidekiq', '~> 3.5.4'
+
+# CONTENTdm ETL
+gem 'hash_at_path'
+gem 'contentdm_api'
+gem 'cdm2solr', :git => "https://github.com/UMNLibraries/cdm2solr.git"

@@ -1,3 +1,15 @@
+GIT
+  remote: https://github.com/UMNLibraries/cdm2solr.git
+  revision: eaa256943aa479eaa0a0310fbf43345342fd0092
+  specs:
+    cdm2solr (0.1.0)
+      activesupport (~> 4.2)
+      contentdm_api (~> 0.2)
+      hash_at_path (~> 0.1)
+      rsolr (~> 1.0)
+      sidekiq (~> 3.4)
+      titleize (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -107,6 +119,7 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
     connection_pool (2.2.0)
+    contentdm_api (0.2.1)
     coveralls (0.8.13)
       json (~> 1.8)
       simplecov (~> 0.11.0)
@@ -123,10 +136,6 @@ GEM
     docile (1.1.5)
     domain_name (0.5.20160216)
       unf (>= 0.0.5, < 1.0.0)
-    dotenv (2.1.0)
-    dotenv-rails (2.1.0)
-      dotenv (= 2.1.0)
-      railties (>= 4.0, < 5.1)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -145,6 +154,7 @@ GEM
     git-version-bump (0.15.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    hash_at_path (0.1.4)
     hashdiff (0.3.0)
     hitimes (1.2.3)
     http-cookie (1.0.2)
@@ -300,6 +310,7 @@ GEM
     timers (4.1.1)
       hitimes
     tins (1.6.0)
+    titleize (1.4.0)
     turbolinks (2.5.3)
       coffee-rails
     twitter-typeahead-rails (0.11.1)
@@ -341,14 +352,16 @@ DEPENDENCIES
   capistrano-rails
   capistrano-sidekiq
   capybara
+  cdm2solr!
   coffee-rails (~> 4.1.0)
+  contentdm_api
   coveralls
   database_cleaner
-  dotenv-rails
   factory_girl_rails
   faker
   fontello_rails_converter
   globalid
+  hash_at_path
   jbuilder (~> 2.0)
   jquery-rails
   launchy
@@ -361,7 +374,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver
-  sidekiq (~> 3.5.4)
   solr_wrapper (>= 0.3)
   spring
   sqlite3
