@@ -20,16 +20,27 @@ Open another tab in your teminal and enter:
 
 * `$ docker-compose run web rake db:migrate`
 
-# Handy-Dandy Docker Command Aliases
+# Handy-Dandy Docker Commands
+
+
+## Some aliases for your shell
 
 ```
 # Show all docker images
 alias dps='docker ps -a'
 
-# Remove All Inactive Docker Images (ones that have "Exited")
+# Remove all inactive Docker images (ones that have "Exited")
 alias drm='docker rm $(docker ps -a | grep Exited | awk '\''BEGIN { FS=" " } ; {print $1;}'\'')'
 
-# Scorched Earth! Remove All Docker Images
+# Scorched earth! remove all Docker images
 alias drmi='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
-``
+```
+
+## Working with composed images
+
+Enter an interactive session with the application:
+
+`$ docker-compose exec web /bin/bash`
+
+
 
