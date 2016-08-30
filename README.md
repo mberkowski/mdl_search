@@ -12,3 +12,4 @@ An implementation of the [Blacklight Search](http://projectblacklight.org/) plat
 * `$ cd mdl_search`
 * `$ docker-compose run solr_setup`
 * `$ docker-compose up`
+* `$ docker-compose run web rake db:migrate`
