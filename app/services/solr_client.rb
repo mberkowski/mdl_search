@@ -21,4 +21,13 @@ class SolrClient
   def connect
     Blacklight.default_index.connection
   end
+
+  def swap_cores
+    Net::HTTP.get_response(URI("#{ENV['SOLR_BASE_URL']}/solr/admin/cores?action=SWAP&core=#{ENV['SOLR_CORE_0']}&other=#{ENV['SOLR_CORE_1']}"))
+  end
+
+  def delete_index
+    client.delete_by_query '*:*'
+    client.commit
+  end
 end
