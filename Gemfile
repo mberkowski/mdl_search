@@ -68,4 +68,4 @@ gem 'globalid'
 # CONTENTdm ETL
 gem 'hash_at_path'
 gem 'contentdm_api'
-gem 'cdm2solr', :git => "https://github.com/UMNLibraries/cdm2solr.git"
+gem 'cdmbl', :git => 'https://github.com/UMNLibraries/cdmbl'

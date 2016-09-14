@@ -1,8 +1,8 @@
 GIT
-  remote: https://github.com/UMNLibraries/cdm2solr.git
-  revision: eaa256943aa479eaa0a0310fbf43345342fd0092
+  remote: https://github.com/UMNLibraries/cdmbl
+  revision: bfdce51bc46331c03e0c8d665feabdce3f69400c
   specs:
-    cdm2solr (0.1.0)
+    cdmbl (0.1.0)
       activesupport (~> 4.2)
       contentdm_api (~> 0.2)
       hash_at_path (~> 0.1)
@@ -106,7 +106,7 @@ GEM
       timers (>= 4.1.1)
     celluloid-pool (0.20.5)
       timers (>= 4.1.1)
-    celluloid-supervision (0.20.5)
+    celluloid-supervision (0.20.6)
       timers (>= 4.1.1)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
@@ -156,7 +156,7 @@ GEM
       activesupport (>= 4.1.0)
     hash_at_path (0.1.4)
     hashdiff (0.3.0)
-    hitimes (1.2.3)
+    hitimes (1.2.4)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -184,7 +184,7 @@ GEM
       railties (>= 3.0.0, < 5.1.0)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
-    minitest (5.8.4)
+    minitest (5.9.0)
     multi_json (1.11.2)
     mysql2 (0.3.20)
     net-scp (1.2.1)
@@ -228,7 +228,7 @@ GEM
     rake (11.1.1)
     rdoc (4.2.2)
       json (~> 1.4)
-    redis (3.2.2)
+    redis (3.3.1)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
     ref (2.0.0)
@@ -352,7 +352,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-sidekiq
   capybara
-  cdm2solr!
+  cdmbl!
   coffee-rails (~> 4.1.0)
   contentdm_api
   coveralls
