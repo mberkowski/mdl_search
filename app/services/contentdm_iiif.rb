@@ -51,7 +51,7 @@ class ContentdmIIIF
   end
 
   def filename
-    "#{collection}:#{id}"
+    "#{collection}_#{id}"
   end
 
   def cache_dir
