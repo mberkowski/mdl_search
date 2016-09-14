@@ -34,7 +34,7 @@ module MDL
     private
 
     def ids
-      document[:id].split(':')
+      document[:id].split('/')
     end
 
     def format
