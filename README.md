@@ -13,7 +13,7 @@ An implementation of the [Blacklight Search](http://projectblacklight.org/) plat
 * `$ cd mdl_search`
 * `$ mkdir thumbnails`
 * `$ docker-compose run solr_setup`
-* `$ docker-compose build`
+* `$ docker-compose build web`
 * `$ docker-compose up`
 
 Open another tab in your teminal and enter:
