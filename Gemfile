@@ -24,6 +24,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# React Profile Editor
+gem 'react-rails'
+# Allow us to use CommonJS style modules
+gem 'browserify-rails', '~> 3.1.0'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -50,6 +55,8 @@ group :test, :development do
   gem 'solr_wrapper', '>= 0.3'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem "teaspoon-jasmine"
+  gem "phantomjs"
 end
 
 group :test do

@@ -25,5 +25,23 @@ module MdlSearch
 
     config.autoload_paths << Rails.root.join('lib')
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+
+    # /via https://medium.com/technically-speaking/rails-react-browserify-e315001d5974#.nnnog8fnc
+    config.browserify_rails.commandline_options = "-t [ babelify --presets [ react es2015 stage-2] ] --extension=\".js.jsx\" "
+
+    unless Rails.env.production?
+        # Work around sprockets+teaspoon mismatch:
+        Rails.application.config.assets.precompile += %w(spec_helper.js)
+
+        # # Make sure Browserify is triggered when
+        # # asked to serve javascript spec files
+        # config.browserify_rails.paths << lambda { |p|
+        #   p.start_with?(Rails.root.join("spec/javascripts").to_s)
+        # }
+
+        config.browserify_rails.paths << lambda { |p|
+           p.start_with?(Rails.root.join("spec/javascripts/components").to_s)
+        }
+    end
   end
 end
