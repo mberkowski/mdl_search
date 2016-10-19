@@ -1,61 +1,62 @@
 require 'net/http'
 
 class ContentdmIIIF
-  attr_accessor :collection, :id, :scale, :width, :height
-  def initialize(collection, id, scale = 100, width = 10000, height = 10000)
+  attr_accessor :base_url, :collection, :id
+  def initialize(base_url: 'http://reflections.mndigital.org', 
+                 collection: '',
+                 id: '')
+    @base_url   = base_url
     @collection = collection
-    @id = id
-    @scale = scale
-    @width = width
-    @height = height
+    @id         = id
   end
 
-  def load
-    File.file?(local_filepath) ? local_file : cache_remote_file
+  def info
+    contentdm_info.merge(local_info)
   end
 
-  def location
-    "#{base_url}/#{params}"
+  def contentdm_info
+    JSON.parse(Net::HTTP.get_response(info_uri).body)
   end
 
-  private
-
-  def cache_remote_file
-    File.open(local_filepath, 'wb') { |file| file.write(remote_file) }
-    remote_file
+  def local_info
+    {
+      "@id" => "#{base_url}/digital/iiif/#{collection}/#{id}",
+    }
   end
 
-  def remote_file
-    @remote_file ||= Net::HTTP.get_response(URI(location)).body
+  def info_uri
+    URI("#{base_url}/digital/iiif/#{collection}/#{id}/info.json")
   end
-
-  def base_url
-    'http://reflections.mndigital.org/utils/ajaxhelper'
-  end
-
-  def params
-    "?CISOROOT=#{collection}" \
-    "&CISOPTR=#{id}"  \
-    '&action=2'  \
-    "&DMSCALE=#{scale}"  \
-    "&DMWIDTH=#{width}"  \
-    "&DMHEIGHT=#{height}"
-  end
-
- def local_file
-    File.open(local_filepath, 'r') { |file| file.read }
-  end
-
-  def local_filepath
-    File.join(cache_dir,  filename) + ".jpg"
-  end
-
-  def filename
-    "#{collection}_#{id}"
-  end
-
-  def cache_dir
-    File.join(Rails.root, 'cdm_images')
-  end
-
 end
+
+
+    # {
+    #   "@context" => "http://iiif.io/api/image/2/context.json",
+    #   "@id" => "#{base_url}/digital/iiif/#{collection}/#{id}",
+    #   "protocol" => "http://iiif.io/api/image",
+    #   "width" => 10000,
+    #   "height" => 10000,
+    #   "sizes" => [
+    #     {"width" => 100, "height" => 100},
+    #     {"width" => 200, "height" => 200},
+    #     {"width" => 300, "height" => 300},
+    #     {"width" => 500, "height" => 500},
+    #     {"width" => 800, "height" => 800},
+    #     {"width" => 1300, "height" => 1300},
+    #     {"width" => 2100, "height" => 2100},
+    #     {"width" => 3400, "height" => 3400},
+    #     {"width" => 5500, "height" => 5500},
+    #     {"width" => 8900, "height" => 8900},
+    #     {"width" => 10000, "height" => 10000}        
+    #   ],
+    #   "tiles"=> [
+    #     {"width" => 512, "scaleFactors" => [1,2,4,8,16]}
+    #   ],
+    #   "profile" => [
+    #     "http://iiif.io/api/image/2/level2.json",
+    #     {
+    #       "formats" => [ "gif", "pdf" ],
+    #       "qualities" => [ "color", "gray" ],
+    #     }
+    #   ],
+    # }

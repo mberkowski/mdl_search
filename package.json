@@ -1,0 +1,26 @@
+{
+  "name": "mdl-search",
+  "version": "0.1.0",
+  "description": "MDL Search JavaScript dependency management.",
+  "homepage": "http://lib-mdl-dev.oit.umn.edu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:UMNLibraries/mdl_search.git"
+  },  
+  "dependencies" : {
+    "browserify": "~10.2.4",
+    "browserify-incremental": "^3.0.1",
+    "babelify": "^7.3.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-borealis": "git+git@github.com:UMNLibraries/react-borealis.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  }
+}

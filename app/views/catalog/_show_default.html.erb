@@ -1,11 +1,8 @@
-<div class="asset-viewer-panel">
-  <% if document['record_type_ssi'] == 'compound' %>
-    <%= render 'compound_record', compound_asset:  MDL::CompoundAsset.new(desolerize(document)) %>
-  <% else %>
-    <%=  render_asset_viewer MDL::Asset.new(desolerize(document)) %>
-  <% end %>
-</div>
+<% assets = MDL::BorealisDocument.new(document: desolerize(document)).to_assets %>
+<% config = MDL::BorealisConfig.new(assets: assets).config %>
 
+
+<%= react_component('app.MediaViewer', assets: config) %>
 
 <%# default partial to display solr document fields in catalog show view -%>
 <dl class="dl-horizontal  dl-invert">

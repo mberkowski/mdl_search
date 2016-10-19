@@ -4,6 +4,10 @@ class ContentdmImagesController < ApplicationController
     send_data data, type: 'image/jpg', disposition: 'inline'
   end
 
+  def info
+    render json: ContentdmIIIF.new(collection: identifiers.first, id: identifiers.last).info
+  end
+
   private
 
   def data

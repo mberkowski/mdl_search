@@ -8,11 +8,10 @@ describe MDL::Thumbnail do
     FileUtils.rm(tmpfilepath) if File.exist?(tmpfilepath)
   end
 
-  let(:asset) { MDL::Asset.new((create :cdm_document).to_h) }
-  subject { MDL::Thumbnail.new(collection: asset.collection, id: asset.id, cache_dir: tmpdir) }
+  subject { MDL::Thumbnail.new(collection:'mpls', id: '13128', cache_dir: tmpdir) }
 
   it 'returns a its url' do
-   expect(subject.url).to eq 'http://reflections.mndigital.org/utils/getthumbnail/collection/mpls/id/13128'
+    expect(subject.url).to eq 'http://reflections.mndigital.org/utils/getthumbnail/collection/mpls/id/13128'
   end
 
   it 'returns its data' do

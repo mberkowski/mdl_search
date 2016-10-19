@@ -27,7 +27,7 @@ module MdlSearch
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
 
     # /via https://medium.com/technically-speaking/rails-react-browserify-e315001d5974#.nnnog8fnc
-    config.browserify_rails.commandline_options = "-t [ babelify --presets [ react es2015 stage-2] ] --extension=\".js.jsx\" "
+    config.browserify_rails.commandline_options = "-t [ babelify --presets [ react es2015 stage-0] ] --extension=\".js.jsx\" "
 
     unless Rails.env.production?
         # Work around sprockets+teaspoon mismatch:

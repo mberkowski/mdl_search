@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
-group :production do
-  gem 'mysql2', '~> 0.3.18'
-end
+gem 'mysql2', '~> 0.3.18'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'
@@ -55,8 +53,8 @@ group :test, :development do
   gem 'solr_wrapper', '>= 0.3'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-  gem "teaspoon-jasmine"
-  gem "phantomjs"
+  gem 'teaspoon-jasmine'
+  gem 'phantomjs'
 end
 
 group :test do
@@ -68,7 +66,7 @@ group :test do
   gem 'webmock'
 end
 
-gem "blacklight"
+gem 'blacklight'
 gem 'rsolr', '~> 1.0.6'
 gem 'globalid'
 
