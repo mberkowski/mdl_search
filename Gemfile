@@ -73,4 +73,4 @@ gem 'globalid'
 # CONTENTdm ETL
 gem 'hash_at_path'
 gem 'contentdm_api'
-gem 'cdmbl', :git => 'https://github.com/UMNLibraries/cdmbl'
+gem 'cdmbl', '~> 0.2.0'
