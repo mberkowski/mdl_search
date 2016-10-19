@@ -34,7 +34,7 @@ group :development do
   gem 'spring'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano', '~> 3.6'
   gem 'capistrano-rails'
   gem 'capistrano-sidekiq'
   gem 'capistrano-bundler', '~> 1.1.2'
