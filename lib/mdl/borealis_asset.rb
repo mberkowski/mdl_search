@@ -11,7 +11,7 @@ module MDL
     def src
       case type
       when 'image'
-        "/contentdm-images/info?id=#{collection}/#{id}"
+        "/contentdm-images/info?id=#{collection}:#{id}"
       when 'audio'
         "http://reflections.mndigital.org/utils/getstream/collection/#{collection}/id/#{id}"
       when 'video'
@@ -22,7 +22,7 @@ module MDL
     end
 
     def thumbnail
-      "/thumbnails/#{collection}/#{id}"
+      "/thumbnails/#{collection}:#{id}"
     end
 
     def type
