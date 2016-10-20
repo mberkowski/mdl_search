@@ -5,7 +5,7 @@ module MDL
     def initialize(id: '', collection: '', format: 'image/jp2')
       @id         = id
       @collection = collection
-      @format     = format
+      @format     = sanitize(format)
     end
 
     def src
@@ -27,6 +27,12 @@ module MDL
 
     def type
       viewer_mapping[format]
+    end
+
+    private
+
+    def sanitize(format)
+      format.gsub(/;/, '')
     end
 
     def viewer_mapping
