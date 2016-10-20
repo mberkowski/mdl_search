@@ -26,11 +26,11 @@ module MDL
     end
 
     def id
-      document[:id].split('/').last
+      document[:id].split(':').last
     end
 
     def collection
-      document[:id].split('/').first
+      document[:id].split(':').first
     end
 
     def format

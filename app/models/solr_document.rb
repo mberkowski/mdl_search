@@ -54,7 +54,7 @@ class SolrDocument
 
   def mlt_assets(mlt)
     mlt.inject([]) do |sum, v| 
-      collection, id = v['id'].split('/')
+      collection, id = v['id'].split(':')
       sum <<  MDL::Thumbnail.new(id: id, 
                                  collection: collection,
                                  title: v['title_ssi'])

@@ -15,7 +15,7 @@ class ContentdmImagesController < ApplicationController
   end
 
   def identifiers
-    image_params['id'].split('/')
+    image_params['id'].split(':')
   end
 
   def image_params
