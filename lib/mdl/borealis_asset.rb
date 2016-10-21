@@ -17,7 +17,7 @@ module MDL
       when 'video'
         "http://reflections.mndigital.org/utils/getstream/collection/#{collection}/id/#{id}"
       when 'pdf'
-        "http://reflections.mndigital.org/utils/getfile/collection/#{collection}/id/#{id}"
+        "http://reflections.mndigital.org/utils/getfile/collection/#{collection}/id/#{id}/filename/#{id}.pdf"
       end
     end
 
@@ -46,7 +46,8 @@ module MDL
         'jp2' => 'image',
         'jpg' => 'image',
         'pdf' => 'pdf',
-        'pdfpage' => 'pdf'
+        'pdfpage' => 'pdf',
+        'application/pdf' => 'pdf'
       }
     end
   end

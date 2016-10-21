@@ -6,7 +6,11 @@ module MDL
     end
 
     def config
-      non_images_config.push(images_config)
+      if !images.empty?
+        non_images_config.push(images_config)
+      else
+        non_images_config
+      end
     end
 
     private
@@ -69,7 +73,7 @@ module MDL
           "focus": asset.focus,
           "type": asset.type,
           "src": asset.src,
-          "tray_thumbnail": asset.thumbnail
+          "thumbnail": asset.thumbnail
         }
       else
         {}

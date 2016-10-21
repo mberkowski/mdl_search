@@ -9,7 +9,7 @@ class ThumbnailsController < ApplicationController
     if thumbnail.cached?
       thumbnail.cached_file
     else
-      CacheThumbnailWorker.perform_async(thumbnail_params[:collection], thumbnail_params[:id])
+      CacheThumbnailWorker.perform_async(collection, id)
       thumbnail.data
     end
   end
@@ -17,11 +17,15 @@ class ThumbnailsController < ApplicationController
   private
 
   def thumbnail
-    MDL::Thumbnail.new(collection: thumbnail_params[:collection], id: thumbnail_params[:id])
+    MDL::Thumbnail.new(collection: collection, id: id)
   end
 
-  def thumbnail_params
-    params.permit(:collection, :id)
+  def collection
+    params[:id].split(':').first
+  end
+
+  def id
+    params[:id].split(':').last
   end
 
 end
