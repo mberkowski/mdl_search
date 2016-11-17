@@ -1,0 +1,16 @@
+exports[`DetailsFieldValue Test renders a field value with a url 1`] = `
+<span
+  className="field-value">
+  <a
+    href="http://www.example.com">
+    Rama
+  </a>
+</span>
+`;
+
+exports[`DetailsFieldValue Test renders a field value without a url 1`] = `
+<span
+  className="field-value">
+  Rama
+</span>
+`;

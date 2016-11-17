@@ -140,3 +140,21 @@ $viewer-width: 1100px;
   }
 }
 
+.cite-details label {
+  margin-right: 10px;
+}
+
+.citation {
+  padding: 15px;
+  .field {
+    padding-bottom: 5px;
+  }
+}
+
+.citation-navigation {
+  padding-bottom: 10px;
+  margin-top: 20px;
+  padding-top: 5px;
+  border-top: 2px solid #DFDFDF;
+  clear: both;
+}

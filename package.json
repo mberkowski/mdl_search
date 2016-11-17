@@ -17,7 +17,9 @@
     "babel-preset-stage-0": "^6.16.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-borealis": "git+git@github.com:UMNLibraries/react-borealis.git"
+    "react-borealis": "git+git@github.com:UMNLibraries/react-borealis.git",
+    "react-active-item": "git:+git@github.com:UMNLibraries/react-active-item.git",
+    "react-active-item": "git:+git@github.com:UMNLibraries/react-citation.git"
   },
   "license": "MIT",
   "engines": {

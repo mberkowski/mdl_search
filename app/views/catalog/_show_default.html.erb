@@ -1,15 +1,16 @@
-<% assets = MDL::BorealisDocument.new(document: desolerize(document)).to_assets %>
-<% config = MDL::BorealisConfig.new(assets: assets).config %>
+
+<%
+  assets = MDL::BorealisDocument.new(document: desolerize(document)).to_assets
+  config = MDL::BorealisConfig.new(assets: assets).config
+  
+  items = []
+  items << MDL::CiteDetails.new(solr_doc: document).to_hash
+  items << MDL::CiteCitation.new(solr_doc: document, base_url: request.base_url).to_hash
+  items << MDL::CiteDownload.new(assets: assets).to_hash
+  items << MDL::CiteTranscript.new(solr_doc: document).to_hash
+%>
 
 
-<%= react_component('app.MediaViewer', assets: config) %>
-
-<%# default partial to display solr document fields in catalog show view -%>
-<dl class="dl-horizontal  dl-invert">
-  <% document_show_fields(document).each do |field_name, field| -%>
-    <% if should_render_show_field? document, field %>
-      <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
-      <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
-    <% end -%>
-  <% end -%>
-</dl>
+<div class="well">
+  <%= react_component('app.FullRecord', assets: config, items: items) %>
+</div>

@@ -16,7 +16,6 @@ module MDL
                 format: object[:pagefile].split('.').last)
         end
       end
-
     end
 
     private
