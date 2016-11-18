@@ -42,7 +42,7 @@ var DetailsFieldValue = function (_React$Component) {
       ) : text;
       return _react2.default.createElement(
         'span',
-        { className: 'field-value' },
+        null,
         field,
         delimiter
       );

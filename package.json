@@ -19,7 +19,7 @@
     "react-dom": "^15.3.2",
     "react-borealis": "git+git@github.com:UMNLibraries/react-borealis.git",
     "react-active-item": "git:+git@github.com:UMNLibraries/react-active-item.git",
-    "react-active-item": "git:+git@github.com:UMNLibraries/react-citation.git"
+    "react-citation": "git:+git@github.com:UMNLibraries/react-citation.git"
   },
   "license": "MIT",
   "engines": {

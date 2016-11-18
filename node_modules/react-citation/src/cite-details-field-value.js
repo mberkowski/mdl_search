@@ -8,7 +8,7 @@ export default class DetailsFieldValue extends React.Component {
   render() {
     let { url, text, delimiter } = this.props
     let field = (url) ? <a href={url}>{text}</a> : text
-    return (<span className='field-value'>{field}{delimiter}</span>)
+    return (<span>{field}{delimiter}</span>)
   }
 }
 
