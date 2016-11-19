@@ -73,5 +73,5 @@ gem 'globalid'
 # CONTENTdm ETL
 gem 'hash_at_path'
 gem 'contentdm_api'
-gem 'cdmbl', '~> 0.2.5'
+gem 'cdmbl', '~> 0.2.6'
 gem 'whenever', :require => false
