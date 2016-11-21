@@ -1,5 +1,5 @@
 <% if @document['keyword_ssim'] %>
-  <div class="panel panel-default more-like-this">
+  <div class="panel panel-default keywords-panel">
     <div class="panel-heading">Keywords</div>
     <div class="panel-body">
       <%  details = MDL::CiteDetails.new(solr_doc: {'keyword_ssim' => @document['keyword_ssim']}).details.first %>
