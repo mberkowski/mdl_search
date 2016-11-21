@@ -140,3 +140,18 @@ $viewer-width: 1100px;
   }
 }
 
+.field-label {
+  text-align: right;
+  padding-right: 0;
+}
+
+.citation {
+  padding: 15px;
+}
+
+.citation-navigation {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 2px solid #DFDFDF;
+    clear: both;
+}

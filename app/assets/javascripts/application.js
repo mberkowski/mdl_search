@@ -18,4 +18,12 @@
 //= require blacklight/blacklight
 
 
+//= require react_ujs
+//= require components
 //= require_tree .
+
+
+// Setup React in global scope
+var React = window.React = global.React = require('react');
+var ReactDOM = window.ReactDOM = global.ReactDOM = require('react-dom');
+

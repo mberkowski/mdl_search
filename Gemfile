@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
-group :production do
-  gem 'mysql2', '~> 0.3.18'
-end
+gem 'mysql2', '~> 0.3.18'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'
@@ -24,6 +22,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# React Profile Editor
+gem 'react-rails'
+# Allow us to use CommonJS style modules
+gem 'browserify-rails', '~> 3.1.0'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -31,7 +34,7 @@ group :development do
   gem 'spring'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano', '~> 3.6'
   gem 'capistrano-rails'
   gem 'capistrano-sidekiq'
   gem 'capistrano-bundler', '~> 1.1.2'
@@ -50,6 +53,8 @@ group :test, :development do
   gem 'solr_wrapper', '>= 0.3'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'teaspoon-jasmine'
+  gem 'phantomjs'
 end
 
 group :test do
@@ -61,11 +66,12 @@ group :test do
   gem 'webmock'
 end
 
-gem "blacklight"
+gem 'blacklight'
 gem 'rsolr', '~> 1.0.6'
 gem 'globalid'
 
 # CONTENTdm ETL
 gem 'hash_at_path'
 gem 'contentdm_api'
-gem 'cdmbl', '~> 0.1.2'
+gem 'cdmbl', '~> 0.2.7'
+gem 'whenever', :require => false

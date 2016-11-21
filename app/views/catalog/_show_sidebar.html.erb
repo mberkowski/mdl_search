@@ -1,3 +1,13 @@
+<% if @document['keyword_ssim'] %>
+  <div class="panel panel-default more-like-this">
+    <div class="panel-heading">Keywords</div>
+    <div class="panel-body">
+      <%  details = MDL::CiteDetails.new(solr_doc: {'keyword_ssim' => @document['keyword_ssim']}).details.first %>
+      <%= raw details[:field_values].map { |keyword| link_to keyword[:text], keyword[:url] }.join(', ') %>
+    </div>
+  </div>
+<% end %>
+
 <% unless @document.more_like_this.empty? %>
   <div class="panel panel-default more-like-this">
     <div class="panel-heading">Related Items</div>

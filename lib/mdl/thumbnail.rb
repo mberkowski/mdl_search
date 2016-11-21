@@ -1,10 +1,14 @@
 module MDL
   class Thumbnail
-    attr_accessor :collection, :id, :cache_dir
-    def initialize(collection: :missing_collection, id: :missing_id, cache_dir: File.join(Rails.root, 'thumbnails'))
+    attr_accessor :collection, :id, :cache_dir, :title
+    def initialize(collection: :missing_collection, 
+                   id: :missing_id, 
+                   cache_dir: File.join(Rails.root, 'thumbnails'),
+                   title: '')
       @collection = collection
-      @id = id
-      @cache_dir = cache_dir
+      @id         = id
+      @cache_dir  = cache_dir
+      @title      = title
     end
 
     def url

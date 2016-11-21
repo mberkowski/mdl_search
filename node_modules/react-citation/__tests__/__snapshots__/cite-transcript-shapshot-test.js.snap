@@ -1,0 +1,6 @@
+exports[`CiteTranscript Tests renders a citation transcript 1`] = `
+<div
+  className="transcript">
+  This is a transcript
+</div>
+`;

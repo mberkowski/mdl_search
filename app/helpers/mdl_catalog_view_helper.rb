@@ -29,6 +29,6 @@ module MdlCatalogViewHelper
 
 
   def identifiers(document)
-    document['id'].split('/')
+    document['id'].split(':')
   end
 end

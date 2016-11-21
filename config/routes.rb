@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
 
-    root to: "catalog#index"
-    concern :searchable, Blacklight::Routes::Searchable.new
+  root to: "catalog#index"
+  concern :searchable, Blacklight::Routes::Searchable.new
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   end
 
   get 'contentdm-images' => 'contentdm_images#show'
-  get 'thumbnails/:collection/:id' => 'thumbnails#show', as: 'thumbnail'
+  get 'contentdm-images/info' => 'contentdm_images#info'
+  get 'thumbnails/:id' => 'thumbnails#show', as: 'thumbnail'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
