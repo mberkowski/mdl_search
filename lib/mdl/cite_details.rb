@@ -77,6 +77,7 @@ module MDL
         {key: 'formal_subject_ssim', label: 'Formal Subjects', delimiter: ', ', facet: true},
         {key: 'subject_ssim', label: 'Local Subjects', delimiter: ', ', facet: true},
         {key: 'topic_ssim', label: 'Topic', delimiter: ', ', facet: true},
+        {key: 'keyword_ssim', label: 'Keywords', delimiter: ', ', facet: true},
         {key: 'fiscal_sponsor_ssi', label: 'Fiscal Sponsor'},
         {key: 'geonam_ssi', label: 'GeoNames Identifier'}
       ]
