@@ -66,7 +66,7 @@ module MDL
         {key: 'dimensions_ssi', label: 'Dimensions', facet: true},
         {key: 'country_ssi', label: 'Country', facet: true},
         {key: 'state_ssi', label: 'State', facet: true},
-        {key: 'city_ssim', label: 'City', facet: true},
+        {key: 'city_ssim', delimiter: ', ', label: 'City', facet: true},
         {key: 'district_ssi', label: 'District', facet: true},
         {key: 'language_ssi', label: 'Language'},
         {key: 'rights_ssi', label: 'Rights'},
