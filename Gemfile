@@ -75,6 +75,7 @@ gem 'devise'
 gem 'devise-guests'
 gem 'hash_at_path'
 gem 'contentdm_api'
-gem 'cdmbl', '~> 0.2.9'
+gem 'cdmbl', '~> 0.2.10'
+gem 'sinatra', require: false
 gem 'sidekiq-failures'
 gem 'whenever', :require => false
