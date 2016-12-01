@@ -11,7 +11,9 @@
     </div>
 
     <div class="collapse navbar-collapse" id="user-util-collapse">
-      <%= render :partial=>'/user_util_links' %>
+      <% if current_user %>
+        <%= render :partial=>'/user_util_links' %>
+      <% end %>
     </div>
   </div>
 </div>

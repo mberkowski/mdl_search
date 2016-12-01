@@ -14,3 +14,5 @@ set :linked_dirs, fetch(:linked_dirs) + %w(thumbnails cdm_images tmp log cache)
 set :rails_env, "production"
 
 set :bundle_flags, '--deployment'
+
+# set :branch, 'reactify'

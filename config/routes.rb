@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
 
+  require 'sidekiq/web'
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   root to: "catalog#index"
   concern :searchable, Blacklight::Routes::Searchable.new
 
@@ -27,6 +32,11 @@ Rails.application.routes.draw do
   get 'contentdm-images/info' => 'contentdm_images#info'
   get 'thumbnails/:id' => 'thumbnails#show', as: 'thumbnail'
 
+
+  devise_for :users, skip: [:logout]
+  devise_scope :user do
+    get 'users/sign_out', to: 'devise/sessions#destroy'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

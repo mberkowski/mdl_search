@@ -71,7 +71,10 @@ gem 'rsolr', '~> 1.0.6'
 gem 'globalid'
 
 # CONTENTdm ETL
+gem 'devise'
+gem 'devise-guests'
 gem 'hash_at_path'
 gem 'contentdm_api'
-gem 'cdmbl', '~> 0.2.8'
+gem 'cdmbl', '~> 0.2.9'
+gem 'sidekiq-failures'
 gem 'whenever', :require => false
