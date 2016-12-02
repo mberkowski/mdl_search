@@ -74,7 +74,6 @@ gem 'globalid'
 gem 'devise'
 gem 'devise-guests'
 gem 'hash_at_path'
-gem 'contentdm_api'
 gem 'cdmbl', '~> 0.2.12'
 gem 'sinatra', require: false
 gem 'sidekiq-failures'

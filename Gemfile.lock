@@ -406,7 +406,6 @@ DEPENDENCIES
   capybara
   cdmbl (~> 0.2.12)
   coffee-rails (~> 4.1.0)
-  contentdm_api
   coveralls
   database_cleaner
   devise
