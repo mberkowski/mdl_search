@@ -2,8 +2,8 @@ require 'net/http'
 require 'uri'
 module CDMBL
   class CompletedCallback
-    def self.call!
-      Rails.logger.info "Swapping Solr Cores Following Indexing Status: #{Net::HTTP.get_response(URI(ENV['SOLR_URL']))}"
+    def self.call!(solr_client)
+      Rails.logger.info "Swapping Solr Cores Following Indexing Status: #{solr_client.inspect}"
     end
   end
 
