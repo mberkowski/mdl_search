@@ -8,17 +8,25 @@ module MDL
 
     def to_assets
       if compounds.empty?
-        [asset(id: id, collection: collection, format: format)]
+        [asset(id: id,
+               collection: collection,
+               format: format,
+               trascript: trascript(document))]
       else
         compounds.map do |object|
           asset(id: object[:pageptr],
                 collection: collection,
-                format: object[:pagefile].split('.').last)
+                format: object[:pagefile].split('.').last,
+                transcript: trascript(object))
         end
       end
     end
 
     private
+
+    def trascript(doc)
+      doc.fetch(:transc, '')
+    end
 
     def compounds
       document.fetch(:compound_objects, [])
@@ -36,10 +44,11 @@ module MDL
       document.fetch(:format, 'jp2')
     end
 
-    def asset(id: '', collection: '', format: '')
+    def asset(id: '', collection: '', format: '', transcript: '')
       asset_klass.new(id: id,
                       collection: collection,
-                      format: format)
+                      format: format,
+                      transcript: transcript)
     end
   end
 end

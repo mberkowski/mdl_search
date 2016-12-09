@@ -1,6 +1,4 @@
 #react-borealis {
-  height: 500px;
-  background-color: black;
   .panel-footer {
     padding-top: 15px;
   }
@@ -70,8 +68,14 @@
 .openseadragon-container, .openseadragon {
   height: 500px;
   width: 100%;
+  background-color: black;
 }
 
 .borealis-tray {
   margin-bottom: 15px;
+}
+
+.image-nav {
+  margin-bottom: 10px;
+  margin-left: 15px;
 }

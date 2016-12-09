@@ -1,8 +1,6 @@
-
 <%
   assets = MDL::BorealisDocument.new(document: desolerize(document)).to_assets
   config = MDL::BorealisConfig.new(assets: assets).config
-  
   items = []
   items << MDL::CiteDetails.new(solr_doc: document).to_hash
   items << MDL::CiteCitation.new(solr_doc: document, base_url: request.base_url).to_hash
@@ -10,7 +8,4 @@
   items << MDL::CiteTranscript.new(solr_doc: document).to_hash
 %>
 
-
-<div class="well">
-  <%= react_component('app.FullRecord', assets: config, items: items) %>
-</div>
+<%= react_component('app.FullRecord', assets: config, items: items) %>

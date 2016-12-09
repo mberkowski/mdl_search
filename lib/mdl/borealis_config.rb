@@ -25,7 +25,7 @@ module MDL
     end
 
     def images_config
-      default_config(image).merge("os_config" => os_config).merge(image_config)
+      default_config(image).merge(items:  [os_config, transcript])
     end
 
     def configure(config)
@@ -51,14 +51,21 @@ module MDL
       images.first
     end
 
-    def image_config
+    def transcript
       {
-        "include_controls": true
+        "type": "transcript",
+        "label": "Transcript",
+        "texts": images.map { |image| image.transcript },
+        "focus": false
       }
     end
 
-    def os_config
+    def os_config      
       {
+        "type": "image",
+        "label": "Image",
+        "focus": true,
+        "include_controls": true,
         "sequenceMode" => true,
         "showReferenceStrip" => true,
         "defaultZoomLevel" => 0,
