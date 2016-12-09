@@ -6,7 +6,7 @@ module MDL
       @id          = id
       @collection  = collection
       @format      = sanitize(format)
-      @transcript = (transcript == {} || !transcript) ? '' : transcript
+      @transcript = (transcript == {} || transcript == false) ? '' : transcript
     end
 
     def src
