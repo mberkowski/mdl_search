@@ -2,11 +2,11 @@ module MDL
   class BorealisAsset
     attr_reader :id, :collection, :format, :transcript
     attr_accessor :focus
-    def initialize(id: '', collection: '', format: 'image/jp2', transcript: '')
+    def initialize(id: '', collection: '', format: 'image/jp2', transcript: false)
       @id          = id
       @collection  = collection
       @format      = sanitize(format)
-      @transcript = transcript
+      @transcript = (transcript == {} || !transcript) ? '' : transcript
     end
 
     def src
