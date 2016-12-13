@@ -74,7 +74,7 @@ gem 'globalid'
 gem 'devise'
 gem 'devise-guests'
 gem 'hash_at_path'
-gem 'cdmbl', '~> 0.2.17'
+gem 'cdmbl', '~> 0.2.18'
 gem 'sinatra', require: false
 gem 'sidekiq-failures'
 gem 'whenever', :require => false
