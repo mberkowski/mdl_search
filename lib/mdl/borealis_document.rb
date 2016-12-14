@@ -11,20 +11,20 @@ module MDL
         [asset(id: id,
                collection: collection,
                format: format,
-               trascript: trascript(document))]
+               transcript: transcript(document))]
       else
         compounds.map do |object|
           asset(id: object[:pageptr],
                 collection: collection,
                 format: object[:pagefile].split('.').last,
-                transcript: trascript(object))
+                transcript: transcript(object))
         end
       end
     end
 
     private
 
-    def trascript(doc)
+    def transcript(doc)
       doc.fetch(:transc, '')
     end
 
