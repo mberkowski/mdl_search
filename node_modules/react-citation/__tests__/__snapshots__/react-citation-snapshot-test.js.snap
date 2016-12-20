@@ -15,35 +15,43 @@ exports[`ReactCitation Test renders react citation 1`] = `
   <div
     className="cite-details">
     <dl
-      className="dl-horizontal">
+      className="row">
       <span>
-        <dt>
+        <dt
+          className="col-sm-3 field-label">
           <label
             className="label label-default">
             Title
             :
           </label>
         </dt>
-        <dd>
-          <a
-            href="https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731" />
-          
+        <dd
+          className="col-sm-9 field-definition">
+          <span>
+            <a
+              href="https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731" />
+            
+          </span>
         </dd>
       </span>
       <span>
-        <dt>
+        <dt
+          className="col-sm-3 field-label">
           <label
             className="label label-default">
             Title
             :
           </label>
         </dt>
-        <dd>
-          <a
-            href="https://www.amazon.com/Snow-Crash-Neal-Stephenson/dp/0553380958/ref=sr_1_1?s=books&ie=UTF8&qid=1478114241&sr=1-1&keywords=snowcrash" />
-        </dd>
-        <dd>
-          
+        <dd
+          className="col-sm-9 field-definition">
+          <span>
+            <a
+              href="https://www.amazon.com/Snow-Crash-Neal-Stephenson/dp/0553380958/ref=sr_1_1?s=books&ie=UTF8&qid=1478114241&sr=1-1&keywords=snowcrash" />
+          </span>
+          <span>
+            
+          </span>
         </dd>
       </span>
     </dl>

@@ -1,24 +1,28 @@
 exports[`Field Tests renders a field with one value 1`] = `
 <span>
-  <dt>
+  <dt
+    className="col-sm-3 field-label">
     <label
       className="label label-default">
       blah
       :
     </label>
   </dt>
-  <dd>
-    <a
-      href="http://example.com">
-      foo
-    </a>
-  </dd>
-  <dd>
-    <a
-      href="http://example1.com">
-      bar
-    </a>
-    
+  <dd
+    className="col-sm-9 field-definition">
+    <span>
+      <a
+        href="http://example.com">
+        foo
+      </a>
+    </span>
+    <span>
+      <a
+        href="http://example1.com">
+        bar
+      </a>
+      
+    </span>
   </dd>
 </span>
 `;

@@ -17,7 +17,7 @@ export default class DetailsField extends React.Component {
                   {field_values.map(function(field_value, i) {
                     delimiter = (i < field_values.length - 1) ? delimiter : ''
                     let field = (field_value.url) ? <a href={field_value.url}>{field_value.text}</a> : field_value.text
-                    return  (<span>{field}{delimiter}</span>)
+                    return  (<span key={i}>{field}{delimiter}</span>)
                   })}
                 </dd>
              </span>

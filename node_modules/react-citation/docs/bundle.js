@@ -5765,7 +5765,7 @@ var DetailsField = function (_React$Component) {
             ) : field_value.text;
             return _react2.default.createElement(
               'span',
-              null,
+              { key: i },
               field,
               delimiter
             );

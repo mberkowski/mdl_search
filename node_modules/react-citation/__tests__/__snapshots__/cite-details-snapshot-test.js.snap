@@ -1,40 +1,48 @@
 exports[`Details Test renders a citation 1`] = `
 <dl
-  className="dl-horizontal">
+  className="row">
   <span>
-    <dt>
+    <dt
+      className="col-sm-3 field-label">
       <label
         className="label label-default">
         Some Field
         :
       </label>
     </dt>
-    <dd>
-      <a
-        href="https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731">
-        Daemon
-      </a>
-      
+    <dd
+      className="col-sm-9 field-definition">
+      <span>
+        <a
+          href="https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731">
+          Daemon
+        </a>
+        
+      </span>
     </dd>
   </span>
   <span>
-    <dt>
+    <dt
+      className="col-sm-3 field-label">
       <label
         className="label label-default">
         Title
         :
       </label>
     </dt>
-    <dd>
-      <a
-        href="https://www.amazon.com/Snow-Crash-Neal-Stephenson/dp/0553380958/ref=sr_1_1?s=books&ie=UTF8&qid=1478114241&sr=1-1&keywords=snowcrash">
-        Snow Crash
-      </a>
-      , 
-    </dd>
-    <dd>
-      Ender\'s Game
-      
+    <dd
+      className="col-sm-9 field-definition">
+      <span>
+        <a
+          href="https://www.amazon.com/Snow-Crash-Neal-Stephenson/dp/0553380958/ref=sr_1_1?s=books&ie=UTF8&qid=1478114241&sr=1-1&keywords=snowcrash">
+          Snow Crash
+        </a>
+        , 
+      </span>
+      <span>
+        Ender\'s Game
+        
+      </span>
     </dd>
   </span>
 </dl>
