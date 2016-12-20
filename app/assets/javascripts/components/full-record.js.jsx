@@ -12,10 +12,10 @@ export default class FullRecord extends React.Component {
       return  (
                 <div>
                   <div className="row">
-                    <Borealis assets={this.props.assets } />
+                    <Borealis items={this.props.borealis_items } />
                   </div>
                   <div className="row citation">
-                    <ReactCitation items={this.props.items } />
+                    <ReactCitation items={this.props.citation_items } />
                   </div>
                 </div>
               )
