@@ -10,8 +10,8 @@ namespace :mdl_ingester do
     solr_config = { url: "#{base_url}:8983/solr/mdl-1"}
     etl_config  = { oai_endpoint: 'http://reflections.mndigital.org/oai/oai.php',
                     cdm_endpoint: 'https://server16022.contentdm.oclc.org/dmwebservices/index.php',
-                    minimum_date: minimum_date }
-    etl_config = (args[:resumption_token]) ? etl_cofig.merge(args[:resumption_token]) : etl_config                    
+                    minimum_date: minimum_date,
+                    resumption_token: 'p16022coll36:1960:oclc-cdm-allsets:2015-09-14:9999-99-99:oai_dc' }
     batch_size = (args[:batch_size]) ? args[:batch_size].to_i : 10
     CDMBL::ETLWorker.perform_async(solr_config, etl_config, batch_size, true)
   end

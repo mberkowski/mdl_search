@@ -1,54 +1,87 @@
+require 'json'
+
 module MDL
   class BorealisDocument
-    attr_reader :document, :asset_klass
-    def initialize(document: {}, asset_klass: BorealisAsset)
-      @document    = document
-      @asset_klass = asset_klass
+    attr_reader :document, :asset_map_klass, :to_viewers_klass
+    def initialize(document: {},
+                   asset_map_klass: BorealisAssetMap,
+                   to_viewers_klass: MDL::BorealisAssetsToViewers)
+      @document         = document
+      @asset_map_klass  = asset_map_klass
+      @to_viewers_klass = to_viewers_klass
     end
 
-    def to_assets
-      if compounds.empty?
-        [asset(id: id,
-               collection: collection,
-               format: format,
-               transcript: transcript(document))]
-      else
-        compounds.map do |object|
-          asset(id: object[:pageptr],
-                collection: collection,
-                format: object[:pagefile].split('.').last,
-                transcript: transcript(object))
-        end
-      end
+
+    def to_viewer
+      to_viewers_klass.new(assets: assets).viewers
+    end
+
+    def assets
+      @assets = to_assets
     end
 
     private
 
+    def to_assets
+      if compounds.empty?
+        [asset(asset_klass(format_field),
+              id,
+              collection,
+              transcript(document),
+              title)]
+      else
+        compounds.map do |compound|
+          asset(asset_klass(compound_format(compound)),
+                compound['pageptr'],
+                collection,
+                transcript(compound),
+                compound['title'])
+
+        end
+      end
+    end
+
+    def compound_format(compound)
+      compound['pagefile'].split('.').last
+    end
+
+    def asset(asset_klass, id, collection, transcript, title = false)
+      if !title
+        asset_klass.new(id: id, collection: collection, transcript: transcript)
+      else
+        asset_klass.new(id: id,
+                        collection: collection,
+                        transcript: transcript,
+                        title: title)
+      end
+    end
+
+    def asset_klass(format_field)
+      asset_map_klass.new(format_field: format_field).map
+    end
+
     def transcript(doc)
-      doc.fetch(:transc, '')
+      doc.fetch('transc' , '')
     end
 
     def compounds
-      document.fetch(:compound_objects, [])
+      JSON.parse(document.fetch('compound_objects_ts', '[]'))
     end
 
     def id
-      document[:id].split(':').last
+      document['id'].split(':').last
     end
 
     def collection
-      document[:id].split(':').first
+      document['id'].split(':').first
     end
 
-    def format
-      document.fetch(:format, 'jp2')
+    def title
+      document.fetch('title_ssi', '')
     end
 
-    def asset(id: '', collection: '', format: '', transcript: '')
-      asset_klass.new(id: id,
-                      collection: collection,
-                      format: format,
-                      transcript: transcript)
+    def format_field
+      document.fetch('format', 'jp2').gsub(/;/, '')
     end
   end
 end
