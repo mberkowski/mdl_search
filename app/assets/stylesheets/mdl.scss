@@ -45,3 +45,100 @@
     margin: 5px;
   }
 }
+
+/* Scot */ 
+
+/*  Dark blue: #0e76bc
+  Medium blue: #30aed0
+  Light blue: #88c2e6
+  Dark green: #5f994a
+  Medium green: #7eba6a
+  Light green: #a3bf5b
+  Orange: #f1aa29
+  Lightest gray: #ecedf0
+  Light gray: #d3d4d7
+  Medium gray: #6d6e71
+  Dark gray/black: #231f20 */
+
+/* import google web font */
+@import url(//fonts.googleapis.com/css?family=Muli:400,400i,700,700i);
+
+body {
+    color: #231f20;
+    font-family: 'Muli', helvetica, arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #5f994a;
+}
+
+a {
+    color: #0e76bc;
+    text-decoration: underline;
+}
+
+a:hover, a:focus {
+    color: #5f994a;
+    text-decoration: underline;
+}
+
+#header-navbar .navbar-brand {
+    background: transparent url("http://mndigital.org/files/images/reflections/reflections-logo-blacklight.png") no-repeat top left;
+    height: 88px;
+  margin: 8px 0;
+    width: 200px;
+}
+
+.navbar-default {
+  background-color: #30aed0;
+}
+
+.navbar-static-top {
+  border-width: 0;
+}
+
+@media (min-width: 1450px) {
+    .blacklight-catalog-show .container {
+    margin: 0 36px;
+        width: 96%;
+    }
+}
+
+.nav>li>a {
+  background-color: #d3d4d7;
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+  text-decoration: none;
+}
+
+.nav>li>a:hover,
+.nav>li>a:focus {
+  background-color: #ecedf0;
+  text-decoration: none;
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:hover,
+.nav-pills>li.active>a:focus {
+  background-color: #0e76bc;
+  color: #fff;
+  text-decoration: none;
+}
+
+.panel-default {
+  border-color: #d3d4d7;
+}
+
+.panel-default > .panel-heading {
+  background-color: #ecedf0;
+  border-color: #d3d4d7;
+  color: #231f20;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.more-like-this {
+  margin-top: 20px;
+}
+
