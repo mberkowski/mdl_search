@@ -140,11 +140,6 @@ $viewer-width: 1100px;
   }
 }
 
-.field-label {
-  text-align: right;
-  padding-right: 0;
-}
-
 .citation {
   padding: 15px;
 }
@@ -161,4 +156,21 @@ $viewer-width: 1100px;
   label {
     margin-right: 5px;
   }
+}
+
+
+/* react-citation */
+
+.row.details {
+  margin-left: 0;
+  padding-top: 10px;
+}
+
+.field-label {
+  padding-right: 0;
+  padding-bottom: 5px;
+}
+
+.field-definition {
+  padding-bottom: 15px;
 }

@@ -44,7 +44,7 @@ var DetailsField = function (_React$Component) {
         null,
         _react2.default.createElement(
           'dt',
-          { className: 'col-sm-3 field-label' },
+          { className: 'field-label' },
           _react2.default.createElement(
             'label',
             { className: 'label label-default' },
@@ -54,7 +54,7 @@ var DetailsField = function (_React$Component) {
         ),
         _react2.default.createElement(
           'dd',
-          { className: 'col-sm-9 field-definition' },
+          { className: 'field-definition' },
           field_values.map(function (field_value, i) {
             delimiter = i < field_values.length - 1 ? delimiter : '';
             var field = field_value.url ? _react2.default.createElement(

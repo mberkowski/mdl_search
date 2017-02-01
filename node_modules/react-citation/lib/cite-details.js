@@ -40,7 +40,7 @@ var Details = function (_React$Component) {
 
       return _react2.default.createElement(
         'dl',
-        { className: 'row' },
+        { className: 'row details' },
         fields.map(function (field, i) {
           return _react2.default.createElement(_citeDetailsField2.default, _extends({ key: i }, field));
         })

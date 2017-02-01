@@ -72,17 +72,9 @@ label {
   display: inline-block;
 }
 .field-label {
+  text-align: right;
   padding-right: 0;
-  padding-bottom: 5px;
 }
 .field-definition {
-  padding-bottom: 10px;
-}
-
-.row.details {
-  margin-left: 0;
-}
-
-dl.details {
-  margin-top: 25px;
+  padding-left: 10px;
 }
