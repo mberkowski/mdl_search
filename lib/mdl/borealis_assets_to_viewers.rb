@@ -7,10 +7,14 @@ module MDL
     end
 
     def viewers
-      non_image_viewers + openseadragon_viewer
+      combined_viewers.sort {|a, b| (a['focus']) ? -1 : 1 }
     end
 
     private
+
+    def combined_viewers
+      non_image_viewers + openseadragon_viewer
+    end
 
     def non_image_viewers
       non_images.map { |asset| asset.to_viewer }
