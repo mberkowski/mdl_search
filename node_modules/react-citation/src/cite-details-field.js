@@ -10,10 +10,10 @@ export default class DetailsField extends React.Component {
     let { field_values, label, delimiter} = this.props
     return (
              <span>
-                <dt className="col-sm-3 field-label">
+                <dt className="field-label">
                   <label className='label label-default'>{label}:</label>
                 </dt>
-                <dd className="col-sm-9 field-definition">
+                <dd className="field-definition">
                   {field_values.map(function(field_value, i) {
                     delimiter = (i < field_values.length - 1) ? delimiter : ''
                     let field = (field_value.url) ? <a href={field_value.url}>{field_value.text}</a> : field_value.text
