@@ -171,7 +171,7 @@ a:hover, a:focus {
 .btn-primary:hover {
   background-color: #5f994a;
   border-color: #5f994a;
-  color: #fff;
+  color: #fff !important;
 }
 
 /* @media (min-width: 1450px) {
@@ -236,7 +236,12 @@ a:hover, a:focus {
 }
 
 #react-borealis {
-  margin: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.osd {
+  padding: 0;
 }
 
 .citation {
@@ -265,4 +270,12 @@ dt, dd {
 
 .label-default {
   background-color: #fff;
+}
+
+.download-source {
+  padding: 0;
+}
+
+.thumbnail {
+  border: 1px solid #d3d4d7;
 }
