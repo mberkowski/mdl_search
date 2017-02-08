@@ -307,16 +307,8 @@ a.remove:hover {
 	color: #0e76bc;
 }
 
-#documents .document {
+.documents-list > .document {
 	background: #ecedf0;
-	border: 1px solid #d3d4d7;
-	border-radius: 4px;
-	margin-top: 8px;
-	padding: 4px 12px;
-}
-
-#documents .documents-gallery .document {
-	background: #fff;
 	border: 1px solid #d3d4d7;
 	border-radius: 4px;
 	margin-top: 8px;
