@@ -128,6 +128,11 @@ a:hover, a:focus {
     text-decoration: underline;
 }
 
+a.remove:hover {
+	background-color: red !important;
+	border-color: red !important;
+}
+
 #header-navbar .navbar-brand {
 	background: transparent url("http://mndigital.org/files/images/reflections/reflections-logo-blacklight.png") no-repeat top left;
 	height: 88px;
@@ -187,6 +192,19 @@ a:hover, a:focus {
 	text-decoration: none !important;
 }
 
+.btn-link {
+	color: #0e76bc;
+}
+
+.close {
+	opacity: 0.3;
+}
+
+.disabled a, .disabled a:hover {
+	color: #6d6e71 !important;
+	text-decoration: none !important;
+}
+
 .nav>li>a {
 	background-color: #d3d4d7;
 	display: block;
@@ -205,6 +223,7 @@ a:hover, a:focus {
 .nav-pills>li.active>a:hover,
 .nav-pills>li.active>a:focus {
 	background-color: #0e76bc;
+	border-radius: 4px;
 	color: #fff;
 	text-decoration: none;
 }
@@ -242,6 +261,14 @@ a:hover, a:focus {
 	color: #231f20;
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+.modal-dialog {
+	margin: 120px auto;
+}
+
+.modal-header {
+	border-bottom: 1px solid #d3d4d7;
 }
 
 /* Search results page styles */
