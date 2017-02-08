@@ -131,6 +131,7 @@ a:hover, a:focus {
 a.remove:hover {
 	background-color: red !important;
 	border-color: red !important;
+	color: #fff !important;
 }
 
 #header-navbar .navbar-brand {
@@ -200,8 +201,8 @@ a.remove:hover {
 	opacity: 0.3;
 }
 
-.disabled a, .disabled a:hover {
-	color: #6d6e71 !important;
+.btn .disabled a:hover {
+	color: #231f20 !important;
 	text-decoration: none !important;
 }
 
@@ -223,7 +224,6 @@ a.remove:hover {
 .nav-pills>li.active>a:hover,
 .nav-pills>li.active>a:focus {
 	background-color: #0e76bc;
-	border-radius: 4px;
 	color: #fff;
 	text-decoration: none;
 }
@@ -315,6 +315,18 @@ a.remove:hover {
 	padding: 4px 12px;
 }
 
+#documents .documents-gallery .document {
+	background: #fff;
+	border: 1px solid #d3d4d7;
+	border-radius: 4px;
+	margin-top: 8px;
+	padding: 4px 12px;
+}
+
+.gallery-result {
+	background-color: #ecedf0;
+}
+
 h3.document-title-heading {
 	font-weight: bold !important;
 	padding-left: 0;
@@ -341,10 +353,6 @@ h3.document-title-heading {
 .pagination > .disabled > a {
 	border-color: #d3d4d7;
 	color: #6d6e71;
-}
-
-li.active {
-	background-color: #0e76bc;
 }
 
 .toggle_bookmark {
