@@ -353,6 +353,18 @@ h3.document-title-heading {
 /* End search results item page styles */
 
 /* Item page styles */
+.keywords-panel a {
+	background-color: #0e76bc !important;
+	border-radius: 2px;
+	color: #fff !important;
+	font-size: 12px !important;
+	font-weight: bold;
+	line-height: 2 !important;
+	padding: 3px;
+	text-decoration: none !important;
+	white-space: nowrap;
+}
+
 .more-like-this {
 	margin-top: 20px;
 }
