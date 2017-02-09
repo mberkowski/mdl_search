@@ -355,12 +355,13 @@ h3.document-title-heading {
 /* Item page styles */
 .keywords-panel a {
 	background-color: #0e76bc !important;
-	border-radius: 2px;
+	border-radius: 3px;
 	color: #fff !important;
 	font-size: 12px !important;
 	font-weight: bold;
-	line-height: 2 !important;
-	padding: 3px;
+	line-height: 2.75 !important;
+	margin-right: 8px;
+	padding: 6px;
 	text-decoration: none !important;
 	white-space: nowrap;
 }
