@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require openseadragon/built-openseadragon/openseadragon/openseadragon.min.js
 // Required by Blacklight
 //= require blacklight/blacklight
 
@@ -26,4 +25,3 @@
 // Setup React in global scope
 var React = window.React = global.React = require('react');
 var ReactDOM = window.ReactDOM = global.ReactDOM = require('react-dom');
-
