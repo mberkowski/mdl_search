@@ -10,24 +10,14 @@ module MDL
 
     def to_viewer
       {
-        "focus" => false,
         "type" => "pdf",
         "height" => 800,
         "thumbnail" => thumbnail,
-        "items" => [
-          {
-            "type" => "pdf",
-            "label" => "PDF",
-            "focus" => true,
-            "src" => src,
-          },
-          {
-            "type" => "transcript",
-            "label" => "Transcript",
-            "texts" => [transcript],
-            "focus" => false
-          }
-        ]
+        "src" => src,
+        "transcript" => {
+          "label" => "PDF",
+          "texts" => transcripts
+        }
       }
     end
   end

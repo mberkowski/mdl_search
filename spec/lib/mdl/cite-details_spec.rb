@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative '../../../lib/mdl/details.rb'
+require_relative '../../../lib/mdl/cite_details.rb'
 
 describe MDL::CiteDetails do
   let(:solr_doc) do

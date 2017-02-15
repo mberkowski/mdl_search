@@ -81,7 +81,7 @@ module MDL
     end
 
     def format_field
-      document.fetch('format', 'jp2').gsub(/;/, '')
+      document.fetch('format_ssi', 'jp2').gsub(/;/, '')
     end
   end
 end

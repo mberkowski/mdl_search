@@ -37,6 +37,6 @@ module MDL
         'pdfpage' => pdf_klass,
         'application/pdf' => pdf_klass
       }
-    end  
+    end
   end
 end

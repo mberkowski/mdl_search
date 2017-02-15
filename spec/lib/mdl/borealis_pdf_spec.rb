@@ -12,14 +12,8 @@ module MDL
     end
 
     it 'serializes itself for use in the viewer' do
-      expect(video.to_viewer).to eq ({"focus" => false,
-                                      "height" => 800,
-                                      "items" => [{"type"=>"pdf", "label"=>"PDF", "focus"=>true, "src"=>"http://reflections.mndigital.org/utils/getfile/collection/foo/id/21/filename/21.pdf"}, {"type"=>"transcript", "label"=>"Transcript", "texts"=>["Audio transcript here"], "focus"=>false}],
-                                      "thumbnail" => "/thumbnails/foo:21",
-                                      "type" => "pdf"
-                                    })
+      expect(video.to_viewer).to eq ({"type"=>"pdf", "height"=>800, "thumbnail"=>"/thumbnails/foo:21", "src" => "http://reflections.mndigital.org/utils/getfile/collection/foo/id/21/filename/21.pdf", "transcript"=>{"label"=>"PDF", "texts"=>["Audio transcript here"]}})
     end
   end
 end
 
-        

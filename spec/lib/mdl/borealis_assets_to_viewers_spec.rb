@@ -16,40 +16,38 @@ module MDL
     end
 
     it 'produces a configuration for the borealis player' do
-      expect(MDL::BorealisAssetsToViewers.new(assets: assets).viewers).to eq ([{"focus"=>false,
-                                                                   "type"=>"video",
-                                                                   "thumbnail"=>"/thumbnails/foo:5",
-                                                                   "items"=>
-                                                                    [{"type"=>"video",
-                                                                      "label"=>"Video",
-                                                                      "height"=>500,
-                                                                      "width"=>500,
-                                                                      "focus"=>true,
-                                                                      "src"=>
-                                                                       "http://reflections.mndigital.org/utils/getstream/collection/foo/id/5"},
-                                                                     {"type"=>"transcript",
-                                                                      "label"=>"Transcript",
-                                                                      "texts"=>["Video One"],
-                                                                      "focus"=>false}]},
-                                                                  {"focus"=>true,
-                                                                   "type"=>"image",
-                                                                   "thumbnail"=>"/thumbnails/foo:1",
-                                                                   "items"=>
-                                                                    [{"type"=>"image",
-                                                                      "label"=>"Image",
-                                                                      "focus"=>true,
-                                                                      "include_controls"=>true,
-                                                                      "sequenceMode"=>true,
-                                                                      "showReferenceStrip"=>true,
-                                                                      "defaultZoomLevel"=>0,
-                                                                      "tileSources"=>
-                                                                       ["/contentdm-images/info?id=foo:1", "/contentdm-images/info?id=foo:2"]},
-                                                                     {"type"=>"transcript",
-                                                                      "label"=>"Transcript",
-                                                                      "texts"=>["Image One", "Image Two"],
-                                                                      "focus"=>false}],
-                                                                   "tocs"=>["blah", "blah"]}
-                                                                  ])
+      expect(MDL::BorealisAssetsToViewers.new(assets: assets).viewers).to eq ({
+        "video" => {
+          "type"=>"video",
+          "thumbnail"=>"/thumbnails/foo:5",
+          "height"=>500,
+          "width"=>500,
+          "src"=>"http://reflections.mndigital.org/utils/getstream/collection/foo/id/5",
+          "transcript"=> {
+            "label"=>"Video",
+            "texts"=>["Video One"]
+          }
+        },
+        "image" => {
+          "type"=>"image",
+          "thumbnail"=>"/thumbnails/foo:1",
+          "label"=>"Image",
+          "include_controls"=>true,
+          "sequenceMode"=>true,
+          "showReferenceStrip"=>true,
+          "defaultZoomLevel"=>0,
+          "tileSources"=> [
+            "/contentdm-images/info?id=foo:1",
+            "/contentdm-images/info?id=foo:2"
+          ],
+          "transcript" => {
+            "texts"=> ["Image One", "Image Two"],
+            "label"=> "Image"
+          },
+          "tocs" => ["blah", "blah"]
+          }
+         }
+        )
     end
   end
 end

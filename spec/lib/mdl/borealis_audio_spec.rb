@@ -12,13 +12,16 @@ module MDL
     end
 
     it 'serializes itself for use in the viewer' do
-      expect(video.to_viewer).to eq ({"focus" => false,
-                                      "items" => [{"type"=>"audio", "label"=>"Audio", "focus"=>true, "src"=>"http://reflections.mndigital.org/utils/getstream/collection/foo/id/21"}, {"type"=>"transcript", "label"=>"Transcript", "texts"=>["Audio transcript here"], "focus"=>false}],
-                                      "thumbnail" => "/thumbnails/foo:21",
-                                      "type" => "audio"
-                                    })
+      expect(video.to_viewer).to eq ({
+        "type"=>"audio",
+        "thumbnail"=>"/thumbnails/foo:21",
+        "src"=>"http://reflections.mndigital.org/utils/getstream/collection/foo/id/21",
+        "transcript"=> {
+          "label"=>"Audio",
+          "texts"=> ["Audio transcript here"]
+        }
+      })
     end
   end
 end
 
-        

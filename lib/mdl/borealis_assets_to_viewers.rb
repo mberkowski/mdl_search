@@ -7,21 +7,23 @@ module MDL
     end
 
     def viewers
-      combined_viewers.sort {|a, b| (a['focus']) ? -1 : 1 }
+      openseadragon_viewer.merge(non_image_viewers)
     end
 
     private
 
-    def combined_viewers
-      non_image_viewers + openseadragon_viewer
-    end
-
     def non_image_viewers
-      non_images.map { |asset| asset.to_viewer }
+      non_images.inject({}) do |memo, asset|
+        memo.merge(asset.to_viewer['type'] => asset.to_viewer)
+      end
     end
 
     def openseadragon_viewer
-      [seadragon_klass.new(images: images).to_viewer]
+      (seadragon) ? {"image" => seadragon} : {}
+    end
+
+    def seadragon
+      (!images.empty?) ? seadragon_klass.new(images: images).to_viewer : nil
     end
 
 
@@ -34,6 +36,6 @@ module MDL
     def non_images
       [assets.find_all { |asset| !asset.is_a? MDL::BorealisImage }].flatten
     end
-  
+
   end
 end

@@ -14,15 +14,22 @@ module MDL
 
     let(:openseadragon) { BorealisOpenSeadragon.new(images: images) }
     it 'correctly identifies its src' do
-      expect(openseadragon.to_viewer).to eq ({"focus" => true,
-                                              "items" => [{"type"=>"image", "label"=>"Image", "focus"=>true, "include_controls"=>true, "sequenceMode"=>true, "showReferenceStrip"=>true, "defaultZoomLevel"=>0, "tileSources"=>["/contentdm-images/info?id=foo:123", "/contentdm-images/info?id=foo:312", "/contentdm-images/info?id=foo:321"]}, {"type"=>"transcript", "label"=>"Transcript", "texts"=>["Page One stuff here", "Page Two stuff here", "Page Three stuff here"], "focus"=>false}],
-                                              "type" => "image",
-                                              "thumbnail" => "/thumbnails/foo:123",
-                                              "tocs" => ["Page One", "Page Two", "Page Three"]
-                                              })
+      expect(openseadragon.to_viewer).to eq (
+        {
+          "type"=>"image",
+          "thumbnail"=>"/thumbnails/foo:123",
+          "tileSources" => ["/contentdm-images/info?id=foo:123", "/contentdm-images/info?id=foo:312", "/contentdm-images/info?id=foo:321"],
+          "tocs" => ["Page One", "Page Two", "Page Three"],
+          "transcript" => {"texts"=>["Page One stuff here", "Page Two stuff here", "Page Three stuff here"], "label"=>"Image"},
+          "label"=>"Image",
+          "include_controls"=>true,
+          "defaultZoomLevel" => 0,
+          "sequenceMode" => true,
+          "showReferenceStrip" => true
+        }
+      )
     end
 
   end
 end
 
-        

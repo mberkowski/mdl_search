@@ -11,25 +11,15 @@ module MDL
 
     def to_viewer
       {
-        "focus" => false,
         "type" => "video",
         "thumbnail" => thumbnail,
-        "items" => [
-          {
-            "type" => "video",
+        "height" => 500,
+        "width" => 500,
+        "src" => src,
+        "transcript" => {
             "label" => "Video",
-            "height" => 500,
-            "width" => 500,
-            "focus" => true,
-            "src" => src
-          },
-          {
-            "type" => "transcript",
-            "label" => "Transcript",
-            "texts" => [transcript],
-            "focus" => false
-          }
-        ]    
+            "texts" => transcripts
+        }
       }
     end
 

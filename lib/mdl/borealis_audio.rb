@@ -10,24 +10,14 @@ module MDL
 
     def to_viewer
       {
-        "focus" => false,
         "type" => "audio",
         "thumbnail" => thumbnail,
-        "items" => [
-          {
-            "type" => "audio",
+        "src" => src,
+        "transcript" => {
             "label" => "Audio",
-            "focus" => true,
-            "src" => src
-          },
-          {
-            "type" => "transcript",
-            "label" => "Transcript",
-            "texts" => [transcript],
-            "focus" => false
-          }
-        ]
+            "texts" => transcripts
+        }
       }
-    end      
+    end
   end
 end
