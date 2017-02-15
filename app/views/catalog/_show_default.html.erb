@@ -1,13 +1,14 @@
 <%
    borealis_doc = MDL::BorealisDocument.new(document: document)
-   items = []
-   items << MDL::CiteDetails.new(solr_doc: document).to_hash
-   items << MDL::CiteCitation.new(solr_doc: document, base_url: request.base_url).to_hash
-   items << MDL::CiteDownload.new(assets: borealis_doc.assets).to_hash
-   items << MDL::CiteTranscript.new(solr_doc: document).to_hash
-   items = items.map { |item| (!item.empty?) ? item : nil }.compact
+   config = []
+   config << MDL::CiteDetails.new(solr_doc: document).to_hash
+   config << MDL::CiteCitation.new(solr_doc: document, base_url: request.base_url).to_hash
+   config << MDL::CiteDownload.new(assets: borealis_doc.assets).to_hash
+   config << MDL::CiteTranscript.new(solr_doc: document).to_hash
+   config = config.map { |item| (!item.empty?) ? item : nil }.compact
 %>
 
-
-
-<%= react_component('app.FullRecord', borealis_items: borealis_doc.to_viewer, citation_items: items) %>
+<%= react_component('app.FullRecord',
+                    base_path: request.path,
+                    borealis_config: borealis_doc.to_viewer,
+                    citation_config: config) %>
