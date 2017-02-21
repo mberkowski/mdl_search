@@ -34,7 +34,7 @@ module MdlCatalogViewHelper
 
   def facet_links(key, values)
     raw (values.map do |item|
-      link_to item, "/?f[key][]=#{URI.escape(item)}"
+      link_to item, URI.escape("/?f[#{key}][]=#{item}")
     end.join(' '))
   end
 end
