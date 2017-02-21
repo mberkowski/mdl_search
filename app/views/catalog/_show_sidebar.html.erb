@@ -1,9 +1,17 @@
+<% if @document['topic_ssim'] %>
+  <div class="panel panel-default keywords-panel">
+    <div class="panel-heading">Topics</div>
+    <div class="panel-body">
+      <%= facet_links 'topic_ssim', @document['topic_ssim'] %>
+    </div>
+  </div>
+<% end %>
+
 <% if @document['keyword_ssim'] %>
   <div class="panel panel-default keywords-panel">
     <div class="panel-heading">Keywords</div>
     <div class="panel-body">
-      <%  details = MDL::CiteDetails.new(solr_doc: {'keyword_ssim' => @document['keyword_ssim']}).details.first %>
-      <%= raw details[:field_values].map { |keyword| link_to keyword[:text], keyword[:url] }.join(', ') %>
+      <%= facet_links 'keyword_ssim', @document['keyword_ssim'] %>
     </div>
   </div>
 <% end %>

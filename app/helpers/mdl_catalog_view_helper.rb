@@ -31,4 +31,10 @@ module MdlCatalogViewHelper
   def identifiers(document)
     document['id'].split(':')
   end
+
+  def facet_links(key, values)
+    raw (values.map do |item|
+      link_to item, "/?f[key][]=#{URI.escape(item)}"
+    end.join(' '))
+  end
 end
