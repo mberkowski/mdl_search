@@ -80,13 +80,6 @@
 
 /* Scott */
 
-
-ul.fa-ul {
- list-style: none;
- margin-left: 0;
- padding-left: 20px;
-}
-
 /*  Dark blue: #0e76bc
   Medium blue: #30aed0
   Light blue: #88c2e6
@@ -374,10 +367,11 @@ h3.document-title-heading {
 }
 
 .borealis-tray {
-	margin: 0 0 15px -15px;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
-.image-nav {
+.image-nav ul {
 	margin-left: 0 !important;
 }
 
