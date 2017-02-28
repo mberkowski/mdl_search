@@ -9,10 +9,12 @@ set :ssh_options, {:forward_agent => true}
 set :deploy_to, '/swadm/var/www/html/mdl'
 set :use_sudo, false
 
-set :linked_dirs, fetch(:linked_dirs) + %w(thumbnails cdm_images tmp log cache)
+set :linked_dirs, %w(thumbnails tmp log)
 
 set :rails_env, "production"
 
 set :bundle_flags, '--deployment'
 
-# set :branch, 'reactify'
+
+set :sidekiq_concurrency, 1
+set :sidekiq_processes, 2
