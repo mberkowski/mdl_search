@@ -87,17 +87,13 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'contributing_organization_ssi', label: 'Contributing Institution', index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    # config.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
-    config.add_facet_field 'creator_ssim', label: 'Creator', show: true, limit: 5, index_range: 'A'..'Z', collapse: false, index: true
-    config.add_facet_field 'county_ssim', label: 'County', show: true, limit: 5, index_range: 'A'..'Z', collapse: false, index: true
     config.add_facet_field 'physical_format_ssi', label: 'Format-Medium', show: true, index_range: 'A'..'Z', collapse: false, index: true
-    config.add_facet_field 'keyword_ssim', label: 'Keyword', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
     config.add_facet_field 'type_ssi', label: 'Type', show: true, collapse: false, limit: 5
+    config.add_facet_field 'dat_ssi', label: 'Date Created', limit: 5,  collapse: false, limit: 5
+    config.add_facet_field 'county_ssim', label: 'County', show: true, limit: 5, index_range: 'A'..'Z', collapse: false, index: true
     config.add_facet_field 'topic_ssim', label: 'Topic', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    config.add_facet_field 'record_type_ssi', label: 'Single or Compound', show: true
-    config.add_facet_field 'dat_ssi', label: 'Date Created', limit: 5
-
+    config.add_facet_field 'keyword_ssim', label: 'Keyword', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
+    config.add_facet_field 'contributing_organization_ssi', label: 'Contributing Institution', index_range: 'A'..'Z', collapse: false, limit: 5, index: true
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -112,6 +108,8 @@ class CatalogController < ApplicationController
     config.add_index_field 'contributing_organization_ssi', label: 'Contributing Institution'
     config.add_index_field 'type_ssi', label: 'Type'
     config.add_index_field 'physical_format_ssi', label: 'Format'
+
+    config.add_field_configuration_to_solr_request!
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
