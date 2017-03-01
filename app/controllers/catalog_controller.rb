@@ -89,10 +89,10 @@ class CatalogController < ApplicationController
 
     config.add_facet_field 'contributing_organization_ssi', label: 'Contributing Institution', index_range: 'A'..'Z', collapse: false, limit: 5, index: true
     # config.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
-    config.add_facet_field 'creator_ssim', label: 'Creator', show: true, collapse: false, limit: 5, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    config.add_facet_field 'county_ssim', label: 'County', show: true, collapse: false, limit: 5, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    config.add_facet_field 'physical_format_ssi', label: 'Format-Medium', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    config.add_facet_field 'keyword_ssim', label: 'Keyword', limit: 20, show: true, collapse: false, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
+    config.add_facet_field 'creator_ssim', label: 'Creator', show: true, limit: 5, index_range: 'A'..'Z', collapse: false, index: true
+    config.add_facet_field 'county_ssim', label: 'County', show: true, limit: 5, index_range: 'A'..'Z', collapse: false, index: true
+    config.add_facet_field 'physical_format_ssi', label: 'Format-Medium', show: true, index_range: 'A'..'Z', collapse: false, index: true
+    config.add_facet_field 'keyword_ssim', label: 'Keyword', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
     config.add_facet_field 'type_ssi', label: 'Type', show: true, collapse: false, limit: 5
     config.add_facet_field 'topic_ssim', label: 'Topic', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
     config.add_facet_field 'record_type_ssi', label: 'Single or Compound', show: true
