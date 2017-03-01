@@ -5692,7 +5692,7 @@ var DetailsFieldValue = function (_React$Component) {
       if (this.props.url) {
         return _react2.default.createElement(
           'a',
-          { href: this.props.url.url },
+          { href: this.props.url },
           this.props.text
         );
       } else {

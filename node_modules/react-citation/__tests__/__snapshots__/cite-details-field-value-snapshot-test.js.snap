@@ -9,6 +9,11 @@ exports[`DetailsFieldValue Test renders a field value with a url 1`] = `
 
 exports[`DetailsFieldValue Test renders a field value without a url 1`] = `
 <span>
-  Rama
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "Rama",
+      }
+    } />
 </span>
 `;

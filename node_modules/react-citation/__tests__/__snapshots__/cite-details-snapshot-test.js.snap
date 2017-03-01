@@ -1,9 +1,10 @@
 exports[`Details Test renders a citation 1`] = `
 <dl
-  className="row">
-  <span>
+  className="row details">
+  <span
+    className="detail-field-somefield}">
     <dt
-      className="col-sm-3 field-label">
+      className="field-label">
       <label
         className="label label-default">
         Some Field
@@ -11,7 +12,7 @@ exports[`Details Test renders a citation 1`] = `
       </label>
     </dt>
     <dd
-      className="col-sm-9 field-definition">
+      className="field-definition">
       <span>
         <a
           href="https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731">
@@ -21,9 +22,10 @@ exports[`Details Test renders a citation 1`] = `
       </span>
     </dd>
   </span>
-  <span>
+  <span
+    className="detail-field-title}">
     <dt
-      className="col-sm-3 field-label">
+      className="field-label">
       <label
         className="label label-default">
         Title
@@ -31,7 +33,7 @@ exports[`Details Test renders a citation 1`] = `
       </label>
     </dt>
     <dd
-      className="col-sm-9 field-definition">
+      className="field-definition">
       <span>
         <a
           href="https://www.amazon.com/Snow-Crash-Neal-Stephenson/dp/0553380958/ref=sr_1_1?s=books&ie=UTF8&qid=1478114241&sr=1-1&keywords=snowcrash">
@@ -40,7 +42,12 @@ exports[`Details Test renders a citation 1`] = `
         , 
       </span>
       <span>
-        Ender\'s Game
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Ender\'s Game",
+            }
+          } />
         
       </span>
     </dd>

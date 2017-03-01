@@ -12,7 +12,7 @@ export default class DetailsFieldValue extends React.Component {
 
   _field() {
     if (this.props.url) {
-      return <a href={this.props.url.url}>{this.props.text}</a>
+      return <a href={this.props.url}>{this.props.text}</a>
     } else {
       return <div dangerouslySetInnerHTML={this._createMarkup(this.props.text)} />
     }
