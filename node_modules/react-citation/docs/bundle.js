@@ -5662,27 +5662,38 @@ var DetailsFieldValue = function (_React$Component) {
   function DetailsFieldValue(props) {
     _classCallCheck(this, DetailsFieldValue);
 
-    return _possibleConstructorReturn(this, (DetailsFieldValue.__proto__ || Object.getPrototypeOf(DetailsFieldValue)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (DetailsFieldValue.__proto__ || Object.getPrototypeOf(DetailsFieldValue)).call(this, props));
+
+    _this._field = _this._field.bind(_this);
+    return _this;
   }
 
   _createClass(DetailsFieldValue, [{
+    key: '_createMarkup',
+    value: function _createMarkup(value) {
+      return { __html: value };
+    }
+  }, {
+    key: '_field',
+    value: function _field() {
+      if (this.props.url) {
+        return _react2.default.createElement(
+          'a',
+          { href: this.props.url.url },
+          this.props.text
+        );
+      } else {
+        return _react2.default.createElement('div', { dangerouslySetInnerHTML: this._createMarkup(this.props.text) });
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _props = this.props,
-          url = _props.url,
-          text = _props.text,
-          delimiter = _props.delimiter;
-
-      var field = url ? _react2.default.createElement(
-        'a',
-        { href: url },
-        text
-      ) : text;
       return _react2.default.createElement(
         'span',
         null,
-        field,
-        delimiter
+        this._field(),
+        this.props.delimiter
       );
     }
   }]);
@@ -5695,8 +5706,11 @@ exports.default = DetailsFieldValue;
 
 var propTypes = {
   text: _react2.default.PropTypes.string.isRequired,
+  delimiter: _react2.default.PropTypes.string,
   url: _react2.default.PropTypes.string
 };
+
+DetailsFieldValue.propTypes = propTypes;
 
 },{"react":undefined}],10:[function(require,module,exports){
 'use strict';
@@ -5759,17 +5773,7 @@ var DetailsField = function (_React$Component) {
           { className: 'field-definition' },
           field_values.map(function (field_value, i) {
             delimiter = i < field_values.length - 1 ? delimiter : '';
-            var field = field_value.url ? _react2.default.createElement(
-              'a',
-              { href: field_value.url },
-              field_value.text
-            ) : field_value.text;
-            return _react2.default.createElement(
-              'span',
-              { key: i },
-              field,
-              delimiter
-            );
+            return _react2.default.createElement(_citeDetailsFieldValue2.default, { key: i, url: field_value.url, text: field_value.text, delimiter: delimiter });
           })
         )
       );
@@ -5788,6 +5792,8 @@ var propTypes = {
   url: _react2.default.PropTypes.string,
   field_values: _react2.default.PropTypes.array.isRequired
 };
+
+DetailsField.propTypes = propTypes;
 
 },{"./cite-details-field-value":9,"react":undefined}],11:[function(require,module,exports){
 'use strict';

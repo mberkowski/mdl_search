@@ -17,12 +17,11 @@ export default class DetailsField extends React.Component {
                 <dd className="field-definition">
                   {field_values.map(function(field_value, i) {
                     delimiter = (i < field_values.length - 1) ? delimiter : ''
-                    let field = (field_value.url) ? <a href={field_value.url}>{field_value.text}</a> : field_value.text
-                    return  (<span key={i}>{field}{delimiter}</span>)
+                    return (<DetailsFieldValue key={i} url={field_value.url} text={field_value.text} delimiter={delimiter} />)
                   })}
                 </dd>
              </span>
-           )
+    )
   }
 }
 
@@ -32,3 +31,5 @@ const propTypes = {
   url: React.PropTypes.string,
   field_values: React.PropTypes.array.isRequired
 }
+
+DetailsField.propTypes = propTypes

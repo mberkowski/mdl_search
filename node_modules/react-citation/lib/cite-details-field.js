@@ -58,17 +58,7 @@ var DetailsField = function (_React$Component) {
           { className: 'field-definition' },
           field_values.map(function (field_value, i) {
             delimiter = i < field_values.length - 1 ? delimiter : '';
-            var field = field_value.url ? _react2.default.createElement(
-              'a',
-              { href: field_value.url },
-              field_value.text
-            ) : field_value.text;
-            return _react2.default.createElement(
-              'span',
-              { key: i },
-              field,
-              delimiter
-            );
+            return _react2.default.createElement(_citeDetailsFieldValue2.default, { key: i, url: field_value.url, text: field_value.text, delimiter: delimiter });
           })
         )
       );
@@ -87,3 +77,5 @@ var propTypes = {
   url: _react2.default.PropTypes.string,
   field_values: _react2.default.PropTypes.array.isRequired
 };
+
+DetailsField.propTypes = propTypes;
