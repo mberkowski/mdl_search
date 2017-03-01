@@ -109,8 +109,6 @@ class CatalogController < ApplicationController
     config.add_index_field 'type_ssi', label: 'Type'
     config.add_index_field 'physical_format_ssi', label: 'Format'
 
-    config.add_field_configuration_to_solr_request!
-
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     config.add_show_field 'title_ssi', label: 'Title'
@@ -199,9 +197,9 @@ class CatalogController < ApplicationController
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
     config.add_sort_field 'score desc, dat_sort desc, title_sort asc', label: 'relevance'
-    config.add_sort_field 'dat_ssi desc, title_sort asc', label: 'year'
-    config.add_sort_field 'creator_sort asc, title_sort asc', label: 'creator'
     config.add_sort_field 'title_sort asc, dat_sort desc', label: 'title'
+    config.add_sort_field 'creator_sort asc, title_sort asc', label: 'creator'
+    config.add_sort_field 'dat_ssi desc, title_sort asc', label: 'date'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
