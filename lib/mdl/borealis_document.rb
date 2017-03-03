@@ -33,6 +33,7 @@ module MDL
         compounds.map do |compound|
           asset(asset_klass(compound_format(compound)),
                 compound['pageptr'],
+                compound['pagefile'],
                 collection,
                 transcript(compound),
                 compound['title'])
@@ -45,11 +46,15 @@ module MDL
       compound['pagefile'].split('.').last
     end
 
-    def asset(asset_klass, id, collection, transcript, title = false)
+    def asset(asset_klass, id, pagefile, collection, transcript, title = false)
       if !title
-        asset_klass.new(id: id, collection: collection, transcript: transcript)
+        asset_klass.new(id: id,
+                        pagefile: pagefile,
+                        collection: collection,
+                        transcript: transcript)
       else
         asset_klass.new(id: id,
+                        pagefile: pagefile,
                         collection: collection,
                         transcript: transcript,
                         title: title)
