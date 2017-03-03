@@ -3,7 +3,7 @@ namespace :mdl_ingester do
   desc "ingest batches of records"
   ##
   # e.g. rake mdl_ingester:ingest[2015-09-14, 2]
-  task :batch, [:minimum_date, :set_spec] => :environment  do |t,args|
+  task :batch, [:minimum_date, :batch_size, :set_spec] => :environment  do |t,args|
     minimum_date = (args[:minimum_date]) ? args[:minimum_date] : IndexingRunner.last_indexing_run
     set_spec = (args[:set_spec] != '""') ? args[:set_spec] : false
     etl_config  = {
@@ -12,7 +12,8 @@ namespace :mdl_ingester do
                     minimum_date: minimum_date
                    }
     etl_config.merge!('set_spec': set_spec) if set_spec
-    CDMBL::ETLWorker.perform_async(solr_config, etl_config, true)
+    batch_size = (args[:batch_size]) ? args[:batch_size] : 10
+    CDMBL::ETLWorker.perform_async(solr_config, etl_config, batch_size, true)
   end
 
   desc "ingest a single record"
