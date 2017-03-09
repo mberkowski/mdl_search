@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 class CatalogController < ApplicationController
-
+  caches_page :home
   include Blacklight::Catalog
+
+
+  def home
+    (@response, @document_list) = search_results(params)
+    render :mdl_home
+  end
 
 
   # Override blacklights limit param for facets.
@@ -88,7 +94,7 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
     config.add_facet_field 'physical_format_ssi', label: 'Format-Medium', show: true, index_range: 'A'..'Z', collapse: false, index: true, limit: 5
-    config.add_facet_field 'type_ssi', label: 'Type', show: true, collapse: false, limit: 5
+    config.add_facet_field 'type_ssi', label: 'Type', show: true, collapse: false, limit: 10
     config.add_facet_field 'dat_ssi', label: 'Date Created', limit: 5,  collapse: false, limit: 5
     config.add_facet_field 'county_ssim', label: 'County', show: true, limit: 5, index_range: 'A'..'Z', collapse: false, index: true
     config.add_facet_field 'topic_ssim', label: 'Topic', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true

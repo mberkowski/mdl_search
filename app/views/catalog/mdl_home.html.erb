@@ -1,0 +1,32 @@
+<div id="main-container" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="home-panel-wrapper">
+        <div class="home-panel">
+          <div class="home-wrapper">
+            <div id="home-search">
+              <%= render_search_bar  %>
+            </div>
+            <div class="home-desc">
+              Minnesota Reflections is the first online project of the Minnesota Digital Library.
+              It is a collection of <strong><%= record_count %></strong> images and documents depicting the history of Minnesota.
+              <strong><%= facet_count('contributing_organization_ssi') %></strong> institutions&mdash;including historical societies,
+              public libraries, special archives, univiersities, and colleges&mdash;have shared their original materials with the Minnesota Digital Library.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= render_facet_partials ['contributing_organization_ssi'] %>
+    </div>
+    <div class="col-md-4">
+      <%= render_facet_partials ['topic_ssim'] %>
+    </div>
+    <div class="col-md-4">
+      <%= render_facet_partials ['physical_format_ssi'] %>
+    </div>
+  </div>
+</div>

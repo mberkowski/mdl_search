@@ -1,6 +1,32 @@
 module FacetsHelper
   include Blacklight::FacetsHelperBehavior
 
+  def facet_count(field)
+    Blacklight.default_index.connection.get('select',
+      :params => { :q => '*:*',
+        :'facet.field' => field,
+        :'facet.limit' => 1000,
+        :defType => 'edismax',
+        :fl => '',
+        :rows => 1
+      })['facet_counts']['facet_fields'][field].length / 2
+  end
+
+
+  ##
+  # Render a collection of facet fields.
+  # @see #render_facet_limit
+  #
+  # @param [Array<String>] fields
+  # @param [Hash] options
+  # @return String
+  def render_facet_partials fields = facet_field_names, options = {}
+    safe_join(facets_from_request(fields).map do |display_facet|
+      render_facet_limit(display_facet, options)
+    end.compact, "\n")
+  end
+
+
   ##
   # Standard display of a facet value in a list. Used in both _facets sidebar
   # partial and catalog/facet expanded list. Will output facet value name as
