@@ -107,6 +107,8 @@
   .search_q {
     width: 500px !important;
     border: 1px solid #60994D;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
   }
 
   .navbar-form {
@@ -135,7 +137,7 @@
   background-size: cover;
   min-height: 300px;
   margin-bottom: 25px;
-   -webkit-border-radius: 5px;
+  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
