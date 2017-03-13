@@ -61,23 +61,18 @@ var ReactCitation = function (_React$Component) {
       switch (item.type) {
         case 'details':
           return _react2.default.createElement(_citeDetails2.default, { fields: item.fields });
-          break;
         case 'citation':
           return _react2.default.createElement(_citeCitation2.default, { fields: item.fields });
-          break;
         case 'download':
           return _react2.default.createElement(_citeDownload2.default, { fields: item.fields });
-          break;
         case 'transcript':
           return _react2.default.createElement(_citeTranscript2.default, { transcript: item.transcript });
-          break;
         default:
           return _react2.default.createElement(
             'div',
             null,
-            'No Viewer Avaialable for type: "',
-            type,
-            '"'
+            'No Viewer Avaialable for type: ',
+            item.type
           );
       }
     }
@@ -91,7 +86,7 @@ var ReactCitation = function (_React$Component) {
         _react2.default.createElement(_citeNavigation2.default, this.props),
         _react2.default.createElement(
           'div',
-          { className: "cite-" + type },
+          { className: 'cite-' + type },
           this._viewer()
         )
       );
@@ -102,7 +97,8 @@ var ReactCitation = function (_React$Component) {
 }(_react2.default.Component);
 
 var propTypes = {
-  items: _react2.default.PropTypes.array.isRequired
+  items: _react2.default.PropTypes.array.isRequired,
+  getActiveItem: _react2.default.PropTypes.func.isRequired
 };
 
 ReactCitation.propTypes = propTypes;

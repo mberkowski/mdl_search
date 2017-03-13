@@ -74,7 +74,10 @@ gem 'globalid'
 gem 'devise'
 gem 'devise-guests'
 gem 'hash_at_path'
-gem 'cdmbl', '~> 0.2.23'
+gem 'cdmbl', '~> 0.2.28'
 gem 'sinatra', require: false
 gem 'sidekiq-failures'
 gem 'whenever', :require => false
+
+# Speedy Home Page
+gem "actionpack-page_caching"

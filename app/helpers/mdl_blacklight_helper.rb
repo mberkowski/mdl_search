@@ -1,6 +1,15 @@
 module MdlBlacklightHelper
   include Blacklight::LayoutHelperBehavior
 
+  def record_count
+    Blacklight.default_index.connection.get('select',
+      :params => { :q => '*:*',
+        :defType => 'edismax',
+        :fl => '',
+        :rows => 1
+      })['response']['numFound']
+  end
+
  ##
   # Classes used for sizing the sidebar content of a Blacklight page
   # @return [String]

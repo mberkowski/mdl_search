@@ -26,14 +26,13 @@ module MDL
       if compounds.empty?
         [asset(asset_klass(format_field),
               id,
-              collection,
               transcript(document),
               title)]
       else
         compounds.map do |compound|
           asset(asset_klass(compound_format(compound)),
                 compound['pageptr'],
-                collection,
+                compound['pagefile'],
                 transcript(compound),
                 compound['title'])
 
@@ -45,11 +44,15 @@ module MDL
       compound['pagefile'].split('.').last
     end
 
-    def asset(asset_klass, id, collection, transcript, title = false)
+    def asset(asset_klass, id, pagefile, transcript, title = false)
       if !title
-        asset_klass.new(id: id, collection: collection, transcript: transcript)
+        asset_klass.new(id: id,
+                        pagefile: pagefile,
+                        collection: collection,
+                        transcript: transcript)
       else
         asset_klass.new(id: id,
+                        pagefile: pagefile,
                         collection: collection,
                         transcript: transcript,
                         title: title)
@@ -73,7 +76,7 @@ module MDL
     end
 
     def collection
-      document['id'].split(':').first
+      @collection ||= document['id'].split(':').first
     end
 
     def title

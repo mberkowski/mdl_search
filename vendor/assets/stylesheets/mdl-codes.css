@@ -1,0 +1,10 @@
+
+.icon-image:before { content: '\e800'; } /* '' */
+.icon-sound:before { content: '\e801'; } /* '' */
+.icon-video:before { content: '\e802'; } /* '' */
+.icon-music:before { content: '\e803'; } /* '' */
+.icon-object:before { content: '\e804'; } /* '' */
+.icon-sheet-music:before { content: '\e806'; } /* '' */
+.icon-text:before { content: '\f0f6'; } /* '' */
+.icon-archive:before { content: '\f187'; } /* '' */
+.icon-map:before { content: '\f278'; } /* '' */

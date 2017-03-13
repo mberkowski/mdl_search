@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 class CatalogController < ApplicationController
-
+  caches_page :home
   include Blacklight::Catalog
+
+
+  def home
+    (@response, @document_list) = search_results(params)
+    render :mdl_home
+  end
 
 
   # Override blacklights limit param for facets.
@@ -26,7 +32,7 @@ class CatalogController < ApplicationController
       fl: '*'
     }
 
-    config.default_per_page = 20
+    config.default_per_page = 25
 
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
@@ -42,7 +48,7 @@ class CatalogController < ApplicationController
     #config.solr_path = 'select'
 
     # items to show per page, each number in the array represent another option to choose from.
-    #config.per_page = [10,20,50,100]
+    config.per_page = [25,50,100]
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SearchHelper#solr_doc_params) or
     ## parameters included in the Blacklight-jetty document requestHandler.
@@ -87,17 +93,13 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'contributing_organization_ssi', label: 'Contributing Institution', index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    # config.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
-    config.add_facet_field 'creator_ssim', label: 'Creator', show: true, collapse: false, limit: 5, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    config.add_facet_field 'county_ssim', label: 'County', show: true, collapse: false, limit: 5, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    config.add_facet_field 'physical_format_ssi', label: 'Format-Medium', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    config.add_facet_field 'keyword_ssim', label: 'Keyword', limit: 20, show: true, collapse: false, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    config.add_facet_field 'type_ssi', label: 'Type', show: true, collapse: false, limit: 5
+    config.add_facet_field 'physical_format_ssi', label: 'Format-Medium', show: true, index_range: 'A'..'Z', collapse: false, index: true, limit: 5
+    config.add_facet_field 'type_ssi', label: 'Type', show: true, collapse: false, limit: 10
+    config.add_facet_field 'dat_ssi', label: 'Date Created', limit: 5,  collapse: false, limit: 5
+    config.add_facet_field 'county_ssim', label: 'County', show: true, limit: 5, index_range: 'A'..'Z', collapse: false, index: true
     config.add_facet_field 'topic_ssim', label: 'Topic', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
-    config.add_facet_field 'record_type_ssi', label: 'Single or Compound', show: true
-    config.add_facet_field 'dat_ssi', label: 'Date Created', limit: 5
-
+    config.add_facet_field 'keyword_ssim', label: 'Keyword', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
+    config.add_facet_field 'contributing_organization_ssi', label: 'Contributing Institution', index_range: 'A'..'Z', collapse: false, limit: 5, index: true
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -201,9 +203,9 @@ class CatalogController < ApplicationController
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
     config.add_sort_field 'score desc, dat_sort desc, title_sort asc', label: 'relevance'
-    config.add_sort_field 'dat_ssi desc, title_sort asc', label: 'year'
-    config.add_sort_field 'creator_sort asc, title_sort asc', label: 'creator'
     config.add_sort_field 'title_sort asc, dat_sort desc', label: 'title'
+    config.add_sort_field 'creator_sort asc, title_sort asc', label: 'creator'
+    config.add_sort_field 'dat_ssi desc, title_sort asc', label: 'date'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.

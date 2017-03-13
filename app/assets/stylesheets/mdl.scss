@@ -70,12 +70,96 @@
 	z-index: 100000;
 }
 
-
-
-
 #main-container,
 #content {
 	margin-top: 60px;
+}
+
+.ppt-download img {
+  margin: 0 10px 15px 0;
+}
+
+.facet-label {
+  color: #0e76bc;
+}
+
+.facet-label.selected {
+  color: #3c763d;
+}
+
+#home-search {
+  width: 600px;
+}
+
+.home-desc {
+  width: 600px;
+  text-align: left;
+  margin-left: 5px;
+}
+
+.home-wrapper {
+  .search_field {
+    display: none;
+  }
+  .input-group-addon {
+    display: none;
+  }
+  .search_q {
+    width: 500px !important;
+    border: 1px solid #60994D;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+  }
+
+  .navbar-form {
+    padding: 0;
+  }
+
+  width: 625px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 15px;
+ -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  z-index: 2;
+  position: relative;
+}
+
+.home-panel {
+  position: relative;
+  padding-top: 50px;
+  text-align: center;
+  background: image-url("home-hero.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 300px;
+  margin-bottom: 25px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.blacklight-catalog-home {
+  .facet-content {
+    min-height: 245px;
+  }
+}
+.home-panel:after {
+  content: " ";
+  z-index: 1;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 /* Scott */
@@ -135,7 +219,7 @@ a.remove:hover {
 }
 
 #header-navbar .navbar-brand {
-	background: transparent url("http://mndigital.org/files/images/reflections/reflections-logo-blacklight.png") no-repeat top left;
+	background: transparent image-url("reflections-logo-blacklight.png") no-repeat top left;
 	height: 88px;
 	margin: 8px 0;
 	width: 200px;
