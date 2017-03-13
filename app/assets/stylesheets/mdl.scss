@@ -102,7 +102,7 @@ body {
 
 .blacklight-catalog .container {
 	margin: 0 auto;
-	width: 96%;
+	/* width: 96%; */
 }
 
 .row {
@@ -270,6 +270,35 @@ a.remove:hover {
 .modal-header {
 	border-bottom: 1px solid #d3d4d7;
 }
+
+/* Homepage styles */
+.home-panel {
+	border-radius: 4px;
+	margin: 41px -999px 25px;
+	padding-top: 75px;
+}
+
+.home-wrapper {
+	background-color: #ecedf0;
+	border-radius: 4px;
+	opacity: .9;
+	width: 36%;
+}
+
+#home-search {
+	width: auto;
+}
+
+.home-desc {
+	margin: 0 auto;
+	text-align: center;
+	width: auto;
+}
+
+.blacklight-catalog-home .facet-content {
+	min-height: 440px;
+}
+/* End homepage styles */
 
 /* Search results page styles */
 .facets .facets-heading {
