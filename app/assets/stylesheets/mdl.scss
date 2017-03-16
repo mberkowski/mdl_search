@@ -321,13 +321,6 @@ a.remove:hover {
 	padding: 0 8px;
 }
 
-.pagination-search-widgets:empty {
-	background: #fff;
-	border: none;
-	border-radius: 0;
-	padding: 0;
-}
-
 .btn:hover,.facets-toggle:hover,.btn:focus,.facets-toggle:focus,.btn.focus,.focus.facets-toggle {
 	color: #5f994a;
 	text-decoration: underline;
@@ -396,6 +389,14 @@ a.remove:hover {
 	padding: 8px;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+.facet-values {
+	table-layout: auto;
+}
+
+.facet-values .facet-label {
+	hyphens: none;
 }
 
 .panel-title > a {
