@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
 
-  get "/pages/:page" => "pages#show"
+  get ":page" => "pages#show", constraints: lambda { |request| request.params[:page] != 'catalog' }
 
   require 'sidekiq/web'
   authenticate :user, lambda { |u| u.admin? } do
