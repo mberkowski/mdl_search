@@ -69,6 +69,18 @@
       "src": "fontawesome"
     },
     {
+      "uid": "8c0ffa714cecbf5144e022d9c3df4a1f",
+      "css": "bank",
+      "code": 61852,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "98687378abd1faf8f6af97c254eb6cd6",
+      "css": "cog-alt",
+      "code": 59397,
+      "src": "fontawesome"
+    },
+    {
       "uid": "b67bc197969f2e05012c5e38e9c66f42",
       "css": "sheet-music",
       "code": 59397,

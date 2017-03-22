@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
 
+  get "/pages/:page" => "pages#show"
+
   require 'sidekiq/web'
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'

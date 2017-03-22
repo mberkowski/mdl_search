@@ -4,7 +4,9 @@
 .icon-video:before { content: '\e802'; } /* '' */
 .icon-music:before { content: '\e803'; } /* '' */
 .icon-object:before { content: '\e804'; } /* '' */
+.icon-cog-alt:before { content: '\e805'; } /* '' */
 .icon-sheet-music:before { content: '\e806'; } /* '' */
 .icon-text:before { content: '\f0f6'; } /* '' */
 .icon-archive:before { content: '\f187'; } /* '' */
+.icon-bank:before { content: '\f19c'; } /* '' */
 .icon-map:before { content: '\f278'; } /* '' */
