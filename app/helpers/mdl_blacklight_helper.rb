@@ -2,12 +2,12 @@ module MdlBlacklightHelper
   include Blacklight::LayoutHelperBehavior
 
   def record_count
-    Blacklight.default_index.connection.get('select',
+    number_with_delimiter(Blacklight.default_index.connection.get('select',
       :params => { :q => '*:*',
         :defType => 'edismax',
         :fl => '',
         :rows => 1
-      })['response']['numFound']
+      })['response']['numFound'])
   end
 
  ##
