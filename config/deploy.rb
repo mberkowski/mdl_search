@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.6.1'
+lock '3.7.2'
 
 set :application, 'mdl'
 set :repo_url, 'git@github.com:UMNLibraries/mdl_search.git'
