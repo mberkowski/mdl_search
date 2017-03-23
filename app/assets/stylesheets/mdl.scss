@@ -353,15 +353,14 @@ a.remove:hover {
 /* Homepage styles */
 .home-panel {
 	border-radius: 4px;
-	margin: 41px -999px 25px;
+	margin: 50px auto 15px;
 	padding-top: 75px;
 }
 
 .home-wrapper {
 	background-color: #ecedf0;
 	border-radius: 4px;
-	opacity: .9;
-	width: 36%;
+	opacity: .92;
 }
 
 #home-search {
@@ -375,7 +374,7 @@ a.remove:hover {
 }
 
 .blacklight-catalog-home .facet-content {
-	min-height: 440px;
+	min-height: 320px;
 }
 /* End homepage styles */
 
@@ -397,6 +396,7 @@ a.remove:hover {
 
 .facet-values .facet-label {
 	hyphens: none;
+	padding-right: 0;
 }
 
 .panel-title > a {
