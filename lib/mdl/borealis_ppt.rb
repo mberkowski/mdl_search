@@ -1,7 +1,7 @@
 module MDL
   class BorealisPPT <  BorealisAsset
     def src
-      "http://reflections.mndigital.org/utils/getfile/collection/#{collection}/id/#{id}/filename/#{pagefile}"
+      "http://reflections.mndigital.org/utils/getfile/collection/#{collection}/id/#{id}/filename"
     end
 
     def downloads

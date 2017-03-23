@@ -1,11 +1,11 @@
 module MDL
   class BorealisPDF <  BorealisAsset
     def src
-      "http://reflections.mndigital.org/utils/getfile/collection/#{collection}/id/#{id}/filename/#{pagefile}"
+      "http://reflections.mndigital.org/utils/getfile/collection/#{collection}/id/#{id}/filename"
     end
 
     def downloads
-      [src: "http://reflections.mndigital.org/utils/getfile/collection/#{collection}/id/#{id}/filename/#{pagefile}", label: 'Download']
+      [src: "http://reflections.mndigital.org/utils/getfile/collection/#{collection}/id/#{id}/filename", label: 'Download']
     end
 
     def to_viewer
