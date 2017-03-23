@@ -95,7 +95,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    cdmbl (0.2.28)
+    cdmbl (0.2.29)
       activesupport (~> 4.2)
       contentdm_api (~> 0.3.11)
       hash_at_path (~> 0.1)
@@ -416,7 +416,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-sidekiq
   capybara
-  cdmbl (~> 0.2.28)
+  cdmbl (~> 0.2.29)
   coffee-rails (~> 4.1.0)
   coveralls
   database_cleaner
