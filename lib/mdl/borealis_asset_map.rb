@@ -23,7 +23,7 @@ module MDL
     end
 
     def map
-      mapping.fetch(format_field)
+      mapping.fetch(format_field.downcase)
     end
 
     def mapping
@@ -34,7 +34,7 @@ module MDL
         'jpg' => image_klass,
         'mp3' => audio_klass,
         'mp4' => video_klass,
-        'video/DV' => video_klass,
+        'video/dv' => video_klass,
         'video/mp4' => video_klass,
         'pdf' => pdf_klass,
         'pdfpage' => pdf_klass,
