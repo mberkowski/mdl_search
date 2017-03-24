@@ -1,12 +1,17 @@
 module MDL
   class BorealisAsset
-    attr_reader :id, :collection, :transcripts, :title
+    attr_reader :id, :collection, :transcripts, :title, :document
     attr_accessor :focus
-    def initialize(id: '', collection: '', transcript: false, title: false)
+    def initialize(id: '',
+                   collection: '',
+                   transcript: false,
+                   title: false,
+                   document: {})
       @id           = id
       @collection   = collection
       @transcripts  = [sanitize_field(transcript)].compact
       @title        = sanitize_field(title)
+      @document     = document
     end
 
     def thumbnail

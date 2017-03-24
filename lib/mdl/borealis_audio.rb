@@ -1,22 +1,48 @@
 module MDL
   class BorealisAudio <  BorealisAsset
-    def src
-      "http://reflections.mndigital.org/utils/getstream/collection/#{collection}/id/#{id}"
-    end
 
     def downloads
         []
     end
 
     def to_viewer
+      (document['kaltura_audio_ssi'] == '') ? player : playlist
+    end
+
+    def player
       {
-        "type" => "audio",
-        "thumbnail" => thumbnail,
-        "src" => src,
-        "transcript" => {
-            "label" => "Audio",
-            "texts" => transcripts
-        }
+        'type' => 'kaltura_audio',
+        'targetId' => 'kaltura_player_1489599711',
+        'wid' => '_1369852',
+        'uiconf_id' => 38708801,
+        'entry_id' => document['kaltura_audio_ssi'],
+        'transcript' => {
+          'texts' => transcripts,
+          'label' => 'Audio',
+        },
+        'height' => '70px',
+        'width' => '460px',
+        'thumbnail' => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/#{collection}/id/#{id}"
+      }
+    end
+
+    def playlist
+      {
+        'type' => 'kaltura_audio_playlist',
+        'targetId' => 'kaltura_player_1489684320',
+        'wid' => '_1369852',
+        'uiconf_id' => 38719361,
+        'flashvars' => {
+          'streamerType' => 'auto',
+          'playlistAPI.kpl0Id' => document['kaltura_audio_playlist_ssi'],
+        },
+        'transcript' => {
+          'texts' => transcripts,
+          'label' => 'Audio Playlist',
+        },
+        'height' => '395px',
+        'width' => '560px',
+        'thumbnail' => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/#{collection}/id/#{id}"
       }
     end
   end

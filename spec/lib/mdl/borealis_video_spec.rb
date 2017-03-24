@@ -18,11 +18,19 @@ module MDL
           "thumbnail"=>"/thumbnails/foo:21",
           "height"=>500,
           "width"=>500,
-          "src"=>"http://reflections.mndigital.org/utils/getstream/collection/foo/id/21",
           "transcript"=>{
             "label"=>"Video",
             "texts"=>["Video transcript here"]
-          }
+          },
+          "entry_id" => nil,
+          "height" => "315px",
+          "targetId" => "kaltura_player_1489614720",
+          "thumbnail" => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/foo/id/21",
+          "transcript" => {"texts"=>["Video transcript here"], "label"=>"Video"},
+          "type" => "kaltura_video",
+          "uiconf_id" => 38683631,
+          "wid" => "_1369852",
+          "width" => "560px",
         })
     end
   end

@@ -7,6 +7,7 @@ require_relative '../../../lib/mdl/borealis_open_seadragon.rb'
 require_relative '../../../lib/mdl/borealis_assets_to_viewers.rb'
 require_relative '../../../lib/mdl/borealis_asset_map.rb'
 require_relative '../../../lib/mdl/borealis_document.rb'
+require_relative '../../../lib/mdl/borealis_ppt.rb'
 module MDL
   describe BorealisDocument do
     let(:asset_klass) { double }
@@ -58,17 +59,7 @@ module MDL
               },
               "tocs"=>["Some thing"]
             },
-           "video" => {
-              "type"=>"video",
-              "thumbnail"=>"/thumbnails/foo:321",
-              "height"=>500,
-              "width"=>500,
-              "src"=>"http://reflections.mndigital.org/utils/getstream/collection/foo/id/321",
-              "transcript"=>{
-                "label"=>"Video",
-                "texts"=>["The text"]
-              }
-            }
+           "kaltura_video" => {"type"=>"kaltura_video", "targetId"=>"kaltura_player_1489614720", "wid"=>"_1369852", "uiconf_id"=>38683631, "transcript"=>{"texts"=>["The text"], "label"=>"Video"}, "entry_id"=>nil, "height"=>"315px", "width"=>"560px", "thumbnail"=>"https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/foo/id/321"}
           })
       end
     end

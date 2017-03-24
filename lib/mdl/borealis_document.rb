@@ -47,12 +47,14 @@ module MDL
       if !title
         asset_klass.new(id: id,
                         collection: collection,
-                        transcript: transcript)
+                        transcript: transcript,
+                        document: document)
       else
         asset_klass.new(id: id,
                         collection: collection,
                         transcript: transcript,
-                        title: title)
+                        title: title,
+                        document: document)
       end
     end
 
