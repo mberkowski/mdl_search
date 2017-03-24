@@ -11,21 +11,15 @@ module MDL
     it 'serializes itself for use in the viewer' do
       expect(video.to_viewer).to eq (
         {
-          "type"=>"audio",
-          "thumbnail"=>"/thumbnails/foo:21",
-          "transcript"=> {
-            "label"=>"Audio",
-            "texts"=> ["Audio transcript here"]
-          },
-          "flashvars" => {"streamerType"=>"auto", "playlistAPI.kpl0Id"=>nil},
-          "height" => "395px",
-          "targetId" => "kaltura_player_1489684320",
+          "entry_id" => nil,
+          "height" => "70px",
+          "targetId" => "kaltura_player_1489599711",
           "thumbnail" => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/foo/id/21",
-          "transcript" => {"texts"=>["Audio transcript here"], "label"=>"Audio Playlist"},
-          "type" => "kaltura_audio_playlist",
-          "uiconf_id" => 38719361,
+          "transcript" => {"texts"=>["Audio transcript here"], "label"=>"Audio"},
+          "type" => "kaltura_audio",
+          "uiconf_id" => 38708801,
           "wid" => "_1369852",
-          "width" => "560px"
+          "width" => "460px"
         }
       )
     end
