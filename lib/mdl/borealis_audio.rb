@@ -6,8 +6,10 @@ module MDL
     end
 
     def to_viewer
-      (document['kaltura_audio_playlist_ssi'] != '') ? playlist : player
+      (audio_playlist_id) ? playlist : player
     end
+
+    private
 
     def player
       {
@@ -15,7 +17,7 @@ module MDL
         'targetId' => 'kaltura_player',
         'wid' => '_1369852',
         'uiconf_id' => 38708801,
-        'entry_id' => document['kaltura_audio_ssi'],
+        'entry_id' => audio_id,
         'transcript' => {
           'texts' => transcripts,
           'label' => 'Audio',
@@ -34,7 +36,7 @@ module MDL
         'uiconf_id' => 38719361,
         'flashvars' => {
           'streamerType' => 'auto',
-          'playlistAPI.kpl0Id' => document['kaltura_audio_playlist_ssi'],
+          'playlistAPI.kpl0Id' => audio_playlist_id,
         },
         'transcript' => {
           'texts' => transcripts,
@@ -44,6 +46,14 @@ module MDL
         'width' => '560px',
         'thumbnail' => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/#{collection}/id/#{id}"
       }
+    end
+
+    def audio_playlist_id
+      document.fetch('kaltura_audio_playlist_ssi', false)
+    end
+
+    def audio_id
+      document.fetch('kaltura_audio_ssi', false)
     end
   end
 end

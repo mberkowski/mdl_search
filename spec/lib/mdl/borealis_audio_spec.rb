@@ -2,26 +2,64 @@ require_relative '../../../lib/mdl/borealis_asset.rb'
 require_relative '../../../lib/mdl/borealis_audio.rb'
 module MDL
   describe BorealisAudio do
-    let(:video) { MDL::BorealisAudio.new(collection: 'foo', id: 21, transcript: 'Audio transcript here') }
+    let(:audio_document) { {"kaltura_audio_ssi" => "foo_bar"} }
+    let(:audio_playlist_document) { {"kaltura_audio_playlist_ssi" => "foo_bar"} }
+    let(:playlist_with_audio) { {"kaltura_audio_playlist_ssi" => "foo_bar", "kaltura_audio_ssi" => "foo;bar;baz"} }
 
     it 'correctly identifies its downloads' do
-      expect(video.downloads).to eq []
+      expect(BorealisAudio.new.downloads).to eq []
     end
 
-    it 'serializes itself for use in the viewer' do
-      expect(video.to_viewer).to eq (
+    it 'produces a kaltura audio player hash' do
+      asset = BorealisAudio.new(document: audio_document, id: 1, collection: 'brah')
+      expect(asset.to_viewer).to eq (
         {
-          "entry_id" => nil,
+          "entry_id" => "foo_bar",
           "height" => "70px",
-          "targetId" => "kaltura_player_1489599711",
-          "thumbnail" => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/foo/id/21",
-          "transcript" => {"texts"=>["Audio transcript here"], "label"=>"Audio"},
+          "targetId" => "kaltura_player",
+          "thumbnail" => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/brah/id/1",
+          "transcript" => {"texts"=>[], "label"=>"Audio"},
           "type" => "kaltura_audio",
           "uiconf_id" => 38708801,
           "wid" => "_1369852",
           "width" => "460px"
         }
       )
+    end
+    it 'produces a kaltura audio playlist hash' do
+      asset = BorealisAudio.new(document: audio_playlist_document, id: 1, collection: 'brah')
+      expect(asset.to_viewer).to eq (
+        {
+          "flashvars" => {"streamerType"=>"auto", "playlistAPI.kpl0Id"=>"foo_bar"},
+           "height" => "395px",
+           "targetId" => "kaltura_player_playlist",
+           "thumbnail" => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/brah/id/1",
+           "transcript" => {"texts"=>[], "label"=>"Audio Playlist"},
+           "type" => "kaltura_audio_playlist",
+           "uiconf_id" => 38719361,
+           "wid" => "_1369852",
+           "width" => "560px"
+        }
+      )
+    end
+
+    describe "when audio ids and playlists are provided" do
+      it 'produces a kaltura audio playlist hash' do
+        asset = BorealisAudio.new(document: playlist_with_audio, id: 1, collection: 'brah')
+        expect(asset.to_viewer).to eq (
+          {
+            "flashvars" => {"streamerType"=>"auto", "playlistAPI.kpl0Id"=>"foo_bar"},
+             "height" => "395px",
+             "targetId" => "kaltura_player_playlist",
+             "thumbnail" => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/brah/id/1",
+             "transcript" => {"texts"=>[], "label"=>"Audio Playlist"},
+             "type" => "kaltura_audio_playlist",
+             "uiconf_id" => 38719361,
+             "wid" => "_1369852",
+             "width" => "560px"
+          }
+        )
+      end
     end
   end
 end
