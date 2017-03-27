@@ -6,7 +6,7 @@ module MDL
     end
 
     def to_viewer
-      (document['kaltura_audio_ssi'] != '') ? player : playlist
+      (document['kaltura_audio_playlist_ssi'] != '') ? playlist : player
     end
 
     def player
