@@ -49,7 +49,7 @@ module MDL
     end
 
     def facet_url(key, val, facet = false)
-      (facet && val) ? URI.escape("/?f[#{key}][]=#{val}") : nil
+      (facet && val) ? URI.escape("/catalog?f[#{key}][]=#{val}") : nil
     end
 
     def details_fields
