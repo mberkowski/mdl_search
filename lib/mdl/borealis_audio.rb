@@ -12,7 +12,7 @@ module MDL
     def player
       {
         'type' => 'kaltura_audio',
-        'targetId' => 'kaltura_player_1489599711',
+        'targetId' => 'kaltura_player',
         'wid' => '_1369852',
         'uiconf_id' => 38708801,
         'entry_id' => document['kaltura_audio_ssi'],
@@ -29,7 +29,7 @@ module MDL
     def playlist
       {
         'type' => 'kaltura_audio_playlist',
-        'targetId' => 'kaltura_player_1489684320',
+        'targetId' => 'kaltura_player_playlist',
         'wid' => '_1369852',
         'uiconf_id' => 38719361,
         'flashvars' => {
