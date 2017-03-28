@@ -8,7 +8,7 @@ export default class DetailsField extends React.Component {
 
   render() {
     let { field_values, label, delimiter} = this.props
-    const field_class = `detail-field-${label.replace(/\s/g, '').toLowerCase()}}`
+    const field_class = `detail-field-${label.replace(/\s/g, '').toLowerCase()}`
     return (
              <span className={field_class}>
                 <dt className="field-label">

@@ -32,7 +32,7 @@ var App = _react2.default.createClass({
         field_values: [{ text: 'Daniel Suarez' }]
       }, {
         label: 'Fiscal Sponsor',
-        field_values: [{ text: 'Grant provided to the Minnesota Digital Library Coalition through the <a href="http://www.ala.org/advocacy/advleg/federallegislation/lsta">Library Services and Technology Act (LSTA)</a> and the State Library Services and School Technology unit of the Minnesota Department of Education' }]
+        field_values: [{ text: 'Grant provided to the Minnesota Digital Library Coalition through the Library Services and Technology Act (LSTA) and the State Library Services and School Technology unit of the Minnesota Department of Education' }]
       }]
     }, {
       focus: false,

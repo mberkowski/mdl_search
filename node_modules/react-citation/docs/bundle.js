@@ -5754,7 +5754,7 @@ var DetailsField = function (_React$Component) {
           label = _props.label,
           delimiter = _props.delimiter;
 
-      var field_class = 'detail-field-' + label.replace(/\s/g, '').toLowerCase() + '}';
+      var field_class = 'detail-field-' + label.replace(/\s/g, '').toLowerCase();
       return _react2.default.createElement(
         'span',
         { className: field_class },
