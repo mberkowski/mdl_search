@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'mdl-fonts';
-  src: font-url('mdl-fonts.eot?48583313');
-  src: font-url('mdl-fonts.eot?48583313#iefix') format('embedded-opentype'),
-       font-url('mdl-fonts.woff2?48583313') format('woff2'),
-       font-url('mdl-fonts.woff?48583313') format('woff'),
-       font-url('mdl-fonts.ttf?48583313') format('truetype'),
-       font-url('mdl-fonts.svg?48583313#mdl-fonts') format('svg');
+  src: font-url('mdl-fonts.eot?58641268');
+  src: font-url('mdl-fonts.eot?58641268#iefix') format('embedded-opentype'),
+       font-url('mdl-fonts.woff2?58641268') format('woff2'),
+       font-url('mdl-fonts.woff?58641268') format('woff'),
+       font-url('mdl-fonts.ttf?58641268') format('truetype'),
+       font-url('mdl-fonts.svg?58641268#mdl-fonts') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'mdl-fonts';
-    src: font-url('mdl-fonts.svg?48583313#mdl-fonts') format('svg');
+    src: font-url('mdl-fonts.svg?58641268#mdl-fonts') format('svg');
   }
 }
 */
@@ -62,6 +62,8 @@
 %icon-object:before { @extend %icon-base; content: '\e804'; } /* '' */
 %icon-cog-alt:before { @extend %icon-base; content: '\e805'; } /* '' */
 %icon-sheet-music:before { @extend %icon-base; content: '\e806'; } /* '' */
+%icon-link:before { @extend %icon-base; content: '\e807'; } /* '' */
+%icon-noun_627189:before { @extend %icon-base; content: '\e808'; } /* '' */
 %icon-text:before { @extend %icon-base; content: '\f0f6'; } /* '' */
 %icon-archive:before { @extend %icon-base; content: '\f187'; } /* '' */
 %icon-bank:before { @extend %icon-base; content: '\f19c'; } /* '' */
@@ -74,6 +76,8 @@
 .icon-object { @extend %icon-object; }
 .icon-cog-alt { @extend %icon-cog-alt; }
 .icon-sheet-music { @extend %icon-sheet-music; }
+.icon-link { @extend %icon-link; }
+.icon-noun_627189 { @extend %icon-noun_627189; }
 .icon-text { @extend %icon-text; }
 .icon-archive { @extend %icon-archive; }
 .icon-bank { @extend %icon-bank; }
