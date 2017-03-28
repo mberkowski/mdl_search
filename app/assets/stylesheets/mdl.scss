@@ -390,6 +390,10 @@ a.remove:hover {
 	text-transform: uppercase;
 }
 
+.facet-label {
+	color: #231f20;
+}
+
 .facet-values {
 	table-layout: auto;
 }
@@ -411,7 +415,7 @@ a.remove:hover {
 .constraints-container {
 	background-color: #ecedf0;
 	border-color: #d3d4d7;
-	margin: 20px 0;
+	margin: 10px 0 20px;
 }
 
 #sortAndPerPage {
