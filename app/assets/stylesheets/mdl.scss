@@ -184,6 +184,12 @@ body {
     font-family: 'Muli', helvetica, arial, sans-serif;
 }
 
+@media (min-width: 1450px) {
+	.blacklight-catalog-show .container {
+		width: 1170px;
+	}
+}
+
 .blacklight-catalog .container {
 	margin: 0 auto;
 	/* width: 96%; */
