@@ -32,9 +32,17 @@ module MdlCatalogViewHelper
     document['id'].split(':')
   end
 
-  def facet_links(key, values)
-    raw (values.map do |item|
-      link_to item, URI.escape("/catalog/?f[#{key}][]=#{item}")
-    end.join(" &nbsp;&bull;&nbsp; "))
+  def facet_links(field, values)
+    raw (values.map do |text|
+      "#{facet_link(text, field)} (#{field_count(field, text)})"
+    end.sort.join(" &nbsp;&bull;&nbsp; "))
+  end
+
+  def field_count(field, text)
+    "#{record_count(q: "#{field}:\"#{text}\"")}"
+  end
+
+  def facet_link(text, field)
+    link_to text, URI.escape("/catalog/?f[#{field}][]=#{text}")
   end
 end

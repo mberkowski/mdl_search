@@ -17,9 +17,9 @@ module MdlBlacklightHelper
     link_to(raw('<div class="icon-json pull-right"></div>'), "#{current_search}.json")
   end
 
-  def record_count
+  def record_count(q: '*:*')
     number_with_delimiter(Blacklight.default_index.connection.get('select',
-      :params => { :q => '*:*',
+      :params => { :q => q,
         :defType => 'edismax',
         :fl => '',
         :rows => 1
