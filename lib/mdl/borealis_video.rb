@@ -12,7 +12,7 @@ module MDL
     def to_viewer
       {
         'type' => 'kaltura_video',
-        'targetId' => 'kaltura_player_1489614720',
+        'targetId' => 'kaltura_player_video',
         'wid' => '_1369852',
         'uiconf_id' => 38683631,
         'transcript' => {
@@ -24,6 +24,12 @@ module MDL
         'width' => '560px',
         'thumbnail' => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/#{collection}/id/#{id}"
       }
+    end
+
+    private
+
+    def video_id
+      document['kaltura_video_ssi']
     end
 
   end

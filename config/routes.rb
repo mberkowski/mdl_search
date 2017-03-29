@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
 
+  root to: "catalog#home"
+
+  get '/catalog', to: redirect('/'), constraints: { query_string: /^$/ }
+
   get ":page" => "pages#show", constraints: lambda { |request|
     request.params[:page] != 'catalog' && request.params[:page] != 'sidekiq'
   }
@@ -11,14 +15,13 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-  root to: "catalog#home"
   concern :searchable, Blacklight::Routes::Searchable.new
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
   end
 
-    concern :exportable, Blacklight::Routes::Exportable.new
+  concern :exportable, Blacklight::Routes::Exportable.new
 
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
     concerns :exportable
