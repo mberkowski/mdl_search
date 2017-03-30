@@ -24,7 +24,7 @@ module MDL
         },
         'height' => '70px',
         'width' => '460px',
-        'thumbnail' => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/#{collection}/id/#{id}"
+        'thumbnail' => "https://d1kue88aredzk1.cloudfront.net/audio.jpg"
       }
     end
 
@@ -44,7 +44,7 @@ module MDL
         },
         'height' => '395px',
         'width' => '560px',
-        'thumbnail' => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/#{collection}/id/#{id}"
+        'thumbnail' => "https://d1kue88aredzk1.cloudfront.net/audio.jpg"
       }
     end
 

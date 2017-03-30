@@ -22,7 +22,7 @@ module MDL
         'entry_id' => document['kaltura_video_ssi'],
         'height' => '315px',
         'width' => '560px',
-        'thumbnail' => "https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/#{collection}/id/#{id}"
+        'thumbnail' => "https://d1kue88aredzk1.cloudfront.net/video.jpg"
       }
     end
 

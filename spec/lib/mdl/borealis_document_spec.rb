@@ -59,7 +59,7 @@ module MDL
               },
               "tocs"=>["Some thing"]
             },
-           "kaltura_video" => {"type"=>"kaltura_video", "targetId"=>"kaltura_player_1489614720", "wid"=>"_1369852", "uiconf_id"=>38683631, "transcript"=>{"texts"=>["The text"], "label"=>"Video"}, "entry_id"=>nil, "height"=>"315px", "width"=>"560px", "thumbnail"=>"https://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/foo/id/321"}
+           "kaltura_video" => {"type"=>"kaltura_video", "targetId"=>"kaltura_player_video", "wid"=>"_1369852", "uiconf_id"=>38683631, "transcript"=>{"texts"=>["The text"], "label"=>"Video"}, "entry_id"=>nil, "height"=>"315px", "width"=>"560px", "thumbnail"=>"https://d1kue88aredzk1.cloudfront.net/video.jpg"}
           })
       end
     end
