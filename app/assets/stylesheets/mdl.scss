@@ -560,6 +560,24 @@ dt, dd {
 	border: 1px solid #d3d4d7;
 	margin-bottom: 0;
 }
+
+.detail-field-collectiondescription > .field-label {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.detail-field-collectiondescription > .field-definition {
+	background: #ecedf0;
+	border: 1px solid #d3d4d7;
+	border-radius: 4px;
+	padding: 8px;
+}
 /* End item page styles */
 
 /* Footer styles */
