@@ -310,15 +310,12 @@ a.remove:hover {
 	text-decoration: none;
 }
 
-.nav>li>a:hover,
-.nav>li>a:focus {
+.nav>li>a:hover, .nav>li>a:focus {
 	background-color: #ecedf0;
 	text-decoration: none;
 }
 
-.nav-pills>li.active>a,
-.nav-pills>li.active>a:hover,
-.nav-pills>li.active>a:focus {
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus, .nav-pills>li>a.active, .nav-pills>li>a.active:hover, .nav-pills>li>a.active:focus {
 	background-color: #0e76bc;
 	color: #fff;
 	text-decoration: none;
@@ -510,6 +507,10 @@ h3.document-title-heading {
 	padding: 0 !important;
 }
 
+.image-nav {
+	margin: 12px 0;
+}
+
 .image-nav ul {
 	margin-left: 0 !important;
 }
@@ -518,13 +519,18 @@ h3.document-title-heading {
 	padding: 0;
 }
 
+.kaltura-player {
+	padding-top: 16px;
+}
+
 .citation {
 	margin: 0;
 	padding: 0;
 }
 
 .citation-navigation {
-	border-top: 1px solid #d3d4d7;
+	border-top: none;
+	padding-top: 16px;
 }
 
 .citation h3 {
@@ -559,6 +565,10 @@ dt, dd {
 .thumbnail {
 	border: 1px solid #d3d4d7;
 	margin-bottom: 0;
+}
+
+.borealis-thumbnail .active {
+	border: 1px solid #0e76bc;
 }
 
 .detail-field-collectiondescription > .field-label {
