@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://reflections.mndigital.org/utils/getthumbnail/collection/mpls/id/13128
+    uri: http://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/mpls/id/13128
     body:
       encoding: US-ASCII
       string: ''
@@ -14,20 +14,22 @@ http_interactions:
       User-Agent:
       - Ruby
       Host:
-      - reflections.mndigital.org
+      - cdm16022.contentdm.oclc.org
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 28 Mar 2016 17:02:11 GMT
+      - Fri, 31 Mar 2017 18:02:35 GMT
       Server:
       - Apache
+      X-Powered-By:
+      - PHP/5.6.5
       Set-Cookie:
-      - PHPSESSID=81hlhl47m5ffs8ejqmuaelbb57; path=/; HttpOnly
+      - PHPSESSID=acs205aqp9dfaijg1gsqj7fto6; path=/; HttpOnly
       Expires:
-      - Mon, 11 Apr 2016 17:02:11 GMT
+      - Fri, 14 Apr 2017 18:02:36 GMT
       Cache-Control:
       - maxage=1209600
       Pragma:
@@ -97,10 +99,10 @@ http_interactions:
         RD/z7S/mKPZMOdDv+EngIx9nm/Sj2TDnRQ1jV0v7QQpE6fOGyxHYH/GnGHK7
         kyldWP/Z
     http_version: 
-  recorded_at: Mon, 28 Mar 2016 17:02:11 GMT
+  recorded_at: Fri, 31 Mar 2017 18:02:36 GMT
 - request:
     method: get
-    uri: http://reflections.mndigital.org/utils/getthumbnail/collection/mpls/id/13128
+    uri: http://cdm16022.contentdm.oclc.org/utils/getthumbnail/collection/mpls/id/13128
     body:
       encoding: US-ASCII
       string: ''
@@ -112,20 +114,22 @@ http_interactions:
       User-Agent:
       - Ruby
       Host:
-      - reflections.mndigital.org
+      - cdm16022.contentdm.oclc.org
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 28 Mar 2016 17:02:11 GMT
+      - Fri, 31 Mar 2017 18:02:36 GMT
       Server:
       - Apache
+      X-Powered-By:
+      - PHP/5.6.5
       Set-Cookie:
-      - PHPSESSID=4timj9f9op4r0gulvfgfjnpqq1; path=/; HttpOnly
+      - PHPSESSID=sq0u05n70foc4je6bdb68vofu5; path=/; HttpOnly
       Expires:
-      - Mon, 11 Apr 2016 17:02:11 GMT
+      - Fri, 14 Apr 2017 18:02:36 GMT
       Cache-Control:
       - maxage=1209600
       Pragma:
@@ -195,5 +199,5 @@ http_interactions:
         RD/z7S/mKPZMOdDv+EngIx9nm/Sj2TDnRQ1jV0v7QQpE6fOGyxHYH/GnGHK7
         kyldWP/Z
     http_version: 
-  recorded_at: Mon, 28 Mar 2016 17:02:11 GMT
-recorded_with: VCR 3.0.1
+  recorded_at: Fri, 31 Mar 2017 18:02:36 GMT
+recorded_with: VCR 3.0.3

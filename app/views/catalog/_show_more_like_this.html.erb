@@ -1,3 +1,7 @@
 <li class="more_like_this_document">
-  <span class="mlt_title"><%= link_to image_tag(thumbnail_path("#{asset.collection}:#{asset.id}")), "/catalog/#{asset.collection}:#{asset.id}", alt: asset.title, title: asset.title %></span>
+  <span class="mlt_title"><%= link_to image_tag(thumbnail_path("#{asset.collection}:#{asset.id}", type: asset.type)),
+                                                "/catalog/#{asset.collection}:#{asset.id}",
+                                                alt: asset.title,
+                                                title: asset.title %>
+                                                </span>
 </li>

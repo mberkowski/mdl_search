@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
   get 'contentdm-images' => 'contentdm_images#show'
   get 'contentdm-images/info' => 'contentdm_images#info'
-  get 'thumbnails/:id' => 'thumbnails#show', as: 'thumbnail'
+  get 'thumbnails/:id/(:type)' => 'thumbnails#show', as: 'thumbnail'
 
 
   devise_for :users, skip: [:logout]

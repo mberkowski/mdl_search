@@ -1,13 +1,13 @@
 # frozen_string_literal: true
-class SolrDocument 
+class SolrDocument
 
   include Blacklight::Solr::Document
 
   # self.unique_key = 'id'
-  
+
   # Email uses the semantic field mappings below to generate the body of an email.
   SolrDocument.use_extension( Blacklight::Document::Email )
-  
+
   # SMS uses the semantic field mappings below to generate the body of an SMS email.
   SolrDocument.use_extension( Blacklight::Document::Sms )
 
@@ -53,11 +53,12 @@ class SolrDocument
   end
 
   def mlt_assets(mlt)
-    mlt.inject([]) do |sum, v| 
+    mlt.inject([]) do |sum, v|
       collection, id = v['id'].split(':')
-      sum <<  MDL::Thumbnail.new(id: id, 
+      sum <<  MDL::Thumbnail.new(id: id,
                                  collection: collection,
-                                 title: v['title_ssi'])
+                                 title: v['title_ssi'],
+                                 type: v['type_ssi'])
     end
   end
 end
