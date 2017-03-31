@@ -189,6 +189,16 @@ body {
     font-family: 'Muli', helvetica, arial, sans-serif;
 }
 
+@media (min-width: 992px) {
+	#content {
+		margin-top: 0;
+	}
+	
+	.blacklight-catalog-home .facet-content {
+		min-height: 350px;
+	}
+}
+
 @media (min-width: 1450px) {
 	.blacklight-catalog-show .container {
 		width: 1170px;
@@ -595,7 +605,7 @@ dt, dd {
 	background: #30aed0;
 	border-top: none;
 	margin: 24px auto 0;
-	padding: 20px 44px;
+	padding: 20px 0;
 }
 
 .footer h2 {
