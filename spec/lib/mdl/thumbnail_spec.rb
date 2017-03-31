@@ -21,7 +21,7 @@ describe MDL::Thumbnail do
 
   it 'returns a video thumbnail url' do
     thumb = MDL::Thumbnail.new(collection:'mpls', id: '13128', cache_dir: tmpdir, type: 'Moving Image')
-    expect(thumb.thumbnail_url).to eq 'https://d1kue88aredzk1.cloudfront.net/video.jpg'
+    expect(thumb.thumbnail_url).to eq 'https://d1kue88aredzk1.cloudfront.net/video-1.png'
   end
 
   it 'returns its data' do
