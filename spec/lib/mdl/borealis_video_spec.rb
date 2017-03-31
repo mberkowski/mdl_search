@@ -25,7 +25,7 @@ module MDL
           "entry_id" => nil,
           "height" => "315px",
           "targetId" => "kaltura_player_video",
-          "thumbnail" => "https://d1kue88aredzk1.cloudfront.net/video.jpg",
+          "thumbnail" => "https://d1kue88aredzk1.cloudfront.net/video-1.png",
           "transcript" => {"texts"=>["Video transcript here"], "label"=>"Video"},
           "type" => "kaltura_video",
           "uiconf_id" => 38683631,

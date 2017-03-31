@@ -17,7 +17,7 @@ module MDL
 
     it 'produces a configuration for the borealis player' do
       expect(MDL::BorealisAssetsToViewers.new(assets: assets).viewers).to eq ({
-        "kaltura_video" => {"type"=>"kaltura_video", "targetId"=>"kaltura_player_video", "wid"=>"_1369852", "uiconf_id"=>38683631, "transcript"=>{"texts"=>["Video One"], "label"=>"Video"}, "entry_id"=>nil, "height"=>"315px", "width"=>"560px", "thumbnail"=>"https://d1kue88aredzk1.cloudfront.net/video.jpg"},
+        "kaltura_video" => {"type"=>"kaltura_video", "targetId"=>"kaltura_player_video", "wid"=>"_1369852", "uiconf_id"=>38683631, "transcript"=>{"texts"=>["Video One"], "label"=>"Video"}, "entry_id"=>nil, "height"=>"315px", "width"=>"560px", "thumbnail"=>"https://d1kue88aredzk1.cloudfront.net/video-1.png"},
         "image" => {
           "type"=>"image",
           "thumbnail"=>"/thumbnails/foo:1",
