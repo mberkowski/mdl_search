@@ -28,6 +28,7 @@ module MDL
 
     def mapping
       {
+        'image/jpeg' => image_klass,
         'image/jp2' => image_klass,
         'tif' => image_klass,
         'jp2' => image_klass,
