@@ -18,6 +18,10 @@ module MDL
       "/thumbnails/#{collection}:#{id}"
     end
 
+    def iiif_compatable?
+      false
+    end
+
     private
 
     def sanitize_field(field)
