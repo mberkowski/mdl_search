@@ -194,8 +194,8 @@ body {
 		margin-top: 0;
 	}
 	
-	.blacklight-catalog-home .facet-content {
-		min-height: 350px;
+	.blacklight-catalog-home > .facet-content {
+		min-height: 0 !important;
 	}
 }
 
