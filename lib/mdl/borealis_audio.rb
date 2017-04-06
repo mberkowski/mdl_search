@@ -22,7 +22,7 @@ module MDL
           'texts' => transcripts,
           'label' => 'Audio',
         },
-        'height' => '70px',
+        'height' => '125px',
         'width' => '460px',
         'thumbnail' => "https://d1kue88aredzk1.cloudfront.net/audio-3.png"
       }
