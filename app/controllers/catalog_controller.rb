@@ -100,6 +100,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'topic_ssim', label: 'Topic', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
     config.add_facet_field 'keyword_ssim', label: 'Keyword', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
     config.add_facet_field 'contributing_organization_ssi', label: 'Contributing Institution', index_range: 'A'..'Z', collapse: false, limit: 5, index: true
+    config.add_facet_field 'placename_ssim', label: 'Location', index_range: 'A'..'Z', collapse: false, limit: 5, index: true
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
