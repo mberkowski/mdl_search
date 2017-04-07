@@ -34,7 +34,7 @@ module MdlBlacklightHelper
         :fl => 'coordinates_llsi, title_ssi, id',
         :fq => '{!bbox sfield=coordinates_llsi}',
         :defType => 'edismax',
-        :rows => 100
+        :rows => 1000
       })['response']['docs']
     rescue StandardError => e
       Rails.logger.error("Nearby Error: #{e}")
