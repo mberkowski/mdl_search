@@ -194,7 +194,7 @@ body {
 		margin-top: 0;
 	}
 	
-	.blacklight-catalog-home > .facet-content {
+	.blacklight-catalog-home .facet-content {
 		min-height: 0 !important;
 	}
 }
@@ -464,6 +464,7 @@ a.remove:hover {
 
 h3.document-title-heading {
 	font-weight: bold !important;
+	line-height: 1.5 !important;
 	padding-left: 0;
 }
 
