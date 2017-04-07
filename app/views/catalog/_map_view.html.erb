@@ -1,9 +1,10 @@
+<% # Yes, this is heinous - doing a quick demo for the team, will refactor on MONDAY!! %>
 <% if @document['coordinates_llsi']  %>
   <div class="col-sm-12">
     <div id="full_record_map"></div>
     <script>
       var map = L.map('full_record_map').setView([<%= @document['coordinates_llsi'] %>], 10);
-      <% nearby(q: '*:*', pt: @document['coordinates_llsi'], d: 100).each do |near| %>
+      <% nearby(q: '*:*', pt: @document['coordinates_llsi'], d: 20).each do |near| %>
         L.marker([<%= near['coordinates_llsi'] %>])
           .bindPopup('<%= thumbnail_link(near) %>')
           .addTo(map);
