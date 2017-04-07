@@ -1,0 +1,22 @@
+<% if @document['coordinates_llsi']  %>
+  <div class="col-sm-12">
+    <div id="full_record_map"></div>
+    <script>
+      var map = L.map('full_record_map').setView([<%= @document['coordinates_llsi'] %>], 10);
+      <% nearby(q: '*:*', pt: @document['coordinates_llsi'], d: 100).each do |near| %>
+        L.marker([<%= near['coordinates_llsi'] %>])
+          .bindPopup('<%= thumbnail_link(near) %>')
+          .addTo(map);
+      <% end %>
+      L.marker([<%= @document['coordinates_llsi'] %>]).addTo(map)
+        .bindPopup('<%= thumbnail_link(@document) %>').openPopup();
+
+      L.tileLayer('https://api.mapbox.com/styles/v1/libsys/{id}/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
+          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          center: [<%= @document['coordinates_llsi'] %>],
+          id: 'cj17xqnh8003j2rquui5gm3ar',
+          accessToken: 'pk.eyJ1IjoibGlic3lzIiwiYSI6Iks3SXpZUTQifQ.mVUUXOBDusaTEnEsSO3yAQ'
+      }).addTo(map);
+    </script>
+  </div>
+<% end %>
