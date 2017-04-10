@@ -15,8 +15,4 @@
 
 <%= json_page_link %>
 
-<% nearby(q: '*:*', pt: @document['coordinates_llsi'], d: 100).each do |near| %>
-  <% near['coordinates_llsi'] %>
-<% end %>
-
- <%= render partial: 'map_view', locals: { document: @document } %>
+<%= render partial: 'map_view', locals: { document: @document } %>
