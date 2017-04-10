@@ -1,0 +1,44 @@
+     <%
+      # id = document['id'].split(':').last
+      # collection = document['id'].split(':').first
+
+
+      # thumbnail = MDL::Thumbnail.new(collection: collection, id: id,
+      #                                          jumbo: true)
+
+
+      # asset = MDL::BorealisAssetMap.new(format_field: document['format_ssi']).map
+
+      # url = if asset.new.iiif_compatable?
+      #   thumbnail.jumbo_url
+      # else
+      #   thumbnail.thumbnail_url
+      # end
+
+
+       # Has Compound Object?
+
+       ## Yes
+       ### Has Image
+       #### Yes
+       ##### Return IIIF URL
+       #### No
+       ##### Return Thumbnail URL
+
+       ## No
+       ### Is Image
+       #### Yes
+       ##### Return IIIF URL
+       #### No
+       ##### Return Thumbnail URL
+
+       url = ''
+
+      %>
+
+
+<div class="gallery-large-result">
+    <img style="display: inline-block" src="<%= url %>" />
+<!--       <% document['title_ssi'] = truncate(document['title_ssi'], length: 50) %>
+      <%=  link_to_document document %> -->
+</div>
