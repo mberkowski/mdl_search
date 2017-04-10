@@ -23,7 +23,7 @@ module MDL
           'label' => 'Audio',
         },
         'height' => '125px',
-        'width' => '460px',
+        'width' => '560px',
         'thumbnail' => "https://d1kue88aredzk1.cloudfront.net/audio-3.png"
       }
     end
