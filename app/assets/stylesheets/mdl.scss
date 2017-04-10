@@ -1,3 +1,7 @@
+.logos a {
+  text-decoration: none;
+}
+
 .icon-json {
   font-size: 3em;
   margin-top: 15px;
@@ -193,7 +197,7 @@ body {
 	#content {
 		margin-top: 0;
 	}
-	
+
 	.blacklight-catalog-home .facet-content {
 		min-height: 0 !important;
 	}
