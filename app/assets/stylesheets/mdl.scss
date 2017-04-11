@@ -200,6 +200,11 @@ body {
 		margin: 0 8px;
 		width: auto;
 	}
+	
+	.dl-horizontal dd {
+		margin-left: 0;
+		margin-bottom: 16px;
+	}
 }
 
 @media (max-width: 1199px) {
@@ -272,7 +277,7 @@ a.remove:hover {
 
 .navbar-form {
 	margin: 8px 0 !important;
-	padding: 0 !important;
+	padding: 25px 0 0 0 !important;
 }
 
 .input-group-addon {
