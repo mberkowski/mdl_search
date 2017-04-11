@@ -205,6 +205,14 @@ body {
 		margin-left: 0;
 		margin-bottom: 16px;
 	}
+	
+	#sidebar {
+		margin-top: 20px;
+	}
+	
+	#facets .top-panel-heading {
+		border: none;
+	}
 }
 
 @media (max-width: 1199px) {
