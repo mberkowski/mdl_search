@@ -195,11 +195,27 @@ body {
     font-family: 'Muli', helvetica, arial, sans-serif;
 }
 
-@media (max-width: 1199px) {
-	#content {
-		margin-top: 0;
+@media (max-width: 799px) {
+	.home-wrapper {
+		margin: 0 8px;
+		width: auto;
 	}
+	
+	.dl-horizontal dd {
+		margin-left: 0;
+		margin-bottom: 16px;
+	}
+	
+	#sidebar {
+		margin-top: 20px;
+	}
+	
+	#facets .top-panel-heading {
+		border: none;
+	}
+}
 
+@media (max-width: 1199px) {
 	.blacklight-catalog-home .facet-content {
 		min-height: 0 !important;
 	}
@@ -265,6 +281,11 @@ a.remove:hover {
 
 #search-navbar .input-group {
 	width: 60%;
+}
+
+.navbar-form {
+	margin: 8px 0 !important;
+	padding: 25px 0 0 0 !important;
 }
 
 .input-group-addon {
@@ -399,6 +420,10 @@ a.remove:hover {
 .home-desc {
 	margin: 0 auto;
 	text-align: center;
+	width: auto;
+}
+
+.input-group-btn {
 	width: auto;
 }
 
