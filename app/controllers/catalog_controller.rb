@@ -3,23 +3,10 @@ class CatalogController < ApplicationController
   caches_page :home
   include Blacklight::Catalog
 
-  def home
-    (@response, @document_list) = search_results(params)
-    render :mdl_home
-  end
-
-
   # Override blacklights limit param for facets.
   # See: def solr_facet_params - blacklight-5.7.2/lib/blacklight/solr_helper.rb
   def facet_list_limit
     (params[:limit]) ? params[:limit] : 20
-  end
-
-
-  # Skip the default catalog home page
-  def index
-    redirect_to '/' if !has_search_parameters?
-    super
   end
 
   configure_blacklight do |config|

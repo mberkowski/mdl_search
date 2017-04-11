@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
 
-  root to: "catalog#home"
+  root to: "catalog#index"
 
   get '/catalog', to: redirect('/'), constraints: { query_string: /^$/ }
 
