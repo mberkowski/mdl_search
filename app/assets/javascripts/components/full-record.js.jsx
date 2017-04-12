@@ -15,6 +15,7 @@ export default class FullRecord extends React.Component {
                     <Borealis base_path={this.props.base_path}
                               config={this.props.borealis_config } />
                   </div>
+                  <div className="addthis_inline_share_toolbox"></div>
                   <div className="row citation">
                     <ReactCitation items={this.props.citation_config } />
                   </div>
