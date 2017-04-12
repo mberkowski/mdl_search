@@ -111,27 +111,8 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field 'title_ssi', label: 'Title'
-    config.add_show_field 'creator_ssim', label: 'Creator'
-    config.add_show_field 'description_ts', label: 'Description'
-    config.add_show_field 'dat_ssi', label: 'Date of Creation'
-    config.add_show_field 'dimensions_ssi', label: 'Dimensions'
-    config.add_show_field 'topic_ssim', label: 'Minnesota Reflections Topic'
-    config.add_show_field 'type_ssi', label: 'Item Type'
-    config.add_show_field 'physical_format_ssi', label: 'Item Physical Format'
-    config.add_show_field 'formal_subject_ssim', label: 'Formal Subject Headings'
-    config.add_show_field 'subject_ssim', label: 'Locally Assigned Subject Headings'
-    config.add_show_field 'city_ssi', label: 'Minnesota City or Township'
-    config.add_show_field 'county_ssim', label: 'Minnesota County'
-    config.add_show_field 'state_ssi', label: 'State or Province'
-    config.add_show_field 'country_ssi', label: 'Country'
-    config.add_show_field 'collection_name_ssi', label: 'Collection Name'
-    config.add_show_field 'contributing_organization_ssi', label: 'Contributing Organization'
-    config.add_show_field 'contact_information_ssi', label: 'Contact Information'
-    config.add_show_field 'rights_ssi', label: 'Rights Management'
-    config.add_show_field 'local_identifier_ssi', label: 'Local Identifier'
-    config.add_show_field 'identifier_ssi', label: 'MDL Identifier'
-    config.add_show_field 'fiscal_sponsor_ssi', label: 'Fiscal Sponsor'
+    # config.add_show_field 'title_ssi', label: 'Title'
+
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
