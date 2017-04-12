@@ -1,142 +1,3 @@
-.footer {
-  .logos a {
-    text-decoration: none;
-  }
-}
-
-.icon-json {
-  font-size: 3em;
-  margin-top: 15px;
-}
-
-#header-navbar {
-  background-color: #ecedf0;
-  .navbar-brand {
-    width: 206px;
-    height: 140px;
-    background: transparent url("http://mndigital.org/files/images/reflections/reflections-logo-new.png") no-repeat top left;
-  }
-}
-
-@media (min-width: 768px) {
-  .dl-horizontal dt {
-    float: left;
-    width: 240px;
-    clear: left;
-    text-align: right;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-right: 10px;
-  }
-  .dl-horizontal dd {
-    margin-left: 180px;
-  }
-}
-
-.more-like-this {
-  margin-top: 50px;
-  .panel-body {
-    text-align: center;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  li {
-    display: inline-block;
-  }
-  img {
-    height: 75px;
-    width: 75px;
-    margin: 5px;
-  }
-}
-
-#search-navbar {
-  .navbar-brand {  /* The main logo image for the Blacklight instance */
-    width: 195px;
-    height: 90px;
-    background:transparent image_url('logo.small.png') no-repeat top left;
-    display: inline-block;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    padding-right:0;
-    margin-right: 0;
-    margin-left: 10px;
-    text-align: right;
-    margin-top: 10px;
-  }
-}
-
-
-#search-navbar {
-	.search-query-form {
-		border: 0;
-		padding-top: 25px;
-		padding-left:15px;
-	}
-	z-index: 100000;
-}
-
-#main-container,
-#content {
-	margin-top: 60px;
-}
-
-.ppt-download img {
-  margin: 0 10px 15px 0;
-}
-
-.facet-label {
-  color: #0e76bc;
-}
-
-.facet-label.selected {
-  color: #3c763d;
-}
-
-#home-search {
-  width: 600px;
-}
-
-.home-desc {
-  width: 600px;
-  text-align: left;
-  margin-left: 5px;
-}
-
-.home-wrapper {
-  .search_field {
-    display: none;
-  }
-  .input-group-addon {
-    display: none;
-  }
-  .search_q {
-    width: 500px !important;
-    border: 1px solid #60994D;
-    border-top-left-radius: 5px !important;
-    border-bottom-left-radius: 5px !important;
-  }
-
-  .navbar-form {
-    padding: 0;
-  }
-
-  width: 625px;
-  margin: 0 auto;
-  background-color: white;
-  padding: 15px;
- -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  z-index: 2;
-  position: relative;
-}
-
 .home-panel {
   position: relative;
   padding-top: 50px;
@@ -153,11 +14,6 @@
   border-radius: 5px;
 }
 
-.blacklight-catalog-home {
-  .facet-content {
-    min-height: 245px;
-  }
-}
 .home-panel:after {
   content: " ";
   z-index: 1;
@@ -201,17 +57,29 @@ body {
 		width: auto;
 	}
 	
-	.dl-horizontal dd {
-		margin-left: 0;
-		margin-bottom: 16px;
-	}
+	/*.dl-horizontal dd {
+		margin-left: 180px !important;
+		margin-bottom: 16px !important;
+	} */
 	
 	#sidebar {
-		margin-top: 20px;
+		margin-top: 20px !important;
 	}
-	
-	#facets .top-panel-heading {
-		border: none;
+}
+
+@media (min-width: 800px) {
+	.dl-horizontal dt {
+		float: left;
+		width: 240px;
+		clear: left;
+		text-align: right;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		margin-right: 10px;
+	}
+	.dl-horizontal dd {
+		margin-left: 180px;
 	}
 }
 
@@ -262,10 +130,20 @@ a.remove:hover {
 	color: #fff !important;
 }
 
+#header-navbar {
+	background-color: #ecedf0;
+}
+
 #header-navbar .navbar-brand {
 	background: transparent image-url("reflections-logo-blacklight.png") no-repeat top left;
+	display: inline-block;
 	height: 88px;
 	margin: 8px 0;
+	overflow: hidden;
+	padding-right: 0;
+	text-align: right;
+	text-indent: 100%;
+	white-space: nowrap;
 	width: 200px;
 }
 
@@ -277,6 +155,15 @@ a.remove:hover {
 
 .navbar-fixed-top {
 	border-width: 0 0 2px;
+}
+
+#search-navbar {
+	z-index: 100000;
+}
+
+#search-navbar .search-query-form {
+	border: 0;
+	padding: 25px 0 0 15px;
 }
 
 #search-navbar .input-group {
@@ -372,6 +259,10 @@ a.remove:hover {
 	text-decoration: underline;
 }
 
+#main-container, #content {
+	margin-top: 60px;
+}
+
 #sidebar {
 	margin-top: 60px;
 }
@@ -400,6 +291,15 @@ a.remove:hover {
 	margin: 75px 20px 0;
 }
 
+.ppt-download img {
+  margin: 0 10px 15px 0;
+}
+
+.icon-json {
+  font-size: 3em;
+  margin-top: 15px;
+}
+
 /* Homepage styles */
 .home-panel {
 	border-radius: 4px;
@@ -411,6 +311,30 @@ a.remove:hover {
 	background-color: #ecedf0;
 	border-radius: 4px;
 	opacity: .92;
+}
+
+.home-wrapper .search_field, .home-wrapper .input-group-addon {
+    display: none;
+  }
+
+.home-wrapper .search_q {
+    /*width: 500px !important;
+    border: 1px solid #60994D;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;*/
+  }
+
+.home-wrapper .navbar-form {
+    padding: 0;
+	/* width: 625px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 15px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	z-index: 2;
+	position: relative; */
 }
 
 #home-search {
@@ -430,6 +354,7 @@ a.remove:hover {
 .blacklight-catalog-home .facet-content {
 	min-height: 320px;
 }
+
 /* End homepage styles */
 
 /* Search results page styles */
@@ -447,6 +372,10 @@ a.remove:hover {
 .facet-label {
 	color: #231f20;
 }
+
+/*.facet-label.selected {
+  color: #3c763d;
+} */
 
 .facet-values {
 	table-layout: auto;
@@ -538,6 +467,24 @@ h3.document-title-heading {
 
 .more-like-this {
 	margin-top: 20px;
+}
+
+.more-like-this .panel-body {
+	text-align: center;
+}
+
+.more-like-this ul {
+	list-style: none;
+}
+
+.more-like-this li {
+	display: inline-block;
+}
+
+.more-like-this img {
+	height: 75px;
+	width: 75px;
+	margin: 5px;
 }
 
 #react-borealis {
@@ -653,6 +600,10 @@ dt, dd {
 
 .footer a:hover {
 	color: #fff;
+}
+
+.footer .logos a {
+    text-decoration: none;
 }
 
 .logos {
