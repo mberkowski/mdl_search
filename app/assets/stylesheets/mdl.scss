@@ -226,7 +226,7 @@ a.remove:hover {
 }
 
 #main-container, #content, #sidebar {
-	margin-top: 70px;
+	margin-top: 60px;
 }
 
 .panel-default {
@@ -318,18 +318,18 @@ a.remove:hover {
 }
 
 .home-panel:after {
-  content: " ";
-  z-index: 1;
-  display: block;
-  position: absolute;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+	content: " ";
+	z-index: 1;
+	display: block;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .home-desc {
@@ -339,9 +339,10 @@ a.remove:hover {
 }
 
 .home-page {
-  .facet-content {
-    min-height: 260px;
-  }
+	.facet-content {
+		min-height: 260px;
+	}
+	margin-top: 10px;
 }
 
 .input-group-btn {
