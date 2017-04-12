@@ -130,11 +130,7 @@ a.remove:hover {
 	color: #fff !important;
 }
 
-#header-navbar {
-	background-color: #ecedf0;
-}
-
-#header-navbar .navbar-brand {
+.navbar-brand {
 	background: transparent image-url("reflections-logo-blacklight.png") no-repeat top left;
 	display: inline-block;
 	height: 88px;
