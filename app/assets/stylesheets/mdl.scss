@@ -225,12 +225,8 @@ a.remove:hover {
 	text-decoration: underline;
 }
 
-#main-container, #content {
-	margin-top: 60px;
-}
-
-#sidebar {
-	margin-top: 60px;
+#main-container, #content, #sidebar {
+	margin-top: 70px;
 }
 
 .panel-default {
@@ -277,12 +273,6 @@ a.remove:hover {
 	width: auto;
 }
 
-.home-desc {
-  width: 600px;
-  text-align: left;
-  margin-left: 5px;
-}
-
 .home-wrapper {
 	.search_field {
 		display: none;
@@ -292,9 +282,9 @@ a.remove:hover {
 	}
 	.search_q {
 		width: 500px !important;
-		border: 1px solid #60994D;
-		border-top-left-radius: 5px !important;
-		border-bottom-left-radius: 5px !important;
+		border: 1px solid #5f994a;
+		border-top-left-radius: 4px !important;
+		border-bottom-left-radius: 4px !important;
 	}
 
 	.navbar-form {
@@ -304,11 +294,11 @@ a.remove:hover {
 	background-color: #ecedf0;
 	border-radius: 4px;
 	opacity: .92;
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
 	z-index: 2;
 	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	padding: 0 0 20px;
 }
 
 .home-panel {
@@ -350,7 +340,7 @@ a.remove:hover {
 
 .home-page {
   .facet-content {
-    min-height: 320px;
+    min-height: 260px;
   }
 }
 
