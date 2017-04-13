@@ -53,6 +53,12 @@ body {
 	}
 }
 
+@media (min-width: 1024px) {
+	.search_q {
+		width: 500px !important;
+	}
+}
+
 @media (max-width: 1199px) {
 	.home-page {
 	.facet-content {
@@ -283,7 +289,7 @@ a.remove:hover {
 		display: none;
 	}
 	.search_q {
-		width: 500px !important;
+		width: 100% !important;
 		border: 1px solid #5f994a;
 		border-top-left-radius: 4px !important;
 		border-bottom-left-radius: 4px !important;
