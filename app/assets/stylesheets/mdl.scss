@@ -54,9 +54,11 @@ body {
 }
 
 @media (max-width: 1199px) {
-	.blacklight-catalog-home .facet-content {
+	.home-page {
+	.facet-content {
 		min-height: 0 !important;
 	}
+}
 }
 
 @media (min-width: 1450px) {
