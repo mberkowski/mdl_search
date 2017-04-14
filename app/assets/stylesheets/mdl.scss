@@ -35,9 +35,7 @@ body {
 	#sidebar {
 		margin-top: 20px !important;
 	}
-}
-
-@media (min-width: 800px) {
+	
 	.dl-horizontal dt {
 		float: left;
 		width: 240px;
@@ -434,7 +432,7 @@ h3.document-title-heading {
 	padding-left: 0;
 }
 
-.dl-invert dt {
+.dl-horizontal dt {
     font-weight: bold;
     color: #6d6e71;
 }
