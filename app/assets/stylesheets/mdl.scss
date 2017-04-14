@@ -34,6 +34,10 @@ body {
 	#sidebar {
 		margin-top: 20px !important;
 	}
+	
+	.footer-links, .footer-social, .footer-contact {
+		text-align: center !important;
+	}
 }
 
 @media (min-width: 1024px) {
@@ -602,6 +606,18 @@ dt, dd {
 
 .footer a:hover {
 	color: #fff;
+}
+
+.footer-links {
+	text-align: left;
+}
+
+.footer-social {
+	text-align: center;
+}
+
+.footer-contact {
+	text-align: right;
 }
 
 .footer .logos a {
