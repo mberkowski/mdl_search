@@ -21,7 +21,22 @@ body {
     font-family: 'Muli', helvetica, arial, sans-serif;
 }
 
+@media (max-width: 479px) {
+	.home-panel {
+		min-height: 0;
+		padding: 4px 0 12px;
+	}
+	
+	.home-wrapper {
+		padding: 0 8px 20px;
+	}
+}
+
 @media (max-width: 599px) {
+	.home-desc {
+		margin: 0 8px;
+	}
+	
 	.dl-horizontal dt {
 		width: auto;
 		text-align: left;
