@@ -21,42 +21,49 @@ body {
     font-family: 'Muli', helvetica, arial, sans-serif;
 }
 
+@media (max-width: 767px) {
+	.navbar-brand {
+		background: transparent image-url("reflections-icon-blacklight.png") no-repeat top left;
+		height: 88px;
+		width: 74px;
+	}
+	
+	.search-widgets {
+		text-align: left !important;
+	}
+}
+
 @media (max-width: 799px) {
 	.home-wrapper {
 		margin: 0 8px;
 		width: auto;
 	}
-
-	/*.dl-horizontal dd {
-		margin-left: 180px !important;
-		margin-bottom: 16px !important;
-	} */
+	
+	.input-group {
+		margin: 0 auto !important;
+	}
 
 	#sidebar {
 		margin-top: 20px !important;
 	}
+	
+	.footer-links, .footer-social, .footer-contact {
+		text-align: center !important;
+	}
 }
 
-@media (min-width: 800px) {
-	.dl-horizontal dt {
-		float: left;
-		width: 240px;
-		clear: left;
-		text-align: right;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		margin-right: 10px;
-	}
-	.dl-horizontal dd {
-		margin-left: 180px;
+@media (min-width: 1024px) {
+	.search_q {
+		width: 500px !important;
 	}
 }
 
 @media (max-width: 1199px) {
-	.blacklight-catalog-home .facet-content {
+	.home-page {
+	.facet-content {
 		min-height: 0 !important;
 	}
+}
 }
 
 @media (min-width: 1450px) {
@@ -281,7 +288,7 @@ a.remove:hover {
 		display: none;
 	}
 	.search_q {
-		width: 500px !important;
+		width: 100%;
 		border: 1px solid #5f994a;
 		border-top-left-radius: 4px !important;
 		border-bottom-left-radius: 4px !important;
@@ -349,6 +356,10 @@ a.remove:hover {
 	width: auto;
 }
 
+.alpha-filter .btn {
+	margin: 6px 0 12px;
+}
+
 /* End homepage styles */
 
 /* Search results page styles */
@@ -404,6 +415,10 @@ a.remove:hover {
 	color: #0e76bc;
 }
 
+.search-widgets {
+	text-align: right;
+}
+
 .documents-list > .document {
 	background: #ecedf0;
 	border: 1px solid #d3d4d7;
@@ -422,13 +437,22 @@ h3.document-title-heading {
 	padding-left: 0;
 }
 
-.dl-invert dt {
-    font-weight: bold;
-    color: #6d6e71;
+.dl-horizontal dt {
+	color: #6d6e71;
+	float: left;
+	font-weight: bold;
+	width: 180px;
+	clear: left;
+	text-align: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-right: 10px;
 }
 
 .dl-horizontal dd {
-	margin-left: 250px;
+	margin-left: 190px;
+	margin-bottom: 8px;
 }
 
 .pagination {
@@ -505,6 +529,10 @@ h3.document-title-heading {
 
 .kaltura-player {
 	padding-top: 16px;
+}
+
+.addthis_inline_share_toolbox {
+	margin: 20px 0 0 -2px;
 }
 
 .citation {
@@ -594,6 +622,18 @@ dt, dd {
 
 .footer a:hover {
 	color: #fff;
+}
+
+.footer-links {
+	text-align: left;
+}
+
+.footer-social {
+	text-align: center;
+}
+
+.footer-contact {
+	text-align: right;
 }
 
 .footer .logos a {
