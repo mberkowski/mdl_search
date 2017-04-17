@@ -21,6 +21,18 @@ body {
     font-family: 'Muli', helvetica, arial, sans-serif;
 }
 
+@media (max-width: 599px) {
+	.dl-horizontal dt {
+		width: auto;
+		text-align: left;
+	}
+
+	.dl-horizontal dd {
+		clear: left;
+		margin-left: 0;
+	}
+}
+
 @media (max-width: 767px) {
 	.navbar-brand {
 		background: transparent image-url("reflections-icon-blacklight.png") no-repeat top left;
@@ -29,6 +41,7 @@ body {
 	}
 	
 	.search-widgets {
+		margin-top: 8px;
 		text-align: left !important;
 	}
 }
