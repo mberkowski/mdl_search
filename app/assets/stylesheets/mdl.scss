@@ -21,6 +21,18 @@ body {
     font-family: 'Muli', helvetica, arial, sans-serif;
 }
 
+@media (max-width: 767px) {
+	.navbar-brand {
+		background: transparent image-url("reflections-icon-blacklight.png") no-repeat top left;
+		height: 88px;
+		width: 74px;
+	}
+	
+	.search-widgets {
+		text-align: left !important;
+	}
+}
+
 @media (max-width: 799px) {
 	.home-wrapper {
 		margin: 0 8px;
@@ -401,6 +413,10 @@ a.remove:hover {
 
 #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-toggle {
 	color: #0e76bc;
+}
+
+.search-widgets {
+	text-align: right;
 }
 
 .documents-list > .document {
