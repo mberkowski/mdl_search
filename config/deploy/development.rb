@@ -9,7 +9,7 @@ set :ssh_options, {:forward_agent => true}
 set :deploy_to, '/swadm/var/www/html/mdl'
 set :use_sudo, false
 
-set :linked_dirs, %w(thumbnails tmp log)
+set :linked_dirs, %w(thumbnails log public/assets tmp/pids tmp/sockets)
 
 set :rails_env, "production"
 
