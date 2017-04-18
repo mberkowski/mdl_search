@@ -23,48 +23,47 @@ body {
 
 @media (max-width: 479px) {
 	.home-panel {
-		min-height: 0;
-		padding: 4px 0 12px;
+		min-height: 0 !important;
+		padding: 4px 0 12px !important;
 	}
 	
 	.home-wrapper {
-		padding: 0 8px 20px;
+		padding: 0 8px 20px !important;
 	}
 }
 
 @media (max-width: 599px) {
 	.home-desc {
-		margin: 0 8px;
+		margin: 0 8px !important;
 	}
 	
 	.dl-horizontal dt {
-		width: auto;
-		text-align: left;
+		width: auto !important;
+		text-align: left !important;
 	}
 
 	.dl-horizontal dd {
-		clear: left;
-		margin-left: 0;
+		clear: left !important;
+		margin-left: 0 !important;
 	}
 }
 
 @media (max-width: 767px) {
 	.navbar-brand {
-		background: transparent image-url("reflections-icon-blacklight.png") no-repeat top left;
-		height: 88px;
-		width: 74px;
+		background: transparent image-url("reflections-icon-blacklight.png") no-repeat top left !important;
+		width: 74px !important;
 	}
 	
 	.search-widgets {
-		margin-top: 8px;
+		margin-top: 8px !important;
 		text-align: left !important;
 	}
 }
 
 @media (max-width: 799px) {
 	.home-wrapper {
-		margin: 0 8px;
-		width: auto;
+		margin: 0 8px !important;
+		width: auto !important;
 	}
 	
 	.input-group {
