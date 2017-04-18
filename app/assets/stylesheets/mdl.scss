@@ -30,6 +30,11 @@ body {
 	.home-wrapper {
 		padding: 0 8px 20px !important;
 	}
+	
+	#documents .document .document-thumbnail {
+		float: none !important;
+		padding-left: 0 !important;
+	}
 }
 
 @media (max-width: 599px) {
