@@ -70,10 +70,6 @@ body {
 	.input-group {
 		margin: 0 auto !important;
 	}
-
-	#sidebar {
-		margin-top: 20px !important;
-	}
 	
 	.footer-links, .footer-social, .footer-contact {
 		text-align: center !important;
@@ -88,10 +84,14 @@ body {
 
 @media (max-width: 1199px) {
 	.home-page {
-	.facet-content {
-		min-height: 0 !important;
+		.facet-content {
+			min-height: 0 !important;
+		}
 	}
-}
+	
+	#sidebar {
+		margin-top: 20px !important;
+	}
 }
 
 @media (min-width: 1450px) {
