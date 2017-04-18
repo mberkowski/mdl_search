@@ -33,6 +33,10 @@ body {
 }
 
 @media (max-width: 599px) {
+	.input-group-addon {
+		display: none !important;
+	}
+	
 	.home-desc {
 		margin: 0 8px !important;
 	}
