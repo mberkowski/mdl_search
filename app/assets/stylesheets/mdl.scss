@@ -55,18 +55,22 @@ body {
 		clear: left !important;
 		margin-left: 0 !important;
 	}
+	
+	.pagination-search-widgets {
+		text-align: center !important;
+	}
+	
+	.search-widgets {
+		float: none !important;
+		margin-top: 8px !important;
+		text-align: center !important;
+	}
 }
 
 @media (max-width: 767px) {
 	.navbar-brand {
 		background: transparent image-url("reflections-icon-blacklight.png") no-repeat top left !important;
 		width: 74px !important;
-	}
-	
-	.search-widgets {
-		float: none !important;
-		margin-top: 8px !important;
-		text-align: left !important;
 	}
 }
 
