@@ -55,6 +55,7 @@ body {
 	}
 	
 	.search-widgets {
+		float: none !important;
 		margin-top: 8px !important;
 		text-align: left !important;
 	}
@@ -443,6 +444,7 @@ a.remove:hover {
 }
 
 .search-widgets {
+	float: right;
 	text-align: right;
 }
 
