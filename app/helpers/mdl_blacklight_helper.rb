@@ -26,21 +26,6 @@ module MdlBlacklightHelper
       })['response']['numFound'])
   end
 
-  def nearby(q: '*:*', pt: '46.7296, 94.6859', d: 5)
-    Blacklight.default_index.connection.get('select',
-      :params => { :q => "#{q} -coordinates_llsi:\"#{pt}\"",
-        :d => d,
-        :pt => pt,
-        :fl => 'coordinates_llsi, title_ssi, id',
-        :fq => '{!bbox sfield=coordinates_llsi}',
-        :defType => 'edismax',
-        :rows => 1000
-      })['response']['docs']
-    rescue StandardError => e
-      Rails.logger.error("Nearby Error: #{e}")
-      []
-  end
-
  ##
   # Classes used for sizing the sidebar content of a Blacklight page
   # @return [String]
