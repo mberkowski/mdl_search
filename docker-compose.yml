@@ -24,6 +24,8 @@ services:
       - solr
     depends_on:
       - solr
+    environment:
+      - GEONAMES_USER
   sidekiq:
     build: .
     command: bundle exec sidekiq -r /mdl_search
@@ -33,5 +35,7 @@ services:
       - redis
     env_file:
       - .env
+    environment:
+      - GEONAMES_USER
   redis:
     image: redis:latest
