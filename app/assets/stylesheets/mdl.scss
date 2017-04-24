@@ -22,57 +22,79 @@ body {
 }
 
 @media (max-width: 479px) {
-	.home-panel {
-		min-height: 0;
-		padding: 4px 0 12px;
+	.home-wrapper {
+		padding: 0 8px 20px !important;
 	}
 	
-	.home-wrapper {
-		padding: 0 8px 20px;
+	#documents .document .document-thumbnail {
+		float: none !important;
+		padding-left: 0 !important;
 	}
 }
 
 @media (max-width: 599px) {
+	.search_q {
+		border-top-left-radius: 4px !important;
+		border-bottom-left-radius: 4px !important;
+	}
+	
+	.input-group-addon {
+		display: none !important;
+	}
+	
+	.home-panel {
+		min-height: 0 !important;
+		padding: 4px 0 12px !important;
+	}
+	
 	.home-desc {
-		margin: 0 8px;
+		margin: 0 8px !important;
 	}
 	
 	.dl-horizontal dt {
-		width: auto;
-		text-align: left;
+		width: auto !important;
+		text-align: left !important;
 	}
 
 	.dl-horizontal dd {
-		clear: left;
-		margin-left: 0;
+		clear: left !important;
+		margin-left: 0 !important;
+	}
+	
+	.pagination-search-widgets, .page_links {
+		text-align: center !important;
+	}
+	
+	.search-widgets {
+		float: none !important;
+		margin-top: 8px !important;
+		text-align: center !important;
 	}
 }
 
 @media (max-width: 767px) {
 	.navbar-brand {
-		background: transparent image-url("reflections-icon-blacklight.png") no-repeat top left;
-		height: 88px;
-		width: 74px;
-	}
-	
-	.search-widgets {
-		margin-top: 8px;
-		text-align: left !important;
+		background: transparent image-url("reflections-icon-blacklight.png") no-repeat top left !important;
+		width: 74px !important;
 	}
 }
 
 @media (max-width: 799px) {
+	.icon-json {
+		display: none !important;
+	}
+	
 	.home-wrapper {
-		margin: 0 8px;
-		width: auto;
+		margin: 0 8px !important;
+		width: auto !important;
 	}
 	
 	.input-group {
 		margin: 0 auto !important;
 	}
-
-	#sidebar {
-		margin-top: 20px !important;
+	
+	.toc-select {
+		display: none !important;
 	}
 	
 	.footer-links, .footer-social, .footer-contact {
@@ -88,10 +110,14 @@ body {
 
 @media (max-width: 1199px) {
 	.home-page {
-	.facet-content {
-		min-height: 0 !important;
+		.facet-content {
+			min-height: 0 !important;
+		}
 	}
-}
+	
+	#sidebar {
+		margin-top: 20px !important;
+	}
 }
 
 @media (min-width: 1450px) {
@@ -444,6 +470,7 @@ a.remove:hover {
 }
 
 .search-widgets {
+	float: right;
 	text-align: right;
 }
 
