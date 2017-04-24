@@ -14,7 +14,7 @@ module MDL
                    ppt_klass: BorealisPPT,
                    image_klass: BorealisImage)
 
-      @format_field = format_field
+      @format_field = (format_field.nil?) ? 'jp2' : format_field
       @video_klass  = video_klass
       @audio_klass  = audio_klass
       @pdf_klass    = pdf_klass
@@ -23,7 +23,11 @@ module MDL
     end
 
     def map
-      mapping.fetch(format_field.downcase)
+      mapping.fetch(sanitized_format)
+    end
+
+    def sanitized_format
+      format_field.gsub(/;/, '').downcase
     end
 
     def mapping

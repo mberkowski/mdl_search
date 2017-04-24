@@ -8,9 +8,12 @@ module MDL
   describe BorealisAssetMap do
     it 'default maps to the image viewer' do
       expect(MDL::BorealisAssetMap.new.map).to be BorealisImage
+      expect(MDL::BorealisAssetMap.new(format_field: nil).map).to be BorealisImage
     end
+
     it 'correctly maps images' do
       expect(MDL::BorealisAssetMap.new(format_field: 'image/jp2').map).to be BorealisImage
+      expect(MDL::BorealisAssetMap.new(format_field: 'image/jp2;').map).to be BorealisImage
       expect(MDL::BorealisAssetMap.new(format_field: 'tif').map).to be BorealisImage
       expect(MDL::BorealisAssetMap.new(format_field: 'jp2').map).to be BorealisImage
       expect(MDL::BorealisAssetMap.new(format_field: 'jpg').map).to be BorealisImage
