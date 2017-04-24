@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: "catalog#index"
 
-  get '/catalog', to: redirect('/'), constraints: { query_string: /^$/ }
+  get 'thumbnail_link/:id' => 'thumbnail_links#show'
 
   get ":page" => "pages#show", constraints: lambda { |request|
     request.params[:page] != 'catalog' && request.params[:page] != 'sidekiq'

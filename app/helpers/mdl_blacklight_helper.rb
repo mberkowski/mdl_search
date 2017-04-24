@@ -2,11 +2,11 @@ module MdlBlacklightHelper
   include Blacklight::LayoutHelperBehavior
 
   def current_search
-    request.original_url
+    request.original_url.gsub(/\/$/, '')
   end
 
   def current_search_json
-     current_search.gsub(/\/catalog/, '\catalog.json')
+    current_search.gsub(/\?|catalog\/\?|catalog\?/, 'catalog.json?')
   end
 
   def json_result_link
