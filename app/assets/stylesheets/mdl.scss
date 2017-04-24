@@ -43,6 +43,7 @@ body {
 	}
 	
 	.home-panel {
+		background: image-url("home-hero-600.png") no-repeat center center fixed !important;
 		min-height: 0 !important;
 		padding: 4px 0 12px !important;
 	}
@@ -89,6 +90,10 @@ body {
 		width: auto !important;
 	}
 	
+	.home-panel {
+		background: image-url("home-hero-800.png") no-repeat center center fixed;
+	}
+	
 	.input-group {
 		margin: 0 auto !important;
 	}
@@ -99,6 +104,12 @@ body {
 	
 	.footer-links, .footer-social, .footer-contact {
 		text-align: center !important;
+	}
+}
+
+@media (min-width: 800px) {
+	.home-panel {
+		background: image-url("home-hero.png") no-repeat center center fixed;
 	}
 }
 
@@ -365,7 +376,6 @@ a.remove:hover {
 .home-panel {
 	position: relative;
 	text-align: center;
-	background: image-url("home-hero.png") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
