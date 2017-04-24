@@ -43,7 +43,7 @@ body {
 	}
 	
 	.home-panel {
-		background: image-url("home-hero-600.png") no-repeat center center fixed !important;
+		background: image-url("home-hero-600.png") no-repeat center top !important;
 		min-height: 0 !important;
 		padding: 4px 0 12px !important;
 	}
@@ -91,7 +91,7 @@ body {
 	}
 	
 	.home-panel {
-		background: image-url("home-hero-800.png") no-repeat center center fixed;
+		background: image-url("home-hero-800.png") no-repeat center top;
 	}
 	
 	.input-group {
@@ -109,7 +109,7 @@ body {
 
 @media (min-width: 800px) {
 	.home-panel {
-		background: image-url("home-hero.png") no-repeat center center fixed;
+		background: image-url("home-hero.png") no-repeat center top;
 	}
 }
 
