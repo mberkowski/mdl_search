@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git@github.com:UMNLibraries/mdl_search.git"
   },
-  "dependencies" : {
+  "dependencies": {
     "browserify": "~10.2.4",
     "browserify-incremental": "^3.0.1",
     "babelify": "^7.3.0",
@@ -21,8 +21,18 @@
     "react-citation": "git+https://github.com/UMNLibraries/react-citation.git#5bcf4eb3841f1"
 
   },
-  "license": "MIT",
   "engines": {
     "node": ">= 0.10"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3"
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "test": "jest"
   }
 }
