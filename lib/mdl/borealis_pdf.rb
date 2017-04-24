@@ -8,9 +8,13 @@ module MDL
       [src: "http://reflections.mndigital.org/utils/getfile/collection/#{collection}/id/#{id}/filename", label: 'Download']
     end
 
+    def type
+      'pdf'
+    end
+
     def to_viewer
       {
-        "type" => "pdf",
+        "type" => type,
         "height" => 800,
         "thumbnail" => thumbnail,
         "src" => src,

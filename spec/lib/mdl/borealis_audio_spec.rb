@@ -15,14 +15,14 @@ module MDL
       expect(asset.to_viewer).to eq (
         {
           "entry_id" => "foo_bar",
-          "height" => "70px",
+          "height" => "125px",
           "targetId" => "kaltura_player",
           "thumbnail" => "https://d1kue88aredzk1.cloudfront.net/audio-3.png",
           "transcript" => {"texts"=>[], "label"=>"Audio"},
           "type" => "kaltura_audio",
           "uiconf_id" => 38708801,
           "wid" => "_1369852",
-          "width" => "460px"
+          "width" => "560px"
         }
       )
     end

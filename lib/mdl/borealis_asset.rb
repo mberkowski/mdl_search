@@ -22,6 +22,14 @@ module MDL
       false
     end
 
+    def type
+      :missing_type
+    end
+
+    def initial_path
+      "##{type}"
+    end
+
     private
 
     def sanitize_field(field)

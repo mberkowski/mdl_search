@@ -7,6 +7,14 @@ module MDL
       expect(video.src).to eq '/contentdm-images/info?id=foo:21'
     end
 
+    it 'correctly identifies its type' do
+      expect(video.type).to eq 'image'
+    end
+
+    it 'correctly identifies its initial viewer path' do
+      expect(video.initial_path).to eq '#image/0'
+    end
+
     it 'correctly identifies its downloads' do
       expect(video.downloads).to eq [
         { src: "http://reflections.mndigital.org/digital/iiif/foo/21/full/150,150/0/default.jpg", label: '(150 x 150)' },
@@ -25,4 +33,3 @@ module MDL
   end
 end
 
-        

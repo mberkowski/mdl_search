@@ -7,9 +7,13 @@ module MDL
       @images = [images].flatten
     end
 
+    def type
+      'image'
+    end
+
     def to_viewer
       {
-        "type" => "image",
+        "type" => type,
         "thumbnail" => images.first.thumbnail,
         "label" => "Image",
         "include_controls" => true,

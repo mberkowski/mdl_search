@@ -5,6 +5,14 @@ module MDL
       "/contentdm-images/info?id=#{collection}:#{id}"
     end
 
+    def type
+      'image'
+    end
+
+    def initial_path
+      "#{super}/0"
+    end
+
     def downloads
       [
         { src: "http://reflections.mndigital.org/digital/iiif/#{collection}/#{id}/full/150,150/0/default.jpg", label: '(150 x 150)' },

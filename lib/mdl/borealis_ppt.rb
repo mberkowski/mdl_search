@@ -8,9 +8,13 @@ module MDL
       []
     end
 
+    def type
+      'ppt'
+    end
+
     def to_viewer
       {
-        "type" => "ppt",
+        "type" => type,
         "thumbnail" => thumbnail,
         "src" => src,
         "text" => "(Download)",

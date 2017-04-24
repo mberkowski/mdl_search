@@ -22,6 +22,16 @@ module MDL
       expect(asset.transcripts).to eq []
     end
 
+    it 'correctly identifies its type' do
+      asset =  BorealisAsset.new
+      expect(asset.type).to eq :missing_type
+    end
+
+    it 'correctly identifies its initial viewer path' do
+      asset =  BorealisAsset.new
+      expect(asset.initial_path).to eq '#missing_type'
+    end
+
     it 'derives a thumbnail link' do
       asset =  BorealisAsset.new(id: '1', collection: 'foo')
       expect(asset.thumbnail).to eq '/thumbnails/foo:1'
