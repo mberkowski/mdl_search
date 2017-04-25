@@ -55,10 +55,17 @@ class SolrDocument
   def mlt_assets(mlt)
     mlt.inject([]) do |sum, v|
       collection, id = v['id'].split(':')
-      sum <<  MDL::Thumbnail.new(id: id,
-                                 collection: collection,
-                                 title: v['title_ssi'],
-                                 type: v['type_ssi'])
+      sum <<  {
+                id: id,
+                collection: collection,
+                title: v['title_ssi'],
+                type: v['type_ssi'],
+                fragment: initial_path(v['format_ssi'])
+              }
     end
+  end
+
+  def initial_path(format)
+    MDL::BorealisAssetMap.new(format_field: format).map.new.initial_path
   end
 end
