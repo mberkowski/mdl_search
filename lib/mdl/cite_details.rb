@@ -69,7 +69,7 @@ module MDL
         {key: 'city_ssim', delimiter: ', ', label: 'City', facet: true},
         {key: 'district_ssi', label: 'District', facet: true},
         {key: 'language_ssi', label: 'Language'},
-        {key: 'rights_ssi', label: 'Rights', facet: true},
+        {key: 'rights_ssi', label: 'Rights'},
         {key: 'local_identifier_ssi', label: 'Local Identifier'},
         {key: 'identifier_ssi', label: 'MDL Identifier'},
         {key: 'collection_name_ssi', label: 'Collection Name', facet: true},
