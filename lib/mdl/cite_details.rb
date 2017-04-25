@@ -69,13 +69,13 @@ module MDL
         {key: 'city_ssim', delimiter: ', ', label: 'City', facet: true},
         {key: 'district_ssi', label: 'District', facet: true},
         {key: 'language_ssi', label: 'Language'},
-        {key: 'rights_ssi', label: 'Rights'},
+        {key: 'rights_ssi', label: 'Rights', facet: true},
         {key: 'local_identifier_ssi', label: 'Local Identifier'},
         {key: 'identifier_ssi', label: 'MDL Identifier'},
         {key: 'collection_name_ssi', label: 'Collection Name', facet: true},
         {key: 'contact_information_ssi', label: 'Contact information'},
         {key: 'fiscal_sponsor_ssi', label: 'Fiscal Sponsor'},
-        {key: 'geonam_ssi', label: 'GeoNames Identifier'},
+        {key: 'geonam_ssi', label: 'GeoNames Identifier', facet: true},
         {key: 'collection_description_tesi', label: 'Collection Description'}
       ]
     end
