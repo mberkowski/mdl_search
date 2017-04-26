@@ -15,4 +15,6 @@
 
 <%= json_page_link %>
 
+<div class="metadata" data-metadata='<%= document.to_json %>' ></div>
+
 <%= render partial: 'map_view', locals: { document: @document } %>

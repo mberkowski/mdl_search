@@ -10,11 +10,11 @@ module MdlBlacklightHelper
   end
 
   def json_result_link
-    link_to(raw('<div class="icon-json pull-right"></div>'), current_search_json)
+    link_to(raw('<div class="icon-json pull-right"></div>'), current_search_json, {class: 'json-link'})
   end
 
   def json_page_link
-    link_to(raw('<div class="icon-json pull-right"></div>'), "#{current_search}.json")
+    link_to(raw('<div class="icon-json pull-right"></div>'), "#{current_search}.json", {class: 'json-link'})
   end
 
   def record_count(q: '*:*')
