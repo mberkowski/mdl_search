@@ -160,11 +160,6 @@ $( document ).on('turbolinks:load', function() {
       ga_event('Facet Click', 'Date Created', $(this).text());
     });
 
-    $('.blacklight-dat_ssi a').click(function() {
-      console.log($(this).text());
-      ga_event('Facet Click', 'Date Created', $(this).text());
-    });
-
     $('.blacklight-county_ssim a').click(function() {
       console.log($(this).text());
       ga_event('Facet Click', 'County', $(this).text());
