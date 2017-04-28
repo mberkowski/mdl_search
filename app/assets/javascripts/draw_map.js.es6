@@ -8,7 +8,7 @@ function blerg() {
 function reDrawMap(coordinates, needle) {
   const coords = `${coordinates.lat},${coordinates.lng}`.replace(/\./g, '+');
   $.ajax({
-    url: `/nearbys/${coords}/10`,
+    url: `/nearbys/${coords}/35`,
     jsonp: 'callback',
     dataType: 'jsonp',
     success: function( nearbyLocations ) {
