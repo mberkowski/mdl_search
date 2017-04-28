@@ -1,11 +1,11 @@
 module MapsHelper
 
-  def coordinates
-    raw @document['coordinates_llsi'].split(',').to_json
+  def coordinates_json(coordinates)
+    raw coordinates.split(',').to_json
   end
 
-  def nearby_json
-    raw nearby(q: '*:*', pt: @document['coordinates_llsi'], d: 25).to_json
+  def nearby_json(coorinates)
+    raw nearby(q: '*:*', pt: coorinates, d: 25).to_json
   end
 
   def title

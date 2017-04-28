@@ -1,17 +1,15 @@
 export default class LinkedThumbnail {
-  constructor(title, id, type, coordinates, locations) {
+  constructor(title, id, type) {
     this.title = title;
     this.id = id;
     this.type = type;
-    this.coordinates = coordinates;
-    this.locations = locations;
-    this.linked_thumbnail = this.linked_thumbnail.bind(this);
+    this.toHtml = this.toHtml.bind(this);
     this.thumbnail = this.thumbnail.bind(this);
   }
 
-  linkedThumbnail() {
-    [
-      `${this.recordLink('thumbnail', this.thumbnail)}`,
+  toHtml() {
+   return [
+      `${this.recordLink('thumbnail', this.thumbnail())}`,
       `${this.recordLink(this.title, this.title)}`,
     ].join(' ');
   }

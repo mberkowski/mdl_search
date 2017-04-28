@@ -17,4 +17,9 @@
 
 <div class="metadata" data-metadata='<%= document.to_json %>' ></div>
 
-<%= render partial: 'map_view', locals: { document: @document } %>
+<%= render partial: 'map_view',
+  locals: {
+    coordinates: @document['coordinates_llsi'],
+      map_id: 'full_record_map'
+  }
+%>

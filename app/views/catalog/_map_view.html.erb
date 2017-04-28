@@ -1,8 +1,12 @@
-<% if @document['coordinates_llsi']  %>
+<% if coordinates  %>
   <div class="col-sm-12">
-    <div id="full_record_map"></div>
+    <div id="<%= map_id %>"></div>
     <script>
-      DrawMap("<%= title %>", "<%= id %>", "<%= type %>", <%= coordinates %>, <%= nearby_json %>);
+      DrawMap.default(
+        "<%= title %>", "<%= id %>", "<%= type %>",
+        <%= coordinates_json(@document['coordinates_llsi']) %>,
+        <%= nearby_json(@document['coordinates_llsi']) %>,
+        <%= map_id %>);
     </script>
   </div>
 <% end %>
