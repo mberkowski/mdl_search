@@ -4,8 +4,8 @@ module MapsHelper
     raw coordinates.split(',').to_json
   end
 
-  def nearby_json(coorinates)
-    raw nearby(q: '*:*', pt: coorinates, d: 25).to_json
+  def nearby_json(coordinates)
+    raw Nearby.search(q: '*:*', pt: coordinates, d: 25).to_json
   end
 
   def title
@@ -19,20 +19,4 @@ module MapsHelper
   def id
     @document['id']
   end
-
-  def nearby(q: '*:*', pt: '46.7296, 94.6859', d: 10)
-    Blacklight.default_index.connection.get('select',
-      :params => { :q => "#{q} -coordinates_llsi:\"#{pt}\"",
-        :d => d,
-        :pt => pt,
-        :fl => 'coordinates_llsi, title_ssi, id',
-        :fq => '{!bbox sfield=coordinates_llsi}',
-        :defType => 'edismax',
-        :rows => 250
-      })['response']['docs']
-    rescue StandardError => e
-      Rails.logger.error("Nearby Error: #{e}")
-      []
-  end
-
 end

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
 
+  get "nearbys/:coordinates/(:distance)" => "nearbys#show"
+
   root to: "catalog#index"
 
   get 'thumbnail_link/:id' => 'thumbnail_links#show'

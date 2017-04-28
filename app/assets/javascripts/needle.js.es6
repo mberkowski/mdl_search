@@ -18,23 +18,30 @@ export default class Needle {
     this.pinIt = this.pinIt.bind(this);
     this._attachMap = this._attachMap.bind(this);
     this._attachMap();
+    this.onMove = this.onMove.bind(this);
+  }
+
+  onMove(handler, ...args) {
+    this.map.on('dragend', function(e) {
+      handler(e.target.getCenter(), ...args);
+    });
   }
 
   pinIt(coordinates, id, title, type) {
     return (L.marker(coordinates)
       .bindPopup(new LinkedThumbnail(title, id, type).toHtml())
-      .addTo(this._map));
+      .addTo(this.map));
   }
 
   // Initialize the map and attach it to the DOM
   _attachMap() {
-    this._map = this._map();
+    this.map = this._map();
     this._tileIt();
   }
 
   _tileIt() {
     L.tileLayer('https://api.mapbox.com/styles/v1/libsys/{id}/tiles/256/{z}/{x}/{y}?access_token={accessToken}',
-      Needle.config(this.coordinates)).addTo(this._map);
+      Needle.config(this.coordinates)).addTo(this.map);
   }
 
   _map() {

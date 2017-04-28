@@ -2,11 +2,20 @@
   <div class="col-sm-12">
     <div id="<%= map_id %>"></div>
     <script>
-      DrawMap.default(
-        "<%= title %>", "<%= id %>", "<%= type %>",
-        <%= coordinates_json(@document['coordinates_llsi']) %>,
-        <%= nearby_json(@document['coordinates_llsi']) %>,
-        <%= map_id %>);
+      <% if with_popup %>
+        DrawMapWithPopup.default(
+          "<%= title %>",
+          "<%= id %>",
+          "<%= type %>",
+          <%= coordinates_json(coordinates) %>,
+          <%= nearby_json(coordinates) %>,
+          <%= map_id %>);
+      <% else %>
+        DrawMap.default(
+          <%= coordinates_json(coordinates) %>,
+          <%= nearby_json(coordinates) %>,
+          <%= map_id %>);
+      <% end %>
     </script>
   </div>
 <% end %>

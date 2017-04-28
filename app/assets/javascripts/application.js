@@ -26,3 +26,4 @@
 var React = window.React = global.React = require('react');
 var ReactDOM = window.ReactDOM = global.ReactDOM = require('react-dom');
 var DrawMap = window.DrawMap = global.DrawMap = require('./draw_map.js.es6');
+var DrawMapWithPopup = window.DrawMapWithPopup = global.DrawMapWithPopup = require('./draw_map_with_popup.js.es6');
