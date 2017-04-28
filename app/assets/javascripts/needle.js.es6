@@ -6,7 +6,7 @@ export default class Needle {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
       center: coordinates,
       id: 'cj17xqnh8003j2rquui5gm3ar',
-      minZoom: 10,
+      minZoom: 7,
       accessToken: 'pk.eyJ1IjoibGlic3lzIiwiYSI6Iks3SXpZUTQifQ.mVUUXOBDusaTEnEsSO3yAQ',
     };
   }
