@@ -10,6 +10,6 @@ class NearbysController < ApplicationController
   end
 
   def distance
-    (params[:distance]) ? params[:distance] : 25
+    (params[:distance]) ? params[:distance] : 35
   end
 end
