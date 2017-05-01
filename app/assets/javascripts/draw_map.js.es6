@@ -1,10 +1,5 @@
 import Needle from './needle.js.es6';
 
-
-function blerg() {
-}
-
-
 function reDrawMap(coordinates, needle) {
   const coords = `${coordinates.lat},${coordinates.lng}`.replace(/\./g, '+');
   $.ajax({
