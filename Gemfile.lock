@@ -95,7 +95,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    cdmbl (0.2.31)
+    cdmbl (0.2.32)
       activesupport (~> 4.2)
       contentdm_api (~> 0.3.11)
       hash_at_path (~> 0.1)
@@ -376,7 +376,7 @@ GEM
       actionpack (>= 3.1)
       jquery-rails
       railties (>= 3.1)
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.1.2)
       execjs (>= 0.3.0, < 3)
