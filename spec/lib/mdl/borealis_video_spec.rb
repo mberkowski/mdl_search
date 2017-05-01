@@ -4,7 +4,7 @@ module MDL
   describe BorealisVideo do
     let(:video) { MDL::BorealisVideo.new(collection: 'foo', id: 21, transcript: 'Video transcript here') }
     it 'correctly identifies its src' do
-      expect(video.src).to eq 'http://reflections.mndigital.org/utils/getstream/collection/foo/id/21'
+      expect(video.src).to eq 'http://cdm16022.contentdm.oclc.org/utils/getstream/collection/foo/id/21'
     end
 
     it 'correctly identifies its downloads' do

@@ -7,7 +7,7 @@ namespace :mdl_ingester do
     minimum_date = (args[:minimum_date]) ? args[:minimum_date] : IndexingRunner.last_indexing_run
     set_spec = (args[:set_spec] != '""') ? args[:set_spec] : false
     etl_config  = {
-                    oai_endpoint: 'http://reflections.mndigital.org/oai/oai.php',
+                    oai_endpoint: 'http://cdm16022.contentdm.oclc.org/oai/oai.php',
                     cdm_endpoint: 'https://server16022.contentdm.oclc.org/dmwebservices/index.php',
                     minimum_date: minimum_date
                    }
@@ -19,7 +19,7 @@ namespace :mdl_ingester do
   desc "ingest a single record"
   task :record, [:id] => :environment  do |t,args|
     collection, id = args['id'].split(':')
-    oai_request = CDMBL::OaiRequest.new(base_uri: 'http://reflections.mndigital.org/oai/oai.php')
+    oai_request = CDMBL::OaiRequest.new(base_uri: 'http://cdm16022.contentdm.oclc.org/oai/oai.php')
     extraction = CDMBL::Extractor.new(oai_request: oai_request,
                                       cdm_endpoint: 'https://server16022.contentdm.oclc.org/dmwebservices/index.php')
     records = [extraction.cdm_request(collection, id)]

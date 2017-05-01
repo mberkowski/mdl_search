@@ -2,7 +2,7 @@ module MDL
   class BorealisVideo <  BorealisAsset
 
     def src
-      "http://reflections.mndigital.org/utils/getstream/collection/#{collection}/id/#{id}"
+      "http://cdm16022.contentdm.oclc.org/utils/getstream/collection/#{collection}/id/#{id}"
     end
 
     def downloads

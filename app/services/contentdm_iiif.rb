@@ -2,7 +2,7 @@ require 'net/http'
 
 class ContentdmIIIF
   attr_accessor :base_url, :collection, :id
-  def initialize(base_url: 'http://reflections.mndigital.org', 
+  def initialize(base_url: 'http://cdm16022.contentdm.oclc.org',
                  collection: '',
                  id: '')
     @base_url   = base_url
