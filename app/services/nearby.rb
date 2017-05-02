@@ -5,14 +5,20 @@ class Nearby
       :params => { :q => "#{q} -coordinates_llsi:\"#{pt}\"",
         :d => d,
         :pt => pt,
-        :fl => 'coordinates_llsi, title_ssi, id',
+        :fl => 'id, format_ssi, title_ssi, coordinates_llsi',
         :fq => '{!bbox sfield=coordinates_llsi}',
         :defType => 'edismax',
         :rows => 250
-      })['response']['docs']
+      })['response']['docs'].map do |nearby|
+        nearby.merge(initial_path: initial_path(nearby['format_ssi']))
+      end
     rescue StandardError => e
       Rails.logger.error("Nearby Error: #{e}")
       []
+  end
+
+  def self.initial_path(format)
+    MDL::InitialPath.new(format: format).path
   end
 end
 

@@ -28,9 +28,9 @@ export default class Needle {
     });
   }
 
-  pinIt(coordinates, id, title, type) {
+  pinIt(coordinates, id, title, type, initialPath) {
     return (L.marker(coordinates)
-      .bindPopup(new LinkedThumbnail(title, id, type).toHtml())
+      .bindPopup(new LinkedThumbnail(title, id, type, initialPath).toHtml())
       .addTo(this.map));
   }
 

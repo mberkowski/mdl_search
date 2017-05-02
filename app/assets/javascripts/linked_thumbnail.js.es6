@@ -1,10 +1,11 @@
 export default class LinkedThumbnail {
-  constructor(title, id, type) {
+  constructor(title, id, type, initialPath) {
     this.title = title;
     this.id = id;
     this.type = type;
     this.toHtml = this.toHtml.bind(this);
     this.thumbnail = this.thumbnail.bind(this);
+    this.initialPath = initialPath;
   }
 
   toHtml() {
@@ -15,7 +16,7 @@ export default class LinkedThumbnail {
   }
 
   recordLink(alt, data) {
-    return `<a href="/catalog/${this.id}" alt="${alt}">${data}</a>`;
+    return `<a href="/catalog/${this.id}/${this.initialPath}" alt="${alt}">${data}</a>`;
   }
 
   thumbnail() {

@@ -6,7 +6,7 @@ module UrlHelper
   # catalog_path accepts a hash. The solr query params are stored in the session,
   # so we only need the +counter+ param here. We also need to know if we are viewing to document as part of search results.
   # TODO: move this to the IndexPresenter
-  def link_to_document(doc, field_or_opts = nil, opts={:counter => nil})
+  def link_to_document(doc, field_or_opts = nil, opts={:counter => nil}, with_params =true)
     if field_or_opts.is_a? Hash
       opts = field_or_opts
     else
@@ -15,7 +15,11 @@ module UrlHelper
 
     field ||= document_show_link_field(doc)
     label = index_presenter(doc).label field, opts
-    link_to label, "/catalog/#{doc['id']}#{borealis_path(doc)}?", document_link_params(doc, opts)
+    if with_params
+      link_to label, "/catalog/#{doc['id']}#{borealis_path(doc)}?", document_link_params(doc, opts)
+    else
+      link_to label, "/catalog/#{doc['id']}#{borealis_path(doc)}"
+    end
   end
 
   ##
@@ -28,7 +32,7 @@ module UrlHelper
   end
 
   def borealis_path(doc)
-    borealis_asset(doc).new.initial_path
+    MDL::InitialPath.new(format: doc['format_ssi']).path
   end
 
   def borealis_asset(doc)

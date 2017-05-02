@@ -11,7 +11,8 @@ function reDrawMap(coordinates, needle) {
         needle.pinIt(location.coordinates_llsi.split(','),
                      location.id,
                      location.title_ssi,
-                     location.type);
+                     location.type,
+                     location.initial_path);
       });
     },
      error: function(xhr, type, exception) {
@@ -26,7 +27,8 @@ export default function drawMap(coordinates, nearbyLocations, mapName) {
     needle.pinIt(location.coordinates_llsi.split(','),
                  location.id,
                  location.title_ssi,
-                 location.type);
+                 location.type,
+                 location.initial_path);
   });
   needle.onMove(reDrawMap, needle);
   return needle;

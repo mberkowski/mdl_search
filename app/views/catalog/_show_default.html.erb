@@ -20,7 +20,8 @@
 <%= render partial: 'map_view',
   locals: {
     coordinates: @document['coordinates_llsi'],
-      map_id: 'full_record_map',
+    map_id: 'full_record_map',
+    initial_path: MDL::InitialPath.new(format: @document['format_ssi']).path,
     with_popup: true
   }
 %>
