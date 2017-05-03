@@ -26,6 +26,7 @@ services:
       - solr
     environment:
       - GEONAMES_USER
+      - GEONAMES_TOKEN
   sidekiq:
     build: .
     command: bundle exec sidekiq -r /mdl_search
@@ -37,5 +38,6 @@ services:
       - .env
     environment:
       - GEONAMES_USER
+      - GEONAMES_TOKEN
   redis:
     image: redis:latest
