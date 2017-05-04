@@ -1,4 +1,3 @@
-import LinkedThumbnail from './linked_thumbnail.js.es6';
 // "[Pine] Needle," a Leaflet wrapper
 export default class Needle {
   static config(coordinates) {
@@ -28,9 +27,9 @@ export default class Needle {
     });
   }
 
-  pinIt(coordinates, id, title, type, initialPath) {
+  pinIt(coordinates, pinHTML) {
     return (L.marker(coordinates)
-      .bindPopup(new LinkedThumbnail(title, id, type, initialPath).toHtml())
+      .bindPopup(pinHTML)
       .addTo(this.map));
   }
 
