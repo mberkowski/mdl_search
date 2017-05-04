@@ -54,14 +54,12 @@ group :test, :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'teaspoon-jasmine'
-  gem 'phantomjs'
 end
 
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'launchy'
-  gem 'selenium-webdriver'
+  gem 'capybara-webkit'
   gem 'vcr'
   gem 'webmock'
 end
