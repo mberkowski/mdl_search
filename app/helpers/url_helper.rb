@@ -32,7 +32,7 @@ module UrlHelper
   end
 
   def borealis_path(doc)
-    MDL::InitialPath.new(format: doc['format_ssi']).path
+    MDL::BorealisDocument.new(document: doc).initial_path
   end
 
   def borealis_asset(doc)

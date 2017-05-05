@@ -17,7 +17,11 @@ module MDL
     end
 
     def assets
-      @assets = to_assets
+      @assets ||= to_assets
+    end
+
+    def initial_path
+      assets.first.initial_path
     end
 
     private

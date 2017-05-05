@@ -23,7 +23,7 @@ module MDL
     end
 
     def initial_path
-      MDL::InitialPath.new(format: document['format_ssi']).path
+      MDL::BorealisDocument.new(document: document).initial_path
     end
   end
 end
