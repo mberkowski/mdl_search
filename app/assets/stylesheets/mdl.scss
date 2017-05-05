@@ -16,6 +16,24 @@
 /* import google web font */
 @import url(//fonts.googleapis.com/css?family=Muli:400,400i,700,700i);
 
+@media print {
+	a[href]:after {
+		content: none;
+	}
+	
+	#sidebar {display:none;}
+	
+	#sortAndPerPage {display:none;}
+	
+	#previousNextDocument {display:none;}
+	
+	.citation-navigation {display:none;}
+	
+	.field-label {border:none;}
+	
+	.footer {display:none;}
+}
+
 body {
     color: #231f20;
     font-family: 'Muli', helvetica, arial, sans-serif;
