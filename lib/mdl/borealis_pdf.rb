@@ -15,7 +15,7 @@ module MDL
     def to_viewer
       {
         "type" => type,
-        "height" => '100%',
+        "height" => 800,
         "width" => '100%',
         "thumbnail" => thumbnail,
         "src" => src,
