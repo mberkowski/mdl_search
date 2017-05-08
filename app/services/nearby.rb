@@ -17,7 +17,7 @@ class Nearby
       []
   end
 
-  def self.initial_path(dock)
+  def self.initial_path(doc)
     MDL::BorealisDocument.new(document: doc).initial_path
   end
 end
