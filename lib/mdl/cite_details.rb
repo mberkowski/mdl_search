@@ -54,6 +54,7 @@ module MDL
 
     def details_fields
       [
+        {key: 'table_ssim', label: 'Table of Contents', facet: true},
         {key: 'title_ssi', label: 'Title'},
         {key: 'creator_ssim', label: 'Creator', delimiter: ', ', facet: true},
         {key: 'dat_ssi', label: 'Date'},

@@ -11,7 +11,7 @@ export default class Details extends React.Component {
     return (
         <dl className="row details">
           {fields.map(function(field, i) {
-            return <DetailsField key={i} {...field} />  
+            return <DetailsField key={i} {...field} />
           })}
         </dl>
       )

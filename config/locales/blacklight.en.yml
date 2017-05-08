@@ -1,3 +1,6 @@
 en:
   blacklight:
     application_name: 'Minnesota Reflections'
+    search:
+      fields:
+        table_ssim: "Table of Contents"
