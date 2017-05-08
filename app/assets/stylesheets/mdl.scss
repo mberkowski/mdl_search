@@ -29,6 +29,8 @@
 	
 	.citation-navigation {display:none;}
 	
+	.pagination {display:none;}
+	
 	.field-label {border:none;}
 	
 	.footer {display:none;}
@@ -80,7 +82,7 @@ body {
 		margin-left: 0 !important;
 	}
 	
-	.pagination-search-widgets, .page_links {
+	#sortAndPerPage, .pagination-search-widgets, .page_links {
 		text-align: center !important;
 	}
 	
