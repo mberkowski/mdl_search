@@ -225,9 +225,7 @@ $( document ).on('turbolinks:load', function() {
       console.log($(this).attr('href'));
       ga_event('Search Results', 'JSON Click', $(this).attr('href'));
     });
-
-
-    });
+  });
 
     // List Results
     $('.blacklight-catalog-index .documents-list').each(function() {
