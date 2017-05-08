@@ -34,12 +34,13 @@ module MDL
               title)]
       else
         compounds.map do |compound|
+          next if bad_compound?(compound)
           asset(asset_klass(compound_format(compound)),
                 compound['pageptr'],
                 transcript(compound),
                 compound['title'])
 
-        end
+        end.compact
       end
     end
 
@@ -88,6 +89,18 @@ module MDL
 
     def format_field
       document.fetch('format_ssi', 'jp2').gsub(/;/, '')
+    end
+
+    private
+
+    def bad_compound?(compound)
+      compound_fields.map do |field|
+        compound[field].is_a?(Hash)
+      end.include?(true)
+    end
+
+    def compound_fields
+      ['pagetitle', 'pagefile', 'pageptr', 'page', 'title', 'transc']
     end
   end
 end
