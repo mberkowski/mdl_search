@@ -1,8 +1,11 @@
+require 'rinku'
+
 module MDL
   class CiteDetails
-    attr_reader :solr_doc
-    def initialize(solr_doc: '{}')
+    attr_reader :solr_doc, :auto_linker
+    def initialize(solr_doc: '{}', auto_linker: Rinku)
       @solr_doc = solr_doc
+      @auto_linker = auto_linker
     end
 
     def to_hash
@@ -42,10 +45,15 @@ module MDL
 
     def field_values(values, key, facet)
       values.map do |val|
-        [{text: val}, {url: facet_url(key, val, facet)}].inject({}) do |memo, item|
+        [{text: auto_link(val)}, {url: facet_url(key, val, facet)}].inject({}) do |memo, item|
           (item.values.first) ? memo.merge(item) : memo
         end
       end
+    end
+
+    # Wrap URLs in an anchor tag
+    def auto_link(text)
+      auto_linker.auto_link(text) if text
     end
 
     def facet_url(key, val, facet = false)
