@@ -1,6 +1,6 @@
 # A wrapper around a solr bounding box query
 class Nearby
-  def self.search(q: '*:*', pt: '46.7296,-94.6859', d: 45)
+  def self.search(q: '*:*', pt: '46.7296,-94.6859', d: 40)
     Blacklight.default_index.connection.get('select',
       :params => { :q => "#{q} -coordinates_llsi:\"#{pt}\"",
         :d => d,
@@ -8,7 +8,7 @@ class Nearby
         :fl => '*',
         :fq => '{!bbox sfield=coordinates_llsi}',
         :defType => 'edismax',
-        :rows => 250
+        :rows => 200
       })['response']['docs'].map do |nearby|
         nearby.merge(initial_path: initial_path(nearby))
       end
