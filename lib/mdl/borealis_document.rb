@@ -34,7 +34,6 @@ module MDL
               title)]
       else
         compounds.map do |compound|
-          next if bad_compound?(compound)
           asset(asset_klass(compound_format(compound)),
                 compound['pageptr'],
                 transcript(compound),
@@ -94,13 +93,7 @@ module MDL
     private
 
     def bad_compound?(compound)
-      compound_fields.map do |field|
-        compound[field].is_a?(Hash)
-      end.include?(true)
-    end
-
-    def compound_fields
-      ['pagetitle', 'pagefile', 'pageptr', 'page', 'title', 'transc']
+      compound['pagefile'].is_a?(Hash)
     end
   end
 end
