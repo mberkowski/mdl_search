@@ -16,19 +16,7 @@ module MDL
         '[{"pageptr" : 123, "title" : "Some thing", "transc" : "blah", "pagefile" : "foo.jp2"},
          {"pageptr" : 321, "title" : "Another Thing", "transc" : "The text", "pagefile" : "foo.mp4"}]'}) }
 
-    let(:bogus_pageptr) { document.merge({'compound_objects_ts' =>
-        '[{"pageptr" : {}, "title" : "Some thing", "transc" : "blah", "pagefile" : "foo.jp2"},
-         {"pageptr" : 321, "title" : "Another Thing", "transc" : "The text", "pagefile" : "foo.jp2"}]'}) }
-    let(:bogus_title) { document.merge({'compound_objects_ts' =>
-        '[{"pageptr" : 123, "title" : {}, "transc" : "blah", "pagefile" : "foo.jp2"},
-         {"pageptr" : 321, "title" : "Another Thing", "transc" : "The text", "pagefile" : "foo.jp2"}]'}) }
-    let(:bogus_transc) { document.merge({'compound_objects_ts' =>
-        '[{"pageptr" : 123, "title" : "Some thing", "transc" : {}, "pagefile" : "foo.jp2"},
-         {"pageptr" : 321, "title" : "Another Thing", "transc" : "The text", "pagefile" : "foo.jp2"}]'}) }
     let(:bogus_pagefile) { document.merge({'compound_objects_ts' =>
-        '[{"pageptr" : 123, "title" : "Some thing", "transc" : "blah", "pagefile" : {}},
-         {"pageptr" : 321, "title" : "Another Thing", "transc" : "The text", "pagefile" : "foo.jp2"}]'}) }
-    let(:bogus_page) { document.merge({'compound_objects_ts' =>
         '[{"pageptr" : 123, "title" : "Some thing", "transc" : "blah", "pagefile" : {}},
          {"pageptr" : 321, "title" : "Another Thing", "transc" : "The text", "pagefile" : "foo.jp2"}]'}) }
 
@@ -55,6 +43,7 @@ module MDL
 
     context 'when the document is a single item' do
       it 'correctly serializes the document' do
+        puts BorealisDocument.new(document: document).to_viewer.inspect
         expect(BorealisDocument.new(document: document).to_viewer).to eq (
           {
             "image" => {
@@ -99,26 +88,11 @@ module MDL
           })
       end
 
-
-      it 'rejects bad page number data' do
-        expect(BorealisDocument.new(document: bogus_pageptr).to_viewer).to eq expected_bogus_viewer_result
-      end
-
-      it 'rejects bad page title data' do
-        expect(BorealisDocument.new(document: bogus_title).to_viewer).to eq expected_bogus_viewer_result
-      end
-
-      it 'rejects bad page transcription data' do
-        expect(BorealisDocument.new(document: bogus_transc).to_viewer).to eq expected_bogus_viewer_result
-      end
-
       it 'rejects bad page page file data' do
         expect(BorealisDocument.new(document: bogus_pagefile).to_viewer).to eq expected_bogus_viewer_result
       end
 
-      it 'rejects bad page page page data' do
-        expect(BorealisDocument.new(document: bogus_page).to_viewer).to eq expected_bogus_viewer_result
-      end
+
     end
   end
 end

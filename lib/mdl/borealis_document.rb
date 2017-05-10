@@ -30,6 +30,7 @@ module MDL
               title)]
       else
         compounds.map do |compound|
+          next if bad_compound?(compound)
           asset(asset_klass(compound_format(compound)),
                 compound['pageptr'],
                 transcript(compound),
