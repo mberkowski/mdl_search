@@ -8,7 +8,7 @@ class Nearby
         :fl => '*',
         :fq => '{!bbox sfield=coordinates_llsi}',
         :defType => 'edismax',
-        :rows => 200
+        :rows => 100
       })['response']['docs']
     rescue StandardError => e
       Rails.logger.error("Nearby Error: #{e}")
