@@ -11,10 +11,6 @@ module MDL
       expect(video.type).to eq 'image'
     end
 
-    it 'correctly identifies its initial viewer path' do
-      expect(video.initial_path).to eq '#image/0'
-    end
-
     it 'correctly identifies its downloads' do
       expect(video.downloads).to eq [
         { src: "http://cdm16022.contentdm.oclc.org/digital/iiif/foo/21/full/150,150/0/default.jpg", label: '(150 x 150)' },

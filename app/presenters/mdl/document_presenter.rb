@@ -2,10 +2,6 @@ module MDL
   class DocumentPresenter < BasePresenter
     presents :document
 
-    def url(base_url)
-      "#{base_url}#{initial_path}"
-    end
-
     def title
       document.fetch('title_ssi', '[Missing Title]')
     end
@@ -20,10 +16,6 @@ module MDL
 
     def description
       document['description_ts']
-    end
-
-    def initial_path
-      MDL::BorealisDocument.new(document: document).initial_path
     end
   end
 end

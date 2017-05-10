@@ -59,13 +59,8 @@ class SolrDocument
                 id: id,
                 collection: collection,
                 title: v['title_ssi'],
-                type: v['type_ssi'],
-                fragment: initial_path(v['format_ssi'])
+                type: v['type_ssi']
               }
     end
-  end
-
-  def initial_path(format)
-    MDL::BorealisAssetMap.new(format_field: format).map.new.initial_path
   end
 end

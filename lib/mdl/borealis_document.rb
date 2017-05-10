@@ -20,10 +20,6 @@ module MDL
       @assets ||= to_assets
     end
 
-    def initial_path
-      assets.first.initial_path
-    end
-
     private
 
     def to_assets

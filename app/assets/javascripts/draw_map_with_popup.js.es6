@@ -8,13 +8,11 @@ export default function drawMapWithPopup(
   coordinates,
   nearbyLocations,
   mapName,
-  initialPath,
 ) {
   const pinHTML = new LinkedThumbnail(
     title,
     id,
-    type,
-    initialPath).toHtml();
+    type).toHtml();
   DrawMap(coordinates, nearbyLocations, mapName)
     .pinIt(coordinates, pinHTML).openPopup();
 }

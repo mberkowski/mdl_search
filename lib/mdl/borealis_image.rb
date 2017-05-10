@@ -9,10 +9,6 @@ module MDL
       'image'
     end
 
-    def initial_path
-      "#{super}/0"
-    end
-
     def downloads
       [
         { src: "http://cdm16022.contentdm.oclc.org/digital/iiif/#{collection}/#{id}/full/150,150/0/default.jpg", label: '(150 x 150)' },

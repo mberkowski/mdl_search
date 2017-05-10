@@ -9,8 +9,7 @@
           "<%= type %>",
           <%= coordinates_json(coordinates) %>,
           <%= nearby_json(coordinates) %>,
-          <%= map_id %>,
-          "<%= initial_path %>");
+          <%= map_id %>);
       <% else %>
         DrawMap.default(
           <%= coordinates_json(coordinates) %>,

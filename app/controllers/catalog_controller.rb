@@ -20,23 +20,6 @@ class CatalogController < ApplicationController
     super
   end
 
-# updates the search counter (allows the show view to paginate)
-  def track
-    search_session['counter'] = params[:counter]
-    search_session['id'] = params[:search_id]
-    search_session['per_page'] = params[:per_page]
-    if params[:redirect] and (params[:redirect].starts_with?('/') or params[:redirect] =~ URI.regexp)
-      path = "#{uri(params[:redirect]).path}/#/#{uri(params[:redirect]).fragment}"
-      redirect_to path, status: 303
-    else
-      redirect_to blacklight_config.document_model.new(id: params[:id]), status: 303
-    end
-  end
-
-  def uri(path)
-    URI.parse(path)
-  end
-
   # Override blacklights limit param for facets.
   # See: def solr_facet_params - blacklight-5.7.2/lib/blacklight/solr_helper.rb
   def facet_list_limit

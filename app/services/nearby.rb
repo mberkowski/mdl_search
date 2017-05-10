@@ -9,16 +9,10 @@ class Nearby
         :fq => '{!bbox sfield=coordinates_llsi}',
         :defType => 'edismax',
         :rows => 200
-      })['response']['docs'].map do |nearby|
-        nearby.merge(initial_path: initial_path(nearby))
-      end
+      })['response']['docs']
     rescue StandardError => e
       Rails.logger.error("Nearby Error: #{e}")
       []
-  end
-
-  def self.initial_path(doc)
-    MDL::BorealisDocument.new(document: doc).initial_path
   end
 end
 

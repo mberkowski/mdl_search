@@ -14,13 +14,13 @@
       <% document = MDL::DocumentPresenter.new(@document) %>
       <meta property="og:title" content="<%= document.title %>" />
       <meta property="og:image" content="<%= document.thumbnail %>" />
-      <meta property="og:url" content="<%= document.url(request.original_url) %>" />
+      <meta property="og:url" content="<%= request.original_url %>" />
       <meta property="og:description" content="<%= document.description %>" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content="MnDigLib" />
       <meta name="twitter:title" content="<%= document.title_short %>" />
       <meta name="twitter:image" content="<%= document.thumbnail %>" />
-      <meta name="twitter:url" content="<%= document.url(request.original_url) %>" />
+      <meta name="twitter:url" content="<%= request.original_url %>" />
     <% end %>
 
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
