@@ -39,6 +39,7 @@
 body {
     color: #231f20;
     font-family: 'Muli', helvetica, arial, sans-serif;
+	font-size: 16px;
 }
 
 @media (max-width: 479px) {
@@ -177,7 +178,7 @@ h1, .h1 {
 }
 
 a {
-    color: #0e76bc;
+    color: #005da3;
     text-decoration: underline;
 }
 
@@ -329,6 +330,7 @@ a.remove:hover {
 	background-color: #ecedf0;
 	border-color: #d3d4d7;
 	color: #231f20;
+	font-size: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -431,7 +433,7 @@ a.remove:hover {
 
 .home-page {
 	.facet-content {
-		min-height: 260px;
+		min-height: 310px;
 	}
 	margin-top: 10px;
 }
