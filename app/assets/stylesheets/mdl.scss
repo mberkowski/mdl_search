@@ -331,7 +331,6 @@ a.remove:hover {
 	background-color: #ecedf0;
 	border-color: #d3d4d7;
 	color: #231f20;
-	font-size: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -445,6 +444,10 @@ a.remove:hover {
 
 .alpha-filter .btn {
 	margin: 6px 0 12px;
+}
+
+.panel-title {
+	font-size: 20px;
 }
 
 /* End homepage styles */
