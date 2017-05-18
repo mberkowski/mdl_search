@@ -132,6 +132,16 @@ $( document ).on('turbolinks:load', function() {
       ga_event('Full Record Details', 'State', $(this).text());
     });
 
+    $('.detail-field-county a').click(function() {
+      console.log($(this).text());
+      ga_event('Full Record Details', 'County', $(this).text());
+    });
+
+    $('.detail-field-geonamesurl a').click(function() {
+      console.log($(this).text());
+      ga_event('Full Record Details', 'GeoNames URL', $(this).text());
+    });
+
     $('.detail-field-city a').click(function() {
       console.log($(this).text());
       ga_event('Full Record Details', 'City', $(this).text());

@@ -75,8 +75,10 @@ module MDL
         {key: 'dimensions_ssi', label: 'Dimensions', facet: true},
         {key: 'country_ssi', label: 'Country', facet: true},
         {key: 'state_ssi', label: 'State', facet: true},
-        {key: 'city_ssim', delimiter: ', ', label: 'City', facet: true},
+        {key: 'county_ssim', delimiter: ', ', label: 'County', facet: true},
+        {key: 'city_ssim', delimiter: ', ', label: 'City/Township', facet: true},
         {key: 'district_ssi', label: 'District', facet: true},
+        {key: 'geonam_ssi', label: 'GeoNames URL', facet: true},
         {key: 'language_ssi', label: 'Language'},
         {key: 'rights_ssi', label: 'Rights'},
         {key: 'local_identifier_ssi', label: 'Local Identifier'},
@@ -84,7 +86,6 @@ module MDL
         {key: 'collection_name_ssi', label: 'Collection Name', facet: true},
         {key: 'contact_information_ssi', label: 'Contact information'},
         {key: 'fiscal_sponsor_ssi', label: 'Fiscal Sponsor'},
-        {key: 'geonam_ssi', label: 'GeoNames Identifier', facet: true},
         {key: 'collection_description_tesi', label: 'Collection Description'}
       ]
     end
