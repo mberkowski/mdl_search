@@ -1,11 +1,6 @@
 module MDL
-
-  class BorealisOpenSeadragon
-    attr_reader :images
+  class BorealisOpenSeadragon < BorealisAssetsViewer
     attr_accessor :focus
-    def initialize(images: [])
-      @images = [images].flatten
-    end
 
     def type
       'image'
@@ -14,23 +9,21 @@ module MDL
     def to_viewer
       {
         "type" => type,
-        "thumbnail" => images.first.thumbnail,
+        "thumbnail" => assets.first.thumbnail,
         "label" => "Image",
         "include_controls" => true,
         "sequenceMode" => true,
         "showReferenceStrip" => true,
         "defaultZoomLevel" => 0,
-        "tileSources" => images.map { |img| img.src },
+        "tileSources" => assets.map { |img| img.src },
         "transcript" => {
-          "texts" => images.map do |img|
+          "texts" => assets.map do |img|
             img.transcripts if img.transcripts != ''
           end.flatten.compact.uniq,
           "label" => "Image"
         },
-        "tocs" => images.map { |img| img.title }
+        "tocs" => assets.map { |img| img.title }
       }
     end
-
-
   end
 end

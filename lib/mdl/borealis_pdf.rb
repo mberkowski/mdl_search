@@ -1,6 +1,6 @@
 module MDL
   class BorealisPDF <  BorealisAsset
-    def src
+     def src
       "http://cdm16022.contentdm.oclc.org/utils/getfile/collection/#{collection}/id/#{id}/filename"
     end
 
@@ -12,18 +12,10 @@ module MDL
       'pdf'
     end
 
-    def to_viewer
-      {
-        "type" => type,
-        "height" => 800,
-        "width" => '100%',
-        "thumbnail" => thumbnail,
-        "src" => src,
-        "transcript" => {
-          "label" => "PDF",
-          "texts" => transcripts
-        }
-      }
+    # PDF viewer requires multiple PDFs, so no to_viewer method here. See
+    # borealis_pdf_viewer instead
+    def viewer
+      MDL::BorealisPDFViewer
     end
   end
 end

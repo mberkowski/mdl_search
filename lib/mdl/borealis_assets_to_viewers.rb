@@ -1,41 +1,21 @@
 module MDL
   class BorealisAssetsToViewers
-    attr_reader :assets, :seadragon_klass
-    def initialize(assets: [], seadragon_klass: MDL::BorealisOpenSeadragon)
-      @seadragon_klass = seadragon_klass
+    attr_reader :assets, :to_viewer_klass
+    def initialize(assets: [], to_viewer_klass: MDL::BorealisAssetToViewer)
       @assets          = assets
+      @to_viewer_klass = to_viewer_klass
     end
 
     def viewers
-      openseadragon_viewer.merge(non_image_viewers)
+      assets.inject({}) do |memo, asset|
+        memo.merge(to_viewer(asset))
+      end
     end
 
     private
 
-    def non_image_viewers
-      non_images.inject({}) do |memo, asset|
-        memo.merge(asset.to_viewer['type'] => asset.to_viewer)
-      end
+    def to_viewer(asset)
+      to_viewer_klass.new(asset: asset, assets: assets).to_viewer
     end
-
-    def openseadragon_viewer
-      (seadragon) ? {"image" => seadragon} : {}
-    end
-
-    def seadragon
-      (!images.empty?) ? seadragon_klass.new(images: images).to_viewer : nil
-    end
-
-
-    # Images are special: they are all gathered under one asset object for the
-    # OpenSeadragon viewer to handle
-    def images
-      [assets.find_all { |asset| asset.is_a? MDL::BorealisImage }].flatten
-    end
-
-    def non_images
-      [assets.find_all { |asset| !asset.is_a? MDL::BorealisImage }].flatten
-    end
-
   end
 end

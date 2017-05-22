@@ -1,0 +1,333 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`For the first item should render a pdf correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <div>
+        <div
+          className="borealis-pdf-nav"
+        >
+          <div>
+            <a
+              className="active thumbnail"
+              href="/pdf/0"
+              onClick={[Function]}
+              style={Object {}}
+            >
+              <img
+                alt="pdf-link"
+                src="http://lib-mdl-dev.oit.umn.edu/thumbnails/p16022coll52:16"
+              />
+            </a>
+          </div>
+          <div>
+            <a
+              className="thumbnail"
+              href="/pdf/1"
+              onClick={[Function]}
+              style={undefined}
+            >
+              <img
+                alt="pdf-link"
+                src="http://lib-mdl-dev.oit.umn.edu/thumbnails/p16022coll52:17"
+              />
+            </a>
+          </div>
+        </div>
+        <div
+          className="row image-nav"
+        >
+          <ul
+            className="nav nav-pills"
+          >
+            <li>
+              <a
+                className="active transcript-nav-link"
+                href="/pdf/0"
+                onClick={[Function]}
+                style={Object {}}
+              >
+                PDF
+              </a>
+            </li>
+            <li>
+              <a
+                className="transcript-nav-link"
+                href="/pdf/transcript/0"
+                onClick={[Function]}
+                style={undefined}
+              >
+                Transcript
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <object
+            data="http://cdm16022.contentdm.oclc.org/utils/getfile/collection/p16022coll52/id/16/filename"
+            height={800}
+            type="application/pdf"
+            width={800}
+          >
+            <img
+              alt="thumbnail"
+              src="http://lib-mdl-dev.oit.umn.edu/thumbnails/p16022coll52:16"
+            />
+            <a
+              href="http://cdm16022.contentdm.oclc.org/utils/getfile/collection/p16022coll52/id/16/filename"
+            >
+              <span
+                className="glyphicon glyphicon-download-alt"
+              />
+              http://cdm16022.contentdm.oclc.org/utils/getfile/collection/p16022coll52/id/16/filename
+            </a>
+          </object>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`For the first item should render a transcript correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <div>
+        <div
+          className="borealis-pdf-nav"
+        >
+          <div>
+            <a
+              className="thumbnail"
+              href="/pdf/0"
+              onClick={[Function]}
+              style={undefined}
+            >
+              <img
+                alt="pdf-link"
+                src="http://lib-mdl-dev.oit.umn.edu/thumbnails/p16022coll52:16"
+              />
+            </a>
+          </div>
+          <div>
+            <a
+              className="thumbnail"
+              href="/pdf/1"
+              onClick={[Function]}
+              style={undefined}
+            >
+              <img
+                alt="pdf-link"
+                src="http://lib-mdl-dev.oit.umn.edu/thumbnails/p16022coll52:17"
+              />
+            </a>
+          </div>
+        </div>
+        <div
+          className="row image-nav"
+        >
+          <ul
+            className="nav nav-pills"
+          >
+            <li>
+              <a
+                className="transcript-nav-link"
+                href="/pdf/0"
+                onClick={[Function]}
+                style={undefined}
+              >
+                PDF
+              </a>
+            </li>
+            <li>
+              <a
+                className="active transcript-nav-link"
+                href="/pdf/transcript/0"
+                onClick={[Function]}
+                style={Object {}}
+              >
+                Transcript
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div
+            className="transcript"
+          >
+            1 Cecelia Boone Narrator Sara Ring Interviewer June 9, 2011 Minitex Oral History Project Minneapolis, Minnesota SR: Tell us how you got started working at Minitex. How did you end up in the job you are doing right now? CB: As always, there is a story. blah blah
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`For the second item should render a pdf correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <div>
+        <div
+          className="borealis-pdf-nav"
+        >
+          <div>
+            <a
+              className="thumbnail"
+              href="/pdf/0"
+              onClick={[Function]}
+              style={undefined}
+            >
+              <img
+                alt="pdf-link"
+                src="http://lib-mdl-dev.oit.umn.edu/thumbnails/p16022coll52:16"
+              />
+            </a>
+          </div>
+          <div>
+            <a
+              className="active thumbnail"
+              href="/pdf/1"
+              onClick={[Function]}
+              style={Object {}}
+            >
+              <img
+                alt="pdf-link"
+                src="http://lib-mdl-dev.oit.umn.edu/thumbnails/p16022coll52:17"
+              />
+            </a>
+          </div>
+        </div>
+        <div
+          className="row image-nav"
+        >
+          <ul
+            className="nav nav-pills"
+          >
+            <li>
+              <a
+                className="active transcript-nav-link"
+                href="/pdf/1"
+                onClick={[Function]}
+                style={Object {}}
+              >
+                PDF
+              </a>
+            </li>
+            <li>
+              <a
+                className="transcript-nav-link"
+                href="/pdf/transcript/1"
+                onClick={[Function]}
+                style={undefined}
+              >
+                Transcript
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <object
+            data="http://cdm16022.contentdm.oclc.org/utils/getfile/collection/p16022coll52/id/17/filename"
+            height={800}
+            type="application/pdf"
+            width={800}
+          >
+            <img
+              alt="thumbnail"
+              src="http://lib-mdl-dev.oit.umn.edu/thumbnails/p16022coll52:17"
+            />
+            <a
+              href="http://cdm16022.contentdm.oclc.org/utils/getfile/collection/p16022coll52/id/17/filename"
+            >
+              <span
+                className="glyphicon glyphicon-download-alt"
+              />
+              http://cdm16022.contentdm.oclc.org/utils/getfile/collection/p16022coll52/id/17/filename
+            </a>
+          </object>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`For the second item should render a transcript correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <div>
+        <div
+          className="borealis-pdf-nav"
+        >
+          <div>
+            <a
+              className="thumbnail"
+              href="/pdf/0"
+              onClick={[Function]}
+              style={undefined}
+            >
+              <img
+                alt="pdf-link"
+                src="http://lib-mdl-dev.oit.umn.edu/thumbnails/p16022coll52:16"
+              />
+            </a>
+          </div>
+          <div>
+            <a
+              className="thumbnail"
+              href="/pdf/1"
+              onClick={[Function]}
+              style={undefined}
+            >
+              <img
+                alt="pdf-link"
+                src="http://lib-mdl-dev.oit.umn.edu/thumbnails/p16022coll52:17"
+              />
+            </a>
+          </div>
+        </div>
+        <div
+          className="row image-nav"
+        >
+          <ul
+            className="nav nav-pills"
+          >
+            <li>
+              <a
+                className="transcript-nav-link"
+                href="/pdf/1"
+                onClick={[Function]}
+                style={undefined}
+              >
+                PDF
+              </a>
+            </li>
+            <li>
+              <a
+                className="active transcript-nav-link"
+                href="/pdf/transcript/1"
+                onClick={[Function]}
+                style={Object {}}
+              >
+                Transcript
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div
+            className="transcript"
+          >
+            blah blah blah, second pdf here
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

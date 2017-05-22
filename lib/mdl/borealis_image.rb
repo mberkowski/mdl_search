@@ -17,8 +17,8 @@ module MDL
       ]
     end
 
-    def to_viewer
-      {}
+    def viewer
+      MDL::BorealisOpenSeadragon
     end
   end
 end

@@ -12,17 +12,8 @@ module MDL
       'ppt'
     end
 
-    def to_viewer
-      {
-        "type" => type,
-        "thumbnail" => thumbnail,
-        "src" => src,
-        "text" => "(Download)",
-        "transcript" => {
-          "label" => "PowerPoint",
-          "texts" => []
-        }
-      }
+    def viewer
+      MDL::BorealisPPTViewer
     end
   end
 end
