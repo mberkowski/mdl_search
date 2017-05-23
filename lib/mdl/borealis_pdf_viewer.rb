@@ -17,7 +17,7 @@ module MDL
           'height' => 800,
           'width' => '100%',
         },
-       'thumbnail' => assets.first.thumbnail,
+       'thumbnail' => 'https://d1kue88aredzk1.cloudfront.net/reflections-pdf-icon.png',
        'values' => values
       }
     end
