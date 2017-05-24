@@ -1,5 +1,5 @@
 module MDL
-  class BorealisVideoPlayer < BorealisAssetViewer
+  class BorealisVideoPlayer < BorealisAssetsViewer
     def to_viewer
       {
         'type' => asset.type,
