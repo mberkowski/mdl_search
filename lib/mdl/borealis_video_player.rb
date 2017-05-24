@@ -10,7 +10,7 @@ module MDL
           'texts' => asset.transcripts,
           'label' => 'Video',
         },
-        'entry_id' => asset.document['kaltura_video_ssi'],
+        'entry_id' => asset.video_id,
         'height' => '315px',
         'width' => '560px',
         'thumbnail' => "https://d1kue88aredzk1.cloudfront.net/video-1.png"
