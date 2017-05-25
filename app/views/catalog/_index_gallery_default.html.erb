@@ -1,7 +1,7 @@
 <div class="panel panel-default gallery-result">
   <div class="panel-body">
     <div class="image-wrapper">
-      <%= link_to raw(cached_thumbnail_tag(document)), "/catalog/#{document['id']}/#{borealis_path(document)}?" %>
+      <%= link_to raw(cached_thumbnail_tag(document)), "/catalog/#{document['id']}?" %>
     </div>
     <div class="title">
       <% document['title_ssi'] = truncate(document['title_ssi'], length: 50) %>
