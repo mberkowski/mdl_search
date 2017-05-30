@@ -13,7 +13,7 @@ module MDL
     end
 
     def is_child?
-      parent_id == id
+      parent_id != id
     end
 
     def type
