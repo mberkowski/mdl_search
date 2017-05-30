@@ -15,6 +15,7 @@ module MDL
         "sequenceMode" => true,
         "showReferenceStrip" => true,
         "defaultZoomLevel" => 0,
+        "minZoomLevel" => 0,
         "tileSources" => assets.map { |img| img.src },
         "transcript" => {
           "texts" => assets.map do |img|
