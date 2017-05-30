@@ -20,6 +20,20 @@ class CatalogController < ApplicationController
     super
   end
 
+  # overrides /blacklight/controllers/concerns/blacklight/catalog
+  # add a param to allow the search history to be cleared on an item click
+  # get a single document from the index
+  # to add responses for formats other than html or json see _Blacklight::Document::Export_
+  def show
+    @response, @document = fetch params[:id]
+    session[:history].clear if params[:ws] == 'true'
+    respond_to do |format|
+      format.html { setup_next_and_previous_documents }
+      format.json { render json: { response: { document: @document } } }
+      additional_export_formats(@document, format)
+    end
+  end
+
   # Override blacklights limit param for facets.
   # See: def solr_facet_params - blacklight-5.7.2/lib/blacklight/solr_helper.rb
   def facet_list_limit
