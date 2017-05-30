@@ -1,11 +1,12 @@
+<% counter = document_counter_with_offset(document_counter) %>
 <div class="panel panel-default gallery-result">
   <div class="panel-body">
     <div class="image-wrapper">
-      <%= link_to raw(cached_thumbnail_tag(document)), "/catalog/#{document['id']}?" %>
+      <%= link_to raw(cached_thumbnail_tag(document)), "/catalog/#{document['id']}?", counter: counter %>
     </div>
     <div class="title">
       <% document['title_ssi'] = truncate(document['title_ssi'], length: 50) %>
-      <%=  link_to_document document %>
+      <%=  link_to_document document, document_show_link_field(document), counter: counter %>
     </div>
   </div>
 </div>
