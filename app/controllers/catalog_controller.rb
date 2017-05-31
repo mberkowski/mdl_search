@@ -26,7 +26,7 @@ class CatalogController < ApplicationController
   # to add responses for formats other than html or json see _Blacklight::Document::Export_
   def show
     @response, @document = fetch params[:id]
-    session[:history].clear if params[:ws] == 'true'
+    session[:history].clear if params[:ws] == 'true' && session[:history]
     respond_to do |format|
       format.html { setup_next_and_previous_documents }
       format.json { render json: { response: { document: @document } } }
