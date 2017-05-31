@@ -3,7 +3,10 @@ $(document).on('ready page:load', function () {
   // Work-around - safari hangs for a bit before setting focus when
   // autocomplete has been enabled
   if ( window.location.pathname == '/' ){
-    if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)) {
+    if (
+        (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)
+        || (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream)
+       ) {
       $( "input" ).removeAttr( "data-autocomplete-enabled" );
     }
   }
