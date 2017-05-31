@@ -1,4 +1,13 @@
-$(function() {
+$(document).on('ready page:load', function () {
+
+  // Work-around - safari hangs for a bit before setting focus when
+  // autocomplete has been enabled
+  if ( window.location.pathname == '/' ){
+    if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)) {
+      $( "input" ).removeAttr( "data-autocomplete-enabled" );
+    }
+  }
+
   $('.home-page .blacklight-collection_name_ssi h3 a').text('Browse By Collection')
   $('.home-page .blacklight-topic_ssim h3 a').text('Browse By Topic')
   $('.home-page .blacklight-physical_format_ssi h3 a').text('Browse By Format')
