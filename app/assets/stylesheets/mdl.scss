@@ -134,7 +134,7 @@ body {
 	}
 }
 
-@media (min-width: 992px) {
+@media (max-width: 991px) {
 	.input-group-addon:first-child {
 		display: none;
 	}
