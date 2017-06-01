@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 class CatalogController < ApplicationController
-  caches_page :home
   include Blacklight::Catalog
 
 
