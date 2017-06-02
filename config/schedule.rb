@@ -19,6 +19,13 @@
 
 # Learn more: http://github.com/javan/whenever
 
+# Prevent search sessions from bloating our DB
 every 1.day do
   rake "blacklight_maintenance:truncate_searches"
 end
+
+# Pick up new CDM records daily
+every 1.day do
+  rake "mdl_ingester:batch"
+end
+
