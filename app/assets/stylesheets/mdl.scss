@@ -719,6 +719,20 @@ dt, dd {
 #full_record_map {
 	margin: 0 -15px;
 }
+
+.feedback-panel {
+	background: #a3bf5b;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.feedback-panel a {
+	color: #231f20;
+	display: inline-block;
+	padding: 12px;
+	text-decoration: none;
+}
 /* End item page styles */
 
 /* Footer styles */
