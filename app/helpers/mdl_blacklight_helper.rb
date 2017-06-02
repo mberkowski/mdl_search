@@ -14,7 +14,11 @@ module MdlBlacklightHelper
   end
 
   def json_page_link
-    link_to(raw('<div class="icon-json text-center"></div>'), "#{current_search}.json", {class: 'json-link'})
+    link_to(raw('<div class="icon-json text-center"></div>'), "#{uri.scheme}://#{uri.host}:#{uri.port}/#{uri.path}.json", {class: 'json-link'})
+  end
+
+  def uri
+    URI::parse(request.original_url)
   end
 
   def record_count(q: '*:*')
