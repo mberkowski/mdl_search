@@ -15,7 +15,7 @@ export default class LinkedThumbnail {
   }
 
   recordLink(alt, data) {
-    return `<a href="/catalog/${this.id}?ws=true" alt="${alt}" class="map-pin-link">${data}</a>`;
+    return `<a href="/catalog/${this.id}?pn=false" alt="${alt}" class="map-pin-link">${data}</a>`;
   }
 
   thumbnail() {
