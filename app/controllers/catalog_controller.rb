@@ -26,6 +26,7 @@ class CatalogController < ApplicationController
   def show
     @response, @document = fetch params[:id]
     session[:history].clear if params[:ws] == 'true' && session[:history]
+    @hide_previous_next = true if params[:pn] == 'false'
     respond_to do |format|
       format.html { setup_next_and_previous_documents }
       format.json { render json: { response: { document: @document } } }
