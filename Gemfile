@@ -77,8 +77,5 @@ gem 'sinatra', require: false
 gem 'sidekiq-failures'
 gem 'whenever', :require => false
 
-# Speedy Home Page
-gem "actionpack-page_caching"
-
 # Autmatically link URLs in citation details
 gem 'rinku'

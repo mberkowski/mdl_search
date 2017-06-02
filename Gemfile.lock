@@ -14,8 +14,6 @@ GEM
       rack-test (~> 0.6.2)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionpack-page_caching (1.1.0)
-      actionpack (>= 4.0.0, < 6)
     actionview (4.2.5.2)
       activesupport (= 4.2.5.2)
       builder (~> 3.1)
@@ -98,7 +96,7 @@ GEM
     capybara-webkit (1.14.0)
       capybara (>= 2.3.0, < 2.14.0)
       json
-    cdmbl (0.2.34)
+    cdmbl (0.3.0)
       activesupport (~> 4.2)
       contentdm_api (~> 0.3.11)
       hash_at_path (~> 0.1)
@@ -178,10 +176,10 @@ GEM
       activesupport (>= 4.1.0)
     hash_at_path (0.1.4)
     hashdiff (0.3.2)
-    hitimes (1.2.4)
+    hitimes (1.2.5)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (0.8.1)
+    i18n (0.8.4)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
@@ -217,7 +215,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
-    minitest (5.10.1)
+    minitest (5.10.2)
     multi_json (1.12.1)
     multipart-post (2.0.0)
     mysql2 (0.3.21)
@@ -400,7 +398,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack-page_caching
   binding_of_caller
   blacklight
   browserify-rails (~> 3.1.0)
