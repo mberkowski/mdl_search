@@ -2,7 +2,7 @@
 <% #DEPRECATED - using id="previousNextDocument" as a selector is deprecated and will be removed in Blacklight 6.0 %>
 <% if @previous_document || @next_document || current_search_session %>
   <div id='previousNextDocument' class='pagination-search-widgets'>
-  <% if @previous_document || @next_document %>
+  <% if (@previous_document || @next_document) && !@hide_previous_next%>
       <div class="page_links">
         <%= link_to_previous_document @previous_document %> |
 
