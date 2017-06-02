@@ -44,9 +44,6 @@ module MdlSearch
         }
     end
 
-    # https://github.com/rails/actionpack-page_caching
-    config.action_controller.page_cache_directory = "#{Rails.root}/public/cached_pages"
-
     # Compress pages
     config.middleware.use Rack::Deflater
   end
