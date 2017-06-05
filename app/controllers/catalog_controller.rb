@@ -120,7 +120,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'type_ssi', label: 'Type', show: true, collapse: false, limit: 10
     config.add_facet_field 'dat_ssi', label: 'Date Created', collapse: false, limit: 5
     config.add_facet_field 'county_ssim', label: 'County', show: true, limit: 5, index_range: 'A'..'Z', collapse: false, index: true
-    config.add_facet_field 'topic_ssim', label: 'Topic', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
+    # Topics have been incorporated into keywords
+    # config.add_facet_field 'topic_ssim', label: 'Topic', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
     config.add_facet_field 'keyword_ssim', label: 'Keyword', show: true, index_range: 'A'..'Z', collapse: false, limit: 5, index: true
     config.add_facet_field 'collection_name_ssi', label: 'Collection', index_range: 'A'..'Z', collapse: false, limit: 5, index: true
     config.add_facet_field 'placename_ssim', label: 'Location', index_range: 'A'..'Z', collapse: false, limit: 5, index: true
