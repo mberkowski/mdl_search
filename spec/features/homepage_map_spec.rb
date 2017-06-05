@@ -1,25 +1,30 @@
 require 'rails_helper'
+require 'digest/sha1'
 
 describe 'Browsing Homepage Map' do
+  let (:minn_coords) {
+    [
+      '45.01706, -93.09961',
+      '46.80611, -92.243896',
+      '44.02917, -92.75278',
+      '45.75194, -95.61806',
+      '46.86525, -96.82899',
+      '47.51583, -92.50694',
+      '43.86944, -95.11833'
+    ]
+  }
+
   let(:solr_docs) {
     docs = []
-    docs << SolrDocument.new({
-      id: 'mhs:5469',
-      title_ssi: 'The Model C.C.C., January 17, 1935',
-      type_ssi: 'Still Image',
-      format_ssi: "image/jp2",
-      coordinates_llsi: '45.00458, -93.47688'
-    }).to_h
-
-    docs << SolrDocument.new({
-      id: 'lrl:2612',
-      title_ssi: 'Senator George Albert Turnham, 1919-1920 Legislative Session, Minnesota Legislature',
-      type_ssi: 'Still Image',
-      format_ssi: "image/jp2",
-      coordinates_llsi: '44.98528, -93.56889'
-    }).to_h
-
-
+    minn_coords.map do |coords|
+      docs << SolrDocument.new({
+        id: Digest::SHA1.hexdigest(coords),
+        title_ssi: 'The Model C.C.C., January 17, 1935',
+        type_ssi: 'Still Image',
+        format_ssi: "image/jp2",
+        coordinates_llsi: coords
+      }).to_h
+    end
     docs
   }
 
@@ -37,11 +42,6 @@ describe 'Browsing Homepage Map' do
       visit '/'
       first('.leaflet-marker-pane img').click
       expect(find('#home_map')).to have_content('The Model C.C.C., January 17, 1935')
-      # Visit the full record view of this item
-      first('.leaflet-popup-content a').click
-      expect(find('#home_map')).to have_content('The Model C.C.C., January 17, 1935')
-      # Make sure we have navigated to the full record view
-      find('.blacklight-catalog-show')
     end
 end
 
