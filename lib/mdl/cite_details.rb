@@ -78,7 +78,7 @@ module MDL
         {key: 'county_ssim', delimiter: ', ', label: 'County', facet: true},
         {key: 'city_ssim', delimiter: ', ', label: 'City/Township', facet: true},
         {key: 'district_ssi', label: 'District', facet: true},
-        {key: 'geonam_ssi', label: 'GeoNames URL', facet: true},
+        {key: 'geonam_ssi', label: 'GeoNames URI', facet: true},
         {key: 'language_ssi', label: 'Language'},
         {key: 'rights_ssi', label: 'Rights'},
         {key: 'local_identifier_ssi', label: 'Local Identifier'},
