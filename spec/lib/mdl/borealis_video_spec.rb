@@ -1,38 +1,31 @@
+require_relative '../../../lib/mdl/borealis_assets_viewer.rb'
 require_relative '../../../lib/mdl/borealis_asset.rb'
 require_relative '../../../lib/mdl/borealis_video.rb'
+require_relative '../../../lib/mdl/borealis_video_player.rb'
 module MDL
   describe BorealisVideo do
-    let(:video) { MDL::BorealisVideo.new(collection: 'foo', id: 21, transcript: 'Video transcript here') }
-    it 'correctly identifies its src' do
-      expect(video.src).to eq 'http://cdm16022.contentdm.oclc.org/utils/getstream/collection/foo/id/21'
+    let(:video) do
+      BorealisVideo.new(document: { 'kaltura_video_ssi' => '1234' },
+                        collection: 'foo', id: '124')
     end
-
-    it 'correctly identifies its downloads' do
+    it 'provides a download link' do
       expect(video.downloads).to eq []
     end
 
-    it 'serializes itself for use in the viewer' do
-      expect(video.to_viewer).to eq (
-        {
-          "type"=>"video",
-          "thumbnail"=>"/thumbnails/foo:21",
-          "height"=>500,
-          "width"=>500,
-          "transcript"=>{
-            "label"=>"Video",
-            "texts"=>["Video transcript here"]
-          },
-          "entry_id" => nil,
-          "height" => "315px",
-          "targetId" => "kaltura_player_video",
-          "thumbnail" => "https://d1kue88aredzk1.cloudfront.net/video-1.png",
-          "transcript" => {"texts"=>["Video transcript here"], "label"=>"Video"},
-          "type" => "kaltura_video",
-          "uiconf_id" => 38683631,
-          "wid" => "_1369852",
-          "width" => "560px",
-        })
+    it 'knows its src' do
+      expect(video.src).to eq 'http://cdm16022.contentdm.oclc.org/utils/getstream/collection/foo/id/124'
+    end
+
+    it 'knows its player' do
+      expect(video.viewer).to be MDL::BorealisVideoPlayer
+    end
+
+    it 'knows its type' do
+      expect(video.type).to eq 'kaltura_video'
+    end
+
+    it 'knows its video_id' do
+      expect(video.video_id).to eq '1234'
     end
   end
 end
-
