@@ -2,8 +2,6 @@ require_relative '../../../lib/mdl/borealis_assets_viewer.rb'
 require_relative '../../../lib/mdl/borealis_asset.rb'
 require_relative '../../../lib/mdl/borealis_image.rb'
 require_relative '../../../lib/mdl/borealis_video.rb'
-require_relative '../../../lib/mdl/borealis_pdf.rb'
-require_relative '../../../lib/mdl/borealis_pdf_viewer.rb'
 require_relative '../../../lib/mdl/borealis_video_player.rb'
 require_relative '../../../lib/mdl/borealis_open_seadragon.rb'
 require_relative '../../../lib/mdl/borealis_asset_to_viewer.rb'
@@ -11,20 +9,6 @@ require_relative '../../../lib/mdl/borealis_assets_to_viewers.rb'
 
 module MDL
   describe BorealisAssetsToViewers do
-    let(:pdfs) do
-      [
-        MDL::BorealisPDF.new(collection: 'pdfs',
-                             id: 33,
-                             transcript: 'PDF One',
-                             document: { 'id' => 'foo:12' }),
-        MDL::BorealisPDF.new(collection: 'pdfs',
-                             id: 334,
-                             transcript: 'PDF Two',
-                             document: { 'id' => 'foo:13' })
-      ]
-    end
-
-
 
     let(:videos) do
       [
@@ -67,42 +51,6 @@ module MDL
             'label' => 'Image'
           },
           'tocs' => %w[blah blah]
-        }
-      )
-    end
-
-    it 'produces a configuration for PDFs' do
-      expect(to_viewers(pdfs)).to eq(
-        'pdf' => {
-          'transcript' => {
-            'texts' => [],
-            'label' => 'PDF'
-          },
-          'type' => 'pdf',
-          'config' => {
-            'height' => 800,
-            'width' => '100%'
-          },
-          'thumbnail' => 'https://d1kue88aredzk1.cloudfront.net/reflections-pdf-icon.png',
-          'values' => [
-            {
-              'src' => 'http://cdm16022.contentdm.oclc.org/utils/getfile/collection/pdfs/id/33/filename',
-              'thumbnail' => '/thumbnails/pdfs:33',
-              'transcript' => {
-                'texts' => [
-                  'PDF One'
-                ],
-                'label' => 'PDF'
-              }
-            },
-            {
-              'src' => 'http://cdm16022.contentdm.oclc.org/utils/getfile/collection/pdfs/id/334/filename',
-              'thumbnail' => '/thumbnails/pdfs:334',
-              'transcript' => {
-                'texts' => ['PDF Two'], 'label' => 'PDF'
-              }
-            }
-          ]
         }
       )
     end
