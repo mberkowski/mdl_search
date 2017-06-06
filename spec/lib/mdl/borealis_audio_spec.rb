@@ -1,65 +1,52 @@
+require_relative '../../../lib/mdl/borealis_assets_viewer.rb'
 require_relative '../../../lib/mdl/borealis_asset.rb'
 require_relative '../../../lib/mdl/borealis_audio.rb'
+require_relative '../../../lib/mdl/borealis_audio_player.rb'
 module MDL
   describe BorealisAudio do
     let(:audio_document) { {"kaltura_audio_ssi" => "foo_bar"} }
     let(:audio_playlist_document) { {"kaltura_audio_playlist_ssi" => "foo_bar"} }
     let(:playlist_with_audio) { {"kaltura_audio_playlist_ssi" => "foo_bar", "kaltura_audio_ssi" => "foo;bar;baz"} }
+    let(:player) { MDL::BorealisAudio.new.viewer }
+    let(:audios) do
+      [
+        MDL::BorealisAudio.new(collection: 'audios',
+                               id: 33,
+                               document: audio_document,
+                               transcript: 'Audio One blah')
+      ]
+    end
+    let(:audio_playlists) do
+      [
+        MDL::BorealisAudio.new(collection: 'audios',
+                               id: 33,
+                               document: audio_playlist_document,
+                               transcript: 'Audio One blah')
+      ]
+    end
 
-    it 'correctly identifies its downloads' do
+    it 'provides downloads' do
       expect(BorealisAudio.new.downloads).to eq []
     end
 
-    it 'produces a kaltura audio player hash' do
-      asset = BorealisAudio.new(document: audio_document, id: 1, collection: 'brah')
-      expect(asset.to_viewer).to eq (
-        {
-          "entry_id" => "foo_bar",
-          "height" => "125px",
-          "targetId" => "kaltura_player",
-          "thumbnail" => "https://d1kue88aredzk1.cloudfront.net/audio-3.png",
-          "transcript" => {"texts"=>[], "label"=>"Audio"},
-          "type" => "kaltura_audio",
-          "uiconf_id" => 38708801,
-          "wid" => "_1369852",
-          "width" => "560px"
-        }
-      )
-    end
-    it 'produces a kaltura audio playlist hash' do
-      asset = BorealisAudio.new(document: audio_playlist_document, id: 1, collection: 'brah')
-      expect(asset.to_viewer).to eq (
-        {
-          "flashvars" => {"streamerType"=>"auto", "playlistAPI.kpl0Id"=>"foo_bar"},
-           "height" => "395px",
-           "targetId" => "kaltura_player_playlist",
-           "thumbnail" => "https://d1kue88aredzk1.cloudfront.net/audio-3.png",
-           "transcript" => {"texts"=>[], "label"=>"Audio Playlist"},
-           "type" => "kaltura_audio_playlist",
-           "uiconf_id" => 38719361,
-           "wid" => "_1369852",
-           "width" => "560px"
-        }
-      )
+    it 'knows its viewer' do
+      expect(BorealisAudio.new.viewer).to be MDL::BorealisAudioPlayer
     end
 
-    describe "when audio ids and playlists are provided" do
-      it 'produces a kaltura audio playlist hash' do
-        asset = BorealisAudio.new(document: playlist_with_audio, id: 1, collection: 'brah')
-        expect(asset.to_viewer).to eq (
-          {
-            "flashvars" => {"streamerType"=>"auto", "playlistAPI.kpl0Id"=>"foo_bar"},
-             "height" => "395px",
-             "targetId" => "kaltura_player_playlist",
-             "thumbnail" => "https://d1kue88aredzk1.cloudfront.net/audio-3.png",
-             "transcript" => {"texts"=>[], "label"=>"Audio Playlist"},
-             "type" => "kaltura_audio_playlist",
-             "uiconf_id" => 38719361,
-             "wid" => "_1369852",
-             "width" => "560px"
-          }
-        )
-      end
+    it 'knows its type' do
+      expect(BorealisAudio.new.type).to eq 'kaltura_audio'
+    end
+
+    it 'knows its audio playlist id' do
+      expect(BorealisAudio.new(document: { 'kaltura_audio_playlist_ssi' =>
+                                           'foobar:123' })
+        .audio_playlist_id).to eq 'foobar:123'
+    end
+
+    it 'knows its audio id' do
+      expect(BorealisAudio.new(document: { 'kaltura_audio_ssi' =>
+                                           'foobar:123' })
+        .audio_id).to eq 'foobar:123'
     end
   end
 end

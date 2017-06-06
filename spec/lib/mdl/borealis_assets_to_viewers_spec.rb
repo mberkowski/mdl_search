@@ -39,14 +39,6 @@ module MDL
       ]
     end
 
-    let(:audios) do
-      [
-        MDL::BorealisAudio.new(collection: 'audios',
-                               id: 33,
-                               transcript: 'Audio One blah')
-      ]
-    end
-
     let(:videos) do
       [
         MDL::BorealisVideo.new(collection: 'videos',
@@ -143,24 +135,6 @@ module MDL
       )
     end
 
-    it 'produces a configuration for Audios' do
-      expect(to_viewers(audios)).to eq(
-        'kaltura_audio' => {
-          'type' => 'kaltura_audio',
-          'targetId' => 'kaltura_player',
-          'wid' => '_1369852',
-          'uiconf_id' => 38708801,
-          'entry_id' => false,
-          'transcript' => {
-            'texts' => ['Audio One blah'],
-            'label' => 'Audio'
-          },
-          'height' => '125px',
-          'width' => '560px',
-          'thumbnail' => 'https://d1kue88aredzk1.cloudfront.net/audio-3.png'
-        }
-      )
-    end
 
     it 'produces a configuration for Videos' do
       expect(to_viewers(videos)).to eq(
