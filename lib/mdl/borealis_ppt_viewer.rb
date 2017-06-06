@@ -1,5 +1,5 @@
 module MDL
-  class BorealisPPTViewer < BorealisAssetViewer
+  class BorealisPPTViewer < BorealisAssetsViewer
     def to_viewer
       {
         "type" => asset.type,
