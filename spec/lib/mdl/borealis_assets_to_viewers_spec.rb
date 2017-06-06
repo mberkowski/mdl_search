@@ -4,8 +4,6 @@ require_relative '../../../lib/mdl/borealis_image.rb'
 require_relative '../../../lib/mdl/borealis_video.rb'
 require_relative '../../../lib/mdl/borealis_pdf.rb'
 require_relative '../../../lib/mdl/borealis_pdf_viewer.rb'
-require_relative '../../../lib/mdl/borealis_audio_player.rb'
-require_relative '../../../lib/mdl/borealis_audio.rb'
 require_relative '../../../lib/mdl/borealis_video_player.rb'
 require_relative '../../../lib/mdl/borealis_open_seadragon.rb'
 require_relative '../../../lib/mdl/borealis_asset_to_viewer.rb'
@@ -26,13 +24,7 @@ module MDL
       ]
     end
 
-    let(:audios) do
-      [
-        MDL::BorealisAudio.new(collection: 'audios',
-                               id: 33,
-                               transcript: 'Audio One blah')
-      ]
-    end
+
 
     let(:videos) do
       [
