@@ -16,10 +16,6 @@ module MDL
       expect(BorealisPPT.new.type).to eq 'ppt'
     end
 
-    it 'knows its type' do
-      expect(BorealisPPT.new.type).to eq 'ppt'
-    end
-
     it 'knows its src' do
       expect(BorealisPPT.new(collection: 'foo',
                              id: '123').src).to eq 'http://cdm16022.contentdm.oclc.org/utils/getfile/collection/foo/id/123/filename'
