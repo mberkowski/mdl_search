@@ -24,6 +24,7 @@ module MDL
       expect(MDL::BorealisAssetMap.new(format_field: 'mp4').map).to be BorealisVideo
       expect(MDL::BorealisAssetMap.new(format_field: 'video/mp4').map).to be BorealisVideo
       expect(MDL::BorealisAssetMap.new(format_field: 'video/DV').map).to be BorealisVideo
+      expect(MDL::BorealisAssetMap.new(format_field: 'video/dv video/mp4').map).to be BorealisVideo
     end
 
     it 'correctly maps pdf' do
