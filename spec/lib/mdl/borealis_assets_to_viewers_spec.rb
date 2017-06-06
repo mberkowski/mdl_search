@@ -4,8 +4,6 @@ require_relative '../../../lib/mdl/borealis_image.rb'
 require_relative '../../../lib/mdl/borealis_video.rb'
 require_relative '../../../lib/mdl/borealis_pdf.rb'
 require_relative '../../../lib/mdl/borealis_pdf_viewer.rb'
-require_relative '../../../lib/mdl/borealis_ppt_viewer.rb'
-require_relative '../../../lib/mdl/borealis_ppt.rb'
 require_relative '../../../lib/mdl/borealis_audio_player.rb'
 require_relative '../../../lib/mdl/borealis_audio.rb'
 require_relative '../../../lib/mdl/borealis_video_player.rb'
@@ -15,17 +13,6 @@ require_relative '../../../lib/mdl/borealis_assets_to_viewers.rb'
 
 module MDL
   describe BorealisAssetsToViewers do
-    let(:ppts) do
-      [
-        MDL::BorealisPPT.new(collection: 'ppts',
-                             id: 33,
-                             transcript: 'PPT One'),
-        MDL::BorealisPPT.new(collection: 'ppts',
-                             id: 334,
-                             transcript: 'PPT Two')
-      ]
-    end
-
     let(:pdfs) do
       [
         MDL::BorealisPDF.new(collection: 'pdfs',
@@ -36,6 +23,14 @@ module MDL
                              id: 334,
                              transcript: 'PDF Two',
                              document: { 'id' => 'foo:13' })
+      ]
+    end
+
+    let(:audios) do
+      [
+        MDL::BorealisAudio.new(collection: 'audios',
+                               id: 33,
+                               transcript: 'Audio One blah')
       ]
     end
 
@@ -84,7 +79,7 @@ module MDL
       )
     end
 
-    it 'produces a configuration for PPTs' do
+    it 'produces a configuration for PDFs' do
       expect(to_viewers(pdfs)).to eq(
         'pdf' => {
           'transcript' => {
@@ -119,22 +114,6 @@ module MDL
         }
       )
     end
-
-    it 'produces a configuration for PDFs' do
-      expect(to_viewers(ppts)).to eq(
-        'ppt' => {
-          'type' => 'ppt',
-          'thumbnail' => '/thumbnails/ppts:33',
-          'src' => 'http://cdm16022.contentdm.oclc.org/utils/getfile/collection/ppts/id/33/filename',
-          'text' => '(Download)',
-          'transcript' => {
-            'label' => 'PowerPoint',
-            'texts' => []
-          }
-        }
-      )
-    end
-
 
     it 'produces a configuration for Videos' do
       expect(to_viewers(videos)).to eq(
