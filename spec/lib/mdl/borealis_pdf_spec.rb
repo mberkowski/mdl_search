@@ -39,9 +39,5 @@ module MDL
     it 'knows its type' do
       expect(BorealisPDF.new.type).to eq 'pdf'
     end
-
-    it 'knows its type' do
-      expect(BorealisPDF.new.type).to eq 'pdf'
-    end
   end
 end
