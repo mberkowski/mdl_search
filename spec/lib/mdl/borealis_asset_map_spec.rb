@@ -4,6 +4,7 @@ require_relative '../../../lib/mdl/borealis_image.rb'
 require_relative '../../../lib/mdl/borealis_audio.rb'
 require_relative '../../../lib/mdl/borealis_video.rb'
 require_relative '../../../lib/mdl/borealis_pdf.rb'
+require_relative '../../../lib/mdl/borealis_ppt.rb'
 module MDL
   describe BorealisAssetMap do
     it 'default maps to the image viewer' do
@@ -33,6 +34,10 @@ module MDL
 
     it 'correctly maps audio' do
       expect(MDL::BorealisAssetMap.new(format_field: 'mp3').map).to be BorealisAudio
+    end
+
+    it 'correctly maps ppt' do
+      expect(MDL::BorealisAssetMap.new(format_field: 'pptx').map).to be BorealisPPT
     end
   end
 end
