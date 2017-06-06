@@ -4,27 +4,6 @@ require_relative '../../../lib/mdl/borealis_audio.rb'
 require_relative '../../../lib/mdl/borealis_audio_player.rb'
 module MDL
   describe BorealisAudio do
-    let(:audio_document) { {"kaltura_audio_ssi" => "foo_bar"} }
-    let(:audio_playlist_document) { {"kaltura_audio_playlist_ssi" => "foo_bar"} }
-    let(:playlist_with_audio) { {"kaltura_audio_playlist_ssi" => "foo_bar", "kaltura_audio_ssi" => "foo;bar;baz"} }
-    let(:player) { MDL::BorealisAudio.new.viewer }
-    let(:audios) do
-      [
-        MDL::BorealisAudio.new(collection: 'audios',
-                               id: 33,
-                               document: audio_document,
-                               transcript: 'Audio One blah')
-      ]
-    end
-    let(:audio_playlists) do
-      [
-        MDL::BorealisAudio.new(collection: 'audios',
-                               id: 33,
-                               document: audio_playlist_document,
-                               transcript: 'Audio One blah')
-      ]
-    end
-
     it 'provides downloads' do
       expect(BorealisAudio.new.downloads).to eq []
     end
