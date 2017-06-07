@@ -34,8 +34,8 @@ module MDL
       expect(viewer(audio)['uiconf_id']).to eq 38708801
       expect(viewer(audio)['entry_id']).to eq 'foo_bar'
       expect(viewer(audio)['transcript']).to eq( { "texts"=>["Audio One blah"], "label"=>"Audio" })
-      expect(viewer(audio)['wrapper_height']).to eq '125px'
-      expect(viewer(audio)['wrapper_width']).to eq '60%'
+      expect(viewer(audio)['wrapper_height']).to eq '100%'
+      expect(viewer(audio)['wrapper_width']).to eq '100%'
       expect(viewer(audio)['thumbnail']).to eq 'https://d1kue88aredzk1.cloudfront.net/audio-3.png'
     end
 
@@ -49,8 +49,8 @@ module MDL
       expect(viewer(audio_playlist)['wid']).to eq '_1369852'
       expect(viewer(audio_playlist)['uiconf_id']).to eq 38719361
       expect(viewer(audio_playlist)['transcript']).to eq( { "texts"=>["Audio One blah"], "label"=>"Audio Playlist" })
-      expect(viewer(audio_playlist)['wrapper_height']).to eq '395px'
-      expect(viewer(audio_playlist)['wrapper_width']).to eq '60%'
+      expect(viewer(audio_playlist)['wrapper_height']).to eq '100%'
+      expect(viewer(audio_playlist)['wrapper_width']).to eq '100%'
       expect(viewer(audio_playlist)['thumbnail']).to eq 'https://d1kue88aredzk1.cloudfront.net/audio-3.png'
     end
 
