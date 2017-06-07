@@ -11,8 +11,8 @@ module MDL
           'label' => 'Video',
         },
         'entry_id' => asset.video_id,
-        'height' => '315px',
-        'width' => '560px',
+        'wrapper_height' => '315px',
+        'wrapper_width' => '90%',
         'thumbnail' => "https://d1kue88aredzk1.cloudfront.net/video-1.png"
       }
     end
