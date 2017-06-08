@@ -23,8 +23,8 @@ module MDL
       expect(viewer(video)['transcript']).to eq(
         'texts' => ['A brief history of cat costumes'], 'label' => 'Video'
       )
-      expect(viewer(video)['height']).to eq '315px'
-      expect(viewer(video)['width']).to eq '560px'
+      expect(viewer(video)['wrapper_height']).to eq '100%'
+      expect(viewer(video)['wrapper_width']).to eq '100%'
       expect(viewer(video)['thumbnail']).to eq 'https://d1kue88aredzk1.cloudfront.net/video-1.png'
     end
 

@@ -16,8 +16,8 @@ module MDL
           'texts' => asset.transcripts,
           'label' => 'Audio',
         },
-        'height' => '125px',
-        'width' => '560px',
+        'wrapper_height' => '100%',
+        'wrapper_width' => '100%',
         'thumbnail' => "https://d1kue88aredzk1.cloudfront.net/audio-3.png"
       }
     end
@@ -36,8 +36,8 @@ module MDL
           'texts' => asset.transcripts,
           'label' => 'Audio Playlist',
         },
-        'height' => '395px',
-        'width' => '560px',
+        'wrapper_height' => '100%',
+        'wrapper_width' => '100%',
         'thumbnail' => "https://d1kue88aredzk1.cloudfront.net/audio-3.png"
       }
     end
