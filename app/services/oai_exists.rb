@@ -15,6 +15,8 @@ class OAIExists
     error?
   end
 
+  private
+
   def error?
     (/The value of the identifier argument is unknown/ =~ error) != nil
   end
