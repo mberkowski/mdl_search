@@ -5,10 +5,10 @@ class Nearby
       :params => { :q => "#{q} -coordinates_llsi:\"#{pt}\"",
         :d => d,
         :pt => pt,
-        :fl => '*',
+        :fl => 'title_ssi, id, coordinates_llsi',
         :fq => '{!bbox sfield=coordinates_llsi}',
         :defType => 'edismax',
-        :rows => 100
+        :rows => 150
       })['response']['docs']
     rescue StandardError => e
       Rails.logger.error("Nearby Error: #{e}")
