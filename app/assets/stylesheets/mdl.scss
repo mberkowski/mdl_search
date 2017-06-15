@@ -534,6 +534,11 @@ a.remove:hover {
 
 .gallery-result {
 	background-color: #ecedf0;
+	height: 250px !important;
+}
+
+.gallery-result .panel-body {
+	height: 250px !important;
 }
 
 h3.document-title-heading {
