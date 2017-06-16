@@ -12,7 +12,7 @@ export default class FullRecord extends React.Component {
       return  (
                 <div>
                   <div className="row">
-                    <Borealis base_path={this.props.base_path}
+                    <Borealis basename=''
                               config={this.props.borealis_config } />
                   </div>
                   <div className="addthis_inline_share_toolbox"></div>

@@ -17,17 +17,18 @@ module MDL
     it 'correctly identifies its src' do
       expect(openseadragon.to_viewer).to eq (
         {
-          "type"=>"image",
-          "thumbnail"=>"/thumbnails/foo:123",
-          "tileSources" => ["/contentdm-images/info?id=foo:123", "/contentdm-images/info?id=foo:312", "/contentdm-images/info?id=foo:321"],
-          "tocs" => ["Page One", "Page Two", "Page Three"],
-          "transcript" => {"texts"=>["Page One stuff here", "Page Two stuff here", "Page Three stuff here"], "label"=>"Image"},
-          "label"=>"Image",
-          "include_controls"=>true,
-          "defaultZoomLevel" => 0,
-          "minZoomLevel" => 0,
-          "sequenceMode" => true,
-          "showReferenceStrip" => true
+          'type'=>'image',
+          'basename' => '',
+          'thumbnail'=>'/thumbnails/foo:123',
+          'tileSources' => ['/contentdm-images/info?id=foo:123', '/contentdm-images/info?id=foo:312', '/contentdm-images/info?id=foo:321'],
+          'tocs' => ['Page One', 'Page Two', 'Page Three'],
+          'transcript' => {'texts'=>['Page One stuff here', 'Page Two stuff here', 'Page Three stuff here'], 'label'=>'Image'},
+          'label'=>'Image',
+          'include_controls'=>true,
+          'defaultZoomLevel' => 0,
+          'minZoomLevel' => 0,
+          'sequenceMode' => true,
+          'showReferenceStrip' => true
         }
       )
     end
