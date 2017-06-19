@@ -1,7 +1,7 @@
 exports[`CitationChicago Tests renders a citation 1`] = `
 <span>
   
-  Fred. 09/01/2001.\"Fred and his dog.\"  Fred and co, Accessed November 8, 2017.http://www.example.com/fred
+  Fred. 09/01/2001. \"Fred and his dog.\"  Fred and co, Accessed November 8, 2017. http://www.example.com/fred
   
 </span>
 `;

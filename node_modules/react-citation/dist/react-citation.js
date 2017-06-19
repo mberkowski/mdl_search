@@ -5135,7 +5135,7 @@ var CitationChicago = function (_React$Component) {
   _createClass(CitationChicago, [{
     key: 'mappings',
     value: function mappings() {
-      var map = [{ creator: { prefix: '', suffix: '.' } }, { creation_date: { prefix: ' ', suffix: '.' } }, { title: { prefix: '"', suffix: '." ' } }, { contributing_organization: { prefix: ' ', suffix: ', ' } }, { current_date: { prefix: 'Accessed ', suffix: '. ', formatters: [this.format_date] } }, { url: { prefix: '', suffix: '' } }];
+      var map = [{ creator: { prefix: '', suffix: '.' } }, { creation_date: { prefix: ' ', suffix: '. ' } }, { title: { prefix: '"', suffix: '." ' } }, { contributing_organization: { prefix: ' ', suffix: ', ' } }, { current_date: { prefix: 'Accessed ', suffix: '. ', formatters: [this.format_date] } }, { url: { prefix: '', suffix: '' } }];
       return map;
     }
   }, {
