@@ -17,7 +17,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-borealis": "git+https://github.com/UMNLibraries/react-borealis.git#af7913355f13",
+    "react-borealis": "git+https://github.com/UMNLibraries/react-borealis.git#0dc87caaf357",
     "react-citation": "git+https://github.com/UMNLibraries/react-citation.git#b91e8ecd008c"
 
   },
