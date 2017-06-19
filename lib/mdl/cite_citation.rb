@@ -14,7 +14,7 @@ module MDL
         fields: fields
       }
     end
-    
+
     def fields
       {
         mappings: [{}],
@@ -29,7 +29,7 @@ module MDL
             subject: solr_doc['subject_ssim'],
             contributing_organization: solr_doc['contributing_organization_ssi'],
             url: "#{base_url}/catalog/#{solr_doc['id']}",
-            current_date: Time.now.strftime("%d/%m/%Y")
+            current_date: Time.now
           }
       }
     end

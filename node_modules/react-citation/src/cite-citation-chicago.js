@@ -7,16 +7,25 @@ class CitationChicago extends React.Component {
   }
 
   mappings() {
-    let map =  
+    let map =
           [
             {creator: {prefix: '', suffix: '.' }},
             {creation_date: {prefix: ' ', suffix: '.' }},
             {title: {prefix: '"', suffix: '." '}},
             {contributing_organization: {prefix: ' ', suffix: ', ' }},
-            {current_date: {prefix: 'Accessed ', suffix: '.' }},
+            {current_date: {prefix: 'Accessed ', suffix: '. ', formatters: [this.format_date]}},
             {url: {prefix: '', suffix: '' }}
           ]
     return map
+  }
+
+  format_date(timestamp) {
+    let date = new Date(timestamp)
+    let months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+    let month = months[date.getMonth()]
+    let year  = date.getFullYear()
+    let day = date.getDate()
+    return month + ' ' + day + ', ' + year
   }
 
   render() {

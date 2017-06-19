@@ -5134,8 +5134,18 @@ var CitationChicago = function (_React$Component) {
   _createClass(CitationChicago, [{
     key: 'mappings',
     value: function mappings() {
-      var map = [{ creator: { prefix: '', suffix: '.' } }, { creation_date: { prefix: ' ', suffix: '.' } }, { title: { prefix: '"', suffix: '." ' } }, { contributing_organization: { prefix: ' ', suffix: ', ' } }, { current_date: { prefix: 'Accessed ', suffix: '.' } }, { url: { prefix: '', suffix: '' } }];
+      var map = [{ creator: { prefix: '', suffix: '.' } }, { creation_date: { prefix: ' ', suffix: '.' } }, { title: { prefix: '"', suffix: '." ' } }, { contributing_organization: { prefix: ' ', suffix: ', ' } }, { current_date: { prefix: 'Accessed ', suffix: '. ', formatters: [this.format_date] } }, { url: { prefix: '', suffix: '' } }];
       return map;
+    }
+  }, {
+    key: 'format_date',
+    value: function format_date(timestamp) {
+      var date = new Date(timestamp);
+      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      var month = months[date.getMonth()];
+      var year = date.getFullYear();
+      var day = date.getDate();
+      return month + ' ' + day + ', ' + year;
     }
   }, {
     key: 'render',
