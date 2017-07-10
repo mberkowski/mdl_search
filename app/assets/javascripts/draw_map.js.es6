@@ -28,7 +28,7 @@ function reDrawMap(coordinates, needle) {
 export default function drawMap(coordinates, nearbyLocations, mapName) {
   const needle = new Needle(coordinates, mapName);
   nearbyLocations.forEach((location) => {
-    needle.pinIt(location.coordinates_llsi.split(','), pinHTML(location));
+    needle.pinIt(location.coordinates_llsi.split(','), pinHTML(location), `${location.title_ssi.substring(0, 50)}...`);
   });
   needle.onMove(reDrawMap, needle);
   return needle;

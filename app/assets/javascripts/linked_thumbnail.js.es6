@@ -19,6 +19,6 @@ export default class LinkedThumbnail {
   }
 
   thumbnail() {
-    return `<div><img src="/thumbnails/${this.id}/${this.type}" /></div>`;
+    return `<div><img alt="${this.title}" src="/thumbnails/${this.id}/${this.type}" /></div>`;
   }
 }

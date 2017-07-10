@@ -27,8 +27,8 @@ export default class Needle {
     });
   }
 
-  pinIt(coordinates, pinHTML) {
-    return (L.marker(coordinates)
+  pinIt(coordinates, pinHTML, altText) {
+    return (L.marker(coordinates, {alt: `Pin for: ${altText}`})
       .bindPopup(pinHTML)
       .addTo(this.map));
   }
