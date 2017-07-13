@@ -25,3 +25,5 @@
 /cdm_images
 cores/
 data.tar
+/public/packs
+/node_modules

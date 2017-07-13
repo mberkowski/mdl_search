@@ -8,7 +8,7 @@
    config = config.map { |item| (!item.empty?) ? item : nil }.compact
 %>
 
-<%= react_component('app.FullRecord',
+<%= react_component('MDLfullRecord',
                     base_path: request.path,
                     borealis_config: borealis_doc.to_viewer,
                     citation_config: config) %>
