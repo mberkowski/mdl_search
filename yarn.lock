@@ -1610,6 +1610,10 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
+classnames@^2.1.2:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 cli-cursor@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-1.0.2.tgz#64da3f7d56a54412e59794bd62dc35295e8f2987"
@@ -3287,6 +3291,10 @@ ieee754@^1.1.4:
 ignore@^3.2.0:
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.7.tgz#4810ca5f1d8eca5595213a34b94f2eb4ed926bbd"
+
+immutable@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -5415,6 +5423,12 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+"react-active-item@ssh://git@github.com/UMNLibraries/react-active-item.git#e49bc7cc670806e82fea7":
+  version "0.1.0"
+  resolved "ssh://git@github.com/UMNLibraries/react-active-item.git#e49bc7cc670806e82fea7"
+  dependencies:
+    immutable "^3.8.1"
+
 "react-borealis@git+https://github.com/UMNLibraries/react-borealis.git#45219ab28f57":
   version "0.1.0"
   resolved "git+https://github.com/UMNLibraries/react-borealis.git#45219ab28f57"
@@ -5429,6 +5443,15 @@ rc@^1.1.7:
     react-openseadragon "git+https://github.com/UMNLibraries/react-openseadragon.git#b6805c1cc"
     react-router "4.1.1"
     react-router-dom "^4.1.1"
+
+"react-citation@git+https://github.com/UMNLibraries/react-citation.git#51682c87e55b":
+  version "0.1.1"
+  resolved "git+https://github.com/UMNLibraries/react-citation.git#51682c87e55b"
+  dependencies:
+    classnames "^2.1.2"
+    react "^15.3.2"
+    react-active-item "ssh://git@github.com/UMNLibraries/react-active-item.git#e49bc7cc670806e82fea7"
+    react-dom "^15.3.2"
 
 react-dom@^15.3.2, react-dom@^15.4.1:
   version "15.5.4"
