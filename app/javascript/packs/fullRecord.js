@@ -1,13 +1,14 @@
-var ReactRailsUJS = require('react_ujs');
+import 'babel-polyfill';
 
+var ReactRailsUJS = require('react_ujs');
 import React from 'react';
 import Borealis from 'react-borealis';
 import ReactCitation from 'react-citation';
 
+
 export default class FullRecord extends React.Component {
   render() {
-    return  (
-              <div>
+    return  (<div>
                 <div className="row">
                   <Borealis basename=''
                             config={this.props.borealis_config } />
@@ -16,8 +17,7 @@ export default class FullRecord extends React.Component {
                 <div className="row citation">
                   <ReactCitation items={this.props.citation_config } />
                 </div>
-              </div>
-            );
+              </div>);
     }
 
 }
