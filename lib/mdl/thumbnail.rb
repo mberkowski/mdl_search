@@ -4,9 +4,8 @@ module MDL
     def initialize(collection: :missing_collection,
                    id: :missing_id,
                    cache_dir: File.join(Rails.root,
-                                        'app',
+                                        'public',
                                         'assets',
-                                        'images',
                                         'thumbnails'),
                    title: '',
                    type: '')
