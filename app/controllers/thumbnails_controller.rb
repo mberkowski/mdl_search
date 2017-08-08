@@ -2,22 +2,25 @@ class ThumbnailsController < ApplicationController
   before_action :thumbnail
 
   def show
-    send_data data, type: 'image/jpg', disposition: 'inline'
+    redirect_to url
   end
 
-  def data
+  def url
     if thumbnail.cached?
-      thumbnail.cached_file
+      # Route images through the rails assets APIs in order to get the
+      # correct headers
+      "/assets/thumbnails/#{thumbnail.filename}"
     else
       CacheThumbnailWorker.perform_async(collection, id, params[:type])
-      thumbnail.data
+      thumbnail.thumbnail_url
     end
   end
 
   private
 
   def thumbnail
-    MDL::Thumbnail.new(collection: collection, id: id, type: params[:type])
+    MDL::Thumbnail.new(collection: collection,
+                       id: id, type: params[:type])
   end
 
   def collection
