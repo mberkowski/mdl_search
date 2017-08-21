@@ -8,7 +8,7 @@ namespace :mdl_ingester do
 
   desc "ingest batches of records"
   ##
-  # e.g. rake mdl_ingester:ingest[2015-09-14, 2]
+  # e.g. rake mdl_ingester:ingest[10, 2]
   task :batch, [:batch_size, :set_spec] => :environment  do |t, args|
     config  =
       {
