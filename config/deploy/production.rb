@@ -15,8 +15,6 @@ set :rails_env, "production"
 
 set :bundle_flags, '--deployment'
 
-set :branch, 'upgrade/5.1'
-
 set :sidekiq_concurrency, 1
 set :sidekiq_processes, 2
 
