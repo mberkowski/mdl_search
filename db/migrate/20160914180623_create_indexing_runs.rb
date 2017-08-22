@@ -1,4 +1,4 @@
-class CreateIndexingRuns < ActiveRecord::Migration
+class CreateIndexingRuns < ActiveRecord::Migration[4.2]
   def change
     create_table :indexing_runs do |t|
 

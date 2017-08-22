@@ -24,25 +24,7 @@ module MDL
 
     it 'produces a configuration for Images (OpenSeadragon)' do
       expect(to_viewers(images)).to eq(
-        'image' => {
-          'type' => 'image',
-          'thumbnail' => '/thumbnails/images:1',
-          'label' => 'Image',
-          'include_controls' => true,
-          'sequenceMode' => true,
-          'showReferenceStrip' => true,
-          'defaultZoomLevel' => 0,
-          'minZoomLevel' => 0,
-          'tileSources' => [
-            '/contentdm-images/info?id=images:1',
-            '/contentdm-images/info?id=images:2'
-          ],
-          'transcript' => {
-            'texts' => ['Image One', 'Image Two'],
-            'label' => 'Image'
-          },
-          'tocs' => %w[blah blah]
-        }
+       "image" => {"type"=>"image", "basename"=>"", "thumbnail"=>"/thumbnails/images:1", "label"=>"Image", "include_controls"=>true, "sequenceMode"=>true, "showReferenceStrip"=>true, "defaultZoomLevel"=>0, "minZoomLevel"=>0, "tileSources"=>["/contentdm-images/info?id=images:1", "/contentdm-images/info?id=images:2"], "transcript"=>{"texts"=>["Image One", "Image Two"], "label"=>"Image"}, "tocs"=>["blah", "blah"]}
       )
     end
 

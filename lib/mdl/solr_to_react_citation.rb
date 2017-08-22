@@ -38,13 +38,4 @@ class SolrToReactCitation
       cite_transcript
     ]
   end
-
-
-     items << MDL::CiteDetails.new(solr_doc: document).to_hash
-   items << MDL::CiteCitation.new(solr_doc: document, base_url: request.base_url).to_hash
-   items << MDL::CiteDownload.new(assets: borealis_doc.assets).to_hash
-   items << MDL::CiteTranscript.new(solr_doc: document).to_hash
-   items = items.map { |item| (!item.empty?) ? item : nil }.compact
-
-
 end
