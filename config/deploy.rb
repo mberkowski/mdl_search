@@ -1,7 +1,7 @@
 # config valid only for Capistrano 3.1
 
 set :application, 'mdl'
-set :repo_url, 'git@github.com:mjb/mdl_search.git'
+set :repo_url, 'git@github.com:mberkowski/mdl_search.git'
 set :branch, 'ansible-dev'
 set :passenger_restart_with_touch, true
 
