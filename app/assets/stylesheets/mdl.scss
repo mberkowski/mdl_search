@@ -202,7 +202,7 @@ a.remove:hover {
 
 .navbar-brand {
 	background: transparent image-url("reflections-logo-blacklight.png") no-repeat top left;
-	color: #231f20;
+	color: #231f20 !important;
 	display: inline-block;
 	height: 88px;
 	margin: 0 20px 4px 8px !important;
@@ -369,6 +369,21 @@ a.remove:hover {
 .icon-json {
   font-size: 3em;
   margin-top: 15px;
+}
+
+/* Non-modal filter landing pages */
+#main-container .facet_pagination.top {
+	margin: 60px 0 0 0;
+	padding: 0 !important;
+}
+
+#main-container .modal-header, #main-container .modal-footer {
+	margin: 0 15px;
+	padding: 15px 0 !important;
+}
+
+#main-container .alpha-filter .pagination {
+	margin: 6px 0 0 0;
 }
 
 /* Homepage styles */
