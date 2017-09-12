@@ -2,11 +2,10 @@
 export default class Needle {
   static config(coordinates) {
     return {
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       center: coordinates,
       id: 'cj17xqnh8003j2rquui5gm3ar',
       minZoom: 7,
-      accessToken: 'pk.eyJ1IjoibGlic3lzIiwiYSI6Iks3SXpZUTQifQ.mVUUXOBDusaTEnEsSO3yAQ',
     };
   }
 
@@ -40,7 +39,7 @@ export default class Needle {
   }
 
   _tileIt() {
-    L.tileLayer('https://api.mapbox.com/styles/v1/libsys/{id}/tiles/256/{z}/{x}/{y}?access_token={accessToken}',
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
       Needle.config(this.coordinates)).addTo(this.map);
   }
 
