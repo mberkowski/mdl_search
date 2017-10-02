@@ -15,8 +15,8 @@ namespace :mdl_ingester do
         oai_endpoint: 'http://cdm16022.contentdm.oclc.org/oai/oai.php',
         cdm_endpoint: 'https://server16022.contentdm.oclc.org/dmwebservices/index.php',
         set_spec: (args[:set_spec] != '""') ? args[:set_spec] : nil,
-        max_compounds: (args[:max_compounds]) ? args[:max_compounds] : 10,
-        batch_size: (args[:batch_size]) ? args[:batch_size] : 10,
+        max_compounds: 1,
+        batch_size: (args[:batch_size]) ? args[:batch_size] : 5,
         solr_config: solr_config
       }
     CDMBL::ETLWorker.perform_async(config)
