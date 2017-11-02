@@ -13,7 +13,10 @@ module MDL
     end
 
     def is_child?
-      parent_id != id
+      # Collection "p16022coll64" is special case: it is a compound object
+      # made-up of a single multi-page PDF. We are working on ways to detect
+      # these sorts of cases. For now, this behavior is hard-coded
+      parent_id != id && collection != 'p16022coll64'
     end
 
     def type

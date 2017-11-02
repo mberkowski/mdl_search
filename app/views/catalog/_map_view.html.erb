@@ -3,7 +3,7 @@
     <div id="<%= map_id %>"></div>
     <script>
       <% if with_popup %>
-        DrawMapWithPopup.default(
+        MDLdrawMap.drawMapWithPopup(
           "<%= title %>",
           "<%= id %>",
           "<%= type %>",
@@ -11,7 +11,7 @@
           <%= nearby_json(coordinates) %>,
           <%= map_id %>);
       <% else %>
-        DrawMap.default(
+        MDLdrawMap.drawMap(
           <%= coordinates_json(coordinates) %>,
           <%= nearby_json(coordinates) %>,
           <%= map_id %>);

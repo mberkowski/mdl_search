@@ -3,7 +3,10 @@ module MDL
     attr_accessor :collection, :id, :cache_dir, :title, :type
     def initialize(collection: :missing_collection,
                    id: :missing_id,
-                   cache_dir: File.join(Rails.root, 'thumbnails'),
+                   cache_dir: File.join(Rails.root,
+                                        'public',
+                                        'assets',
+                                        'thumbnails'),
                    title: '',
                    type: '')
       @collection = collection
@@ -25,19 +28,27 @@ module MDL
     end
 
     def save
-      File.open("#{cache_dir}/#{filename}", 'wb') { |file| file.write(data)}
+      File.open(file_path, 'wb') { |file| file.write(data)}
     end
 
     def cached?
-      File.exists?("#{cache_dir}/#{filename}")
+      File.exists?(file_path)
     end
 
     def data
       @data ||= Net::HTTP.get_response(URI(thumbnail_url)).body
     end
 
+    def file_path
+      "#{cache_dir}/#{filename}"
+    end
+
     def cached_file
-      File.read("#{cache_dir}/#{filename}")
+      File.read(file_path)
+    end
+
+    def filename
+      "#{collection}_#{id}.jpg"
     end
 
     private
@@ -53,8 +64,5 @@ module MDL
       end
     end
 
-    def filename
-      "#{collection}_#{id}.jpg"
-    end
   end
 end
